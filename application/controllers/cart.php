@@ -177,7 +177,6 @@ class Cart extends CI_Controller {
 
 				}
 					
-
 				$productResult[] = array(
 							   'id'  => $items['id'],
 							   'sku'  => $row['sku'],
