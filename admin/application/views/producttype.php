@@ -1,5 +1,8 @@
-<div id="page-wrapper" ng-app="myApp">
-    <div class="container-fluid" ng-controller="myCtrl">
+<div class="content-wrapper">
+  <section class="content">
+    <div class="container-fluid box" ng-controller="mainCtrl">
+
+    
         <div class="page-header">
             <h1>หมวดสินค้า</h1>
             <?php //if(isset($sql))echo "<p>".$sql."</p>"; ?>
@@ -57,7 +60,8 @@
             </table>
         </div>
         <?php if(isset($links_pagination)) {echo $links_pagination;} ?>
-    </div>
-    <!-- /.container-fluid -->
+        </div>
+    <!-- /.container-fluid box -->
 </div>
-<!-- /#page-wrapper -->
+</section>
+<!-- /.content -->
