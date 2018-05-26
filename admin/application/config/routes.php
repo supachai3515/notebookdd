@@ -38,16 +38,41 @@
 |
 */
 
-$route['products'] = "products/index";
-$route['products/add'] = "products/add";
 
-$route['dashboard'] = "dashboard/index";
-$route['signout'] = "login/logout";
-$route['signin'] = "login/cek_login";
-$route['login'] = "login";
 
-$route['default_controller'] = 'dashboard';
-$route['404_override'] = '';
+
+$route['default_controller'] = "login";
+$route['404_override'] = 'error';
+
+
+/*********** USER DEFINED ROUTES *******************/
+
+$route['loginMe'] = 'login/loginMe';
+//$route['dashboard'] = 'user';
+$route['dashboard'] = 'dashboard';
+$route['logout'] = 'user/logout';
+$route['userListing'] = 'user/userListing';
+$route['userListing/(:num)'] = "user/userListing/$1";
+$route['addNew'] = "user/addNew";
+
+$route['addNewUser'] = "user/addNewUser";
+$route['editOld'] = "user/editOld";
+$route['editOld/(:num)'] = "user/editOld/$1";
+$route['editUser'] = "user/editUser";
+$route['deleteUser'] = "user/deleteUser";
+$route['loadChangePass'] = "user/loadChangePass";
+$route['changePassword'] = "user/changePassword";
+$route['pageNotFound'] = "user/pageNotFound";
+$route['checkEmailExists'] = "user/checkEmailExists";
+
+$route['forgotPassword'] = "login/forgotPassword";
+$route['resetPasswordUser'] = "login/resetPasswordUser";
+$route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
+$route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
+$route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
+$route['createPasswordUser'] = "login/createPasswordUser";
+
+
 $route['translate_uri_dashes'] = TRUE;
 
 /*
