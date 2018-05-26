@@ -1,5 +1,6 @@
-<div id="page-wrapper" ng-app="myApp">
-    <div class="container-fluid" ng-controller="myCtrl">
+<div class="content-wrapper">
+  <section class="content">
+    <div class="container-fluid box" ng-controller="mainCtrl">
 
              <script type="text/ng-template" id="myModalContent.html">
                 <div class="modal-header">
@@ -297,10 +298,12 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    <!-- /.container-fluid box -->
 </div>
-<!-- /#page-wrapper -->
+</section>
+<!-- /.content -->
 
 
 
