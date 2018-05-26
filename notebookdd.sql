@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-26 17:05:11
+Date: 2018-05-26 20:11:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,7 +76,9 @@ CREATE TABLE `ci_sessions` (
 -- ----------------------------
 -- Records of ci_sessions
 -- ----------------------------
-INSERT INTO `ci_sessions` VALUES ('5f456086fc07d83fcadcc289440db3d8', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', '1527328948', 'a:7:{s:9:\"user_data\";s:0:\"\";s:6:\"userId\";s:1:\"1\";s:4:\"role\";s:1:\"1\";s:13:\"menu_group_id\";s:1:\"1\";s:8:\"roleText\";s:6:\"System\";s:4:\"name\";s:12:\"System Admin\";s:10:\"isLoggedIn\";b:1;}');
+INSERT INTO `ci_sessions` VALUES ('1a064643b4a6380767da9aba0b3a0fef', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', '1527338189', '');
+INSERT INTO `ci_sessions` VALUES ('3fb61eba9dc1d16cc199926876c963cb', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', '1527338190', '');
+INSERT INTO `ci_sessions` VALUES ('5d4097a079a42182a35956f494eea9f5', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', '1527340268', 'a:7:{s:9:\"user_data\";s:0:\"\";s:6:\"userId\";s:1:\"1\";s:4:\"role\";s:1:\"1\";s:13:\"menu_group_id\";s:1:\"1\";s:8:\"roleText\";s:6:\"System\";s:4:\"name\";s:12:\"System Admin\";s:10:\"isLoggedIn\";b:1;}');
 INSERT INTO `ci_sessions` VALUES ('d3a90374fe20ab83cdd7c01ca18c86a0', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', '1527264712', 'a:3:{s:9:\"user_data\";s:0:\"\";s:8:\"username\";s:8:\"supachai\";s:12:\"is_logged_in\";b:1;}');
 
 -- ----------------------------
@@ -225,7 +227,7 @@ CREATE TABLE `menu` (
   `modified_date` datetime DEFAULT NULL,
   `modified_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu
@@ -324,6 +326,24 @@ CREATE TABLE `menu_group_detail` (
 -- ----------------------------
 -- Records of menu_group_detail
 -- ----------------------------
+INSERT INTO `menu_group_detail` VALUES ('1', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('2', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('3', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('4', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('5', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('6', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('7', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('8', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('9', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('10', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('11', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('12', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('13', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('14', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('15', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('16', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('17', '2', '1', '1', '1', '1');
+INSERT INTO `menu_group_detail` VALUES ('18', '2', '1', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for menu_old
@@ -2003,7 +2023,7 @@ INSERT INTO `products` VALUES ('1470', 'PLT-BD82HM65', 'Plate stencil BGA reball
 INSERT INTO `products` VALUES ('1471', 'PLT-N12P-GT-A1', 'Plate stencil BGA reball N12P-GT-A1 N12P-GS-A1 N12P-GE-A1 N12P-LP-A1 N12P-GT1-A1 N12P-GV1-A1 N12P-GV2-A1 N12P-GV3-OP-A1 (0.55mm) Direct heating', '27', '', '4', '', null, '1', '1', '1', null, null, null, null, '0', '0', null, '0', null, '1', null, '2018-05-22 19:13:50', '2018-05-22 19:13:50');
 INSERT INTO `products` VALUES ('1472', 'RAM DDR4[2400] 4GB[C15FB] KINGTONHYPER-X', 'RAM DDR4[2400] 4GB[C15FB] KingtonHyper-x', '2', '', '4', '', null, '1', '1', '1', null, null, null, null, '0', '0', null, '0', null, '1', null, '2018-05-22 19:13:50', '2018-05-22 19:13:50');
 INSERT INTO `products` VALUES ('1473', 'TBAL645-FN', 'Cooling Fan Toshiba L600 L645 L640 Series AB7805HX-GB3 Laptop Replacements CPU Fan', '17', '', '4', '', null, '1', '1', '1', null, null, null, null, '0', '0', null, '0', null, '1', null, '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `products` VALUES ('1474', 'WDS120G2G0B', 'SSD SATA M2 2280 WD GREEN WDS120G2G0B', '4', '', '4', '', null, '1', '1', '1', null, null, null, null, '0', '0', null, '0', null, '1', null, '2018-05-22 19:13:50', '2018-05-22 19:13:50');
+INSERT INTO `products` VALUES ('1474', 'WDS120G2G0B', 'SSD SATA M2 2280 WD GREEN WDS120G2G0B', '14', '', '4', '', '', '1', '1', '1', null, null, '<p> SSD SATA M2 2280 WD GREEN WDS120G2G0B</p>', '0', '0', '0', '0', '0', '0', '1', '', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
 
 -- ----------------------------
 -- Table structure for product_brand
@@ -15319,16 +15339,16 @@ INSERT INTO `product_images` VALUES ('1473', '7', '', '1', '2018-05-22 19:13:50'
 INSERT INTO `product_images` VALUES ('1473', '8', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
 INSERT INTO `product_images` VALUES ('1473', '9', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
 INSERT INTO `product_images` VALUES ('1473', '10', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '1', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '2', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '3', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '4', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '5', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '6', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '7', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '8', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '9', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
-INSERT INTO `product_images` VALUES ('1474', '10', '', '1', '2018-05-22 19:13:50', '2018-05-22 19:13:50');
+INSERT INTO `product_images` VALUES ('1474', '1', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '2', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '3', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '4', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '5', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '6', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '7', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '8', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '9', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
+INSERT INTO `product_images` VALUES ('1474', '10', '', '1', '2018-05-22 19:13:50', '2018-05-26 20:11:08');
 
 -- ----------------------------
 -- Table structure for product_type
@@ -16431,21 +16451,21 @@ CREATE TABLE `tbl_users` (
 -- Records of tbl_users
 -- ----------------------------
 INSERT INTO `tbl_users` VALUES ('1', 'system@wisadev.com', '$2y$10$abl8Qcd71JSqUeRPJd7ZQOZfiHzujLnYNFJMV.zv4cMHZvxpcVBSi', 'System Admin', null, '1', '1', null, null, '0', '1', '2017-06-11 21:44:51', '1', '2017-06-11 21:44:54');
-INSERT INTO `tbl_users` VALUES ('2', 'supachai@wisadev.com', '$2y$10$I5FpXKlnpaj8WYAWvSkgBuO3Hc.jr.k7sjwbr.QNy0qinDCqVzR0i', 'Supachai Wisachai', '0917750586', '2', '2', null, null, '0', '1', '2017-06-11 16:56:35', '1', '2017-06-24 18:09:06');
-INSERT INTO `tbl_users` VALUES ('3', 'cyberbatt_md@hotmail.com', '$2y$10$YRf6mlntdwHZuZ6IKEVmS.vrD0Yi4gx1m3gJBH4hoW/3Y37ATLXZ2', 'Kronghatai Mukprom', '0917824565', '2', '2', null, null, '0', '1', '2017-06-11 17:24:57', '3', '2017-08-29 13:19:40');
-INSERT INTO `tbl_users` VALUES ('4', 'chitpongg@gmail.com', '$2y$10$8HycIoabY9tGKoV1w5DgreqcWrndaI.l4WXS4aw5mohWlgBuAWQzC', 'Chitpong Chit', '0899999999', '6', '4', null, null, '0', '1', '2017-06-11 17:26:02', '3', '2018-01-27 15:12:27');
+INSERT INTO `tbl_users` VALUES ('2', 'supachai@wisadev.com', '$2y$10$Ne5iyMMyZNDCd49F1oBRtuVF7fyQeOW2T5z3PgVvBhHNvBRzh5htG', 'Supachai Wisachai', '0917750586', '2', '2', null, null, '0', '1', '2017-06-11 16:56:35', '1', '2018-05-26 18:06:15');
+INSERT INTO `tbl_users` VALUES ('3', 'cyberbatt_md@hotmail.com', '$2y$10$YRf6mlntdwHZuZ6IKEVmS.vrD0Yi4gx1m3gJBH4hoW/3Y37ATLXZ2', 'Kronghatai Mukprom', '0917824565', '2', '2', null, null, '1', '1', '2017-06-11 17:24:57', '1', '2018-05-26 18:08:10');
+INSERT INTO `tbl_users` VALUES ('4', 'chitpongg@gmail.com', '$2y$10$8HycIoabY9tGKoV1w5DgreqcWrndaI.l4WXS4aw5mohWlgBuAWQzC', 'Chitpong Chit', '0899999999', '6', '4', null, null, '1', '1', '2017-06-11 17:26:02', '1', '2018-05-26 18:08:16');
 INSERT INTO `tbl_users` VALUES ('5', 'sale@gmail.com', '$2y$10$HCRu4NbqeGknk5NaMIwAk.8yS9JUjyzIgdIiq8woF93E0AZFnIEOe', 'Sale Excutive', '0899999999', '5', '4', null, null, '1', '1', '2017-07-09 14:30:14', '1', '2017-08-27 18:34:32');
 INSERT INTO `tbl_users` VALUES ('6', 'chitpong@gmail.com', '$2y$10$TMnE0cblgiaSK2sG8ixnw.pBuLp8gD5iMvG/2y9LBLPVheUR53l7W', 'ชิตพงษ์', '0899999999', '4', '4', null, null, '1', '1', '2017-08-27 08:48:51', '1', '2017-08-27 18:34:17');
 INSERT INTO `tbl_users` VALUES ('7', 'sale@hotmail.com', '$2y$10$b3wDgmS8Y9fEz62o2LGJKO0t32uUA6GCr0kUeJbqEtsYoPOVglfVa', 'Sale', '0899999999', '5', '4', null, null, '1', '1', '2017-08-27 09:18:49', '1', '2017-08-27 18:34:37');
 INSERT INTO `tbl_users` VALUES ('8', 'charuwan.ann789@gmail.com', '$2y$10$C0AMdBwKZdWnTbNU6GXH1eY70.o6KEv15FEAB.XTWDqA9sKvDGjsK', 'Charuwan Ann', '0899999999', '6', '4', null, null, '1', '1', '2017-08-27 20:15:37', '3', '2018-04-17 22:50:33');
-INSERT INTO `tbl_users` VALUES ('9', 'k_phetsuwan@hotmail.com', '$2y$10$z7ALzud6hr4AvjOLJYWjzetWmmtvj9k/uu3d.j4cecDYokptGzgVO', 'Suchat K', '0899999999', '8', '3', null, null, '0', '1', '2017-08-27 20:18:54', '3', '2018-01-27 18:31:26');
+INSERT INTO `tbl_users` VALUES ('9', 'k_phetsuwan@hotmail.com', '$2y$10$z7ALzud6hr4AvjOLJYWjzetWmmtvj9k/uu3d.j4cecDYokptGzgVO', 'Suchat K', '0899999999', '8', '3', null, null, '1', '1', '2017-08-27 20:18:54', '1', '2018-05-26 18:08:20');
 INSERT INTO `tbl_users` VALUES ('10', 'biw@hotmail.com', '$2y$10$YPaeVD60JNmyi87.vHOOx.KMk1ugYv4twQYhKcB9L8aZJi8ufNcC.', 'Panupong Biw', '0899999999', '8', '4', null, null, '1', '1', '2017-08-27 20:20:22', '3', '2017-08-28 09:33:34');
-INSERT INTO `tbl_users` VALUES ('11', 'billing@cyberbatt.com', '$2y$10$ea.KAaPPTdvEbUQqdIWqY.plXZ4YCkcAqPvK3Y2pZG0bRSa6/L6HW', 'Ialada Ai', '0817547565', '7', '4', null, null, '0', '1', '2017-08-27 20:22:44', null, null);
-INSERT INTO `tbl_users` VALUES ('12', 'biw@gmail.com', '$2y$10$iNHRspZhg7y8EpMMXvMMI.URj715fD6FSWQ5NBEwtGFOe4JflD7g6', 'Panupong Biw', '0899999999', '8', '4', null, null, '0', '3', '2017-08-28 09:35:13', '3', '2017-09-10 22:40:28');
+INSERT INTO `tbl_users` VALUES ('11', 'billing@cyberbatt.com', '$2y$10$ea.KAaPPTdvEbUQqdIWqY.plXZ4YCkcAqPvK3Y2pZG0bRSa6/L6HW', 'Ialada Ai', '0817547565', '7', '4', null, null, '1', '1', '2017-08-27 20:22:44', '1', '2018-05-26 18:08:33');
+INSERT INTO `tbl_users` VALUES ('12', 'biw@gmail.com', '$2y$10$iNHRspZhg7y8EpMMXvMMI.URj715fD6FSWQ5NBEwtGFOe4JflD7g6', 'Panupong Biw', '0899999999', '8', '4', null, null, '1', '3', '2017-08-28 09:35:13', '1', '2018-05-26 18:08:38');
 INSERT INTO `tbl_users` VALUES ('13', 'kattira1818@gmail.com', '$2y$10$izSfTCY1NTmrAs5Evm.xH.weaDSJwxxEcGPUCAXDC4IzmCVRNlBPm', 'Teerayuth Hwangjan', '0952725188', '5', '4', null, null, '1', '3', '2017-09-02 13:01:28', '3', '2017-10-04 12:09:34');
-INSERT INTO `tbl_users` VALUES ('14', 'cartoon8188@gmail.com', '$2y$10$2zfPujazx0gDIyOscJRZFe/Pxem1P0eXEeUlVP6kzg58QjTeT5ALW', 'Sirikunlaya Pornmongkolratana', '0625419456', '3', '3', null, null, '0', '3', '2017-09-02 17:18:06', null, null);
-INSERT INTO `tbl_users` VALUES ('15', 'miss.krannawee@gmail.com', '$2y$10$I9dhL17uXgmgXsTEL2aJL.7tLkaRHUmMN/exbSUWSwdQgUkiNFoB.', 'Krannawee Eye', '0899999999', '6', '4', null, null, '0', '3', '2017-10-04 12:13:20', '3', '2018-04-03 12:16:02');
-INSERT INTO `tbl_users` VALUES ('16', 'mr.lorling@gmail.com', '$2y$10$5FZqT4viE7BLbwPrNXPxJOfkcz/ZOqU52OxU7dT1PLFjEfH3kbxMe', 'Lorling Ling', '0899999999', '4', '4', null, null, '0', '3', '2017-10-04 12:17:00', null, null);
+INSERT INTO `tbl_users` VALUES ('14', 'cartoon8188@gmail.com', '$2y$10$2zfPujazx0gDIyOscJRZFe/Pxem1P0eXEeUlVP6kzg58QjTeT5ALW', 'Sirikunlaya Pornmongkolratana', '0625419456', '3', '3', null, null, '1', '3', '2017-09-02 17:18:06', '1', '2018-05-26 18:08:41');
+INSERT INTO `tbl_users` VALUES ('15', 'miss.krannawee@gmail.com', '$2y$10$I9dhL17uXgmgXsTEL2aJL.7tLkaRHUmMN/exbSUWSwdQgUkiNFoB.', 'Krannawee Eye', '0899999999', '6', '4', null, null, '1', '3', '2017-10-04 12:13:20', '1', '2018-05-26 18:08:45');
+INSERT INTO `tbl_users` VALUES ('16', 'mr.lorling@gmail.com', '$2y$10$5FZqT4viE7BLbwPrNXPxJOfkcz/ZOqU52OxU7dT1PLFjEfH3kbxMe', 'Lorling Ling', '0899999999', '4', '4', null, null, '1', '3', '2017-10-04 12:17:00', '1', '2018-05-26 18:08:49');
 
 -- ----------------------------
 -- Table structure for wp_commentmeta
@@ -17002,3 +17022,22 @@ CREATE TABLE `wp_users` (
 -- Records of wp_users
 -- ----------------------------
 INSERT INTO `wp_users` VALUES ('1', 'admin', '$P$B93G2dk9.jmSizpR/nJrjy4y6nR5Pv.', 'admin', 'supachai.wi@gmail.com', '', '2016-04-24 10:31:26', '', '0', 'admin');
+
+-- ----------------------------
+-- Function structure for strip_tags
+-- ----------------------------
+DROP FUNCTION IF EXISTS `strip_tags`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `strip_tags`($str text) RETURNS text CHARSET utf8
+BEGIN
+    DECLARE $start, $end INT DEFAULT 1;
+    LOOP
+        SET $start = LOCATE("<", $str, $start);
+        IF (!$start) THEN RETURN $str; END IF;
+        SET $end = LOCATE(">", $str, $start);
+        IF (!$end) THEN SET $end = $start; END IF;
+        SET $str = INSERT($str, $start, $end - $start + 1, "");
+    END LOOP;
+END
+;;
+DELIMITER ;
