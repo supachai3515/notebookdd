@@ -14,12 +14,8 @@ class Menugroup extends BaseController {
 
   function index($page=0)
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_view'])
-    {
+    $data = $this->get_data_check("is_view");
+    if (!is_null($data)) {
 
       $searchText = $this->input->post('searchText');
       $data['searchText'] = $searchText;
@@ -37,20 +33,12 @@ class Menugroup extends BaseController {
               								'keyword' => 'Menu Group');
   		$this->load->view('template/layout_main', $data);
     }
-    else {
-      // access denied
-       $this->loadThis();
-    }
   }
 
   function set_menu($id)
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_edit'])
-    {
+    $data = $this->get_data_check("is_edit");
+    if (!is_null($data)) {
         $data['menugroup_data'] = $this->menugroup_model->get_menugroup_id($id);
         $data['menu_group_detail'] = $this->menugroup_model->get_menu_group_detail($id);
         $data['menu'] = $this->menugroup_model->get_menu($id);
@@ -63,20 +51,13 @@ class Menugroup extends BaseController {
               								'keyword' => 'Menu Group');
   		  $this->load->view('template/layout_main', $data);
     }
-    else {
-      // access denied
-       $this->loadThis();
-    }
+  
   }
 
   function add()
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_add'])
-    {
+    $data = $this->get_data_check("is_add");
+    if (!is_null($data)) {
         $data['content'] = 'menugroup/menugroup_add_view';
         //if script file
         $data['script_file'] = 'js/menugroup_js';
@@ -86,20 +67,13 @@ class Menugroup extends BaseController {
               								'keyword' => 'Menu Group');
   		  $this->load->view('template/layout_main', $data);
     }
-    else {
-      // access denied
-       $this->loadThis();
-    }
+  
   }
 
   function view($id=NULL)
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-    $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_view'])
-    {
+    $data = $this->get_data_check("is_view");
+    if (!is_null($data)) {
 
         $data['menugroup_data'] = $this->menugroup_model->get_menugroup_id($id);
         $data['menu_group_detail'] = $this->menugroup_model->get_menu_group_detail($id);
@@ -112,21 +86,13 @@ class Menugroup extends BaseController {
                               'keyword' => 'Menu Group');
         $this->load->view('template/layout_main', $data);
     }
-    else {
-      // access denied
-       $this->loadThis();
-    }
   }
 
 
   function add_save()
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_add'])
-    {
+    $data = $this->get_data_check("is_edit");
+    if (!is_null($data)) {
           $this->load->library('form_validation');
           $this->form_validation->set_rules('name','Name','trim|required|max_length[128]|xss_clean');
           $this->form_validation->set_rules('description','description','trim|xss_clean|max_length[128]');
@@ -159,19 +125,12 @@ class Menugroup extends BaseController {
               redirect('menugroup/add');
           }
       }
-      else {
-           $this->loadThis();
-      }
   }
 
   function edit($id=NULL)
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_edit'])
-    {
+    $data = $this->get_data_check("is_edit");
+    if (!is_null($data)) {
 
         $data['menugroup_data'] = $this->menugroup_model->get_menugroup_id($id);
         $data['content'] = 'menugroup/menugroup_edit_view';
@@ -183,21 +142,14 @@ class Menugroup extends BaseController {
               								'keyword' => 'Menu Group');
   		  $this->load->view('template/layout_main', $data);
     }
-    else {
-      // access denied
-       $this->loadThis();
-    }
+ 
   }
 
 
   function edit_save()
   {
-    $data['global'] = $this->global;
-    $data['menu_id'] ='4';
-		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
-    $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
-    if($data['access_menu']['is_access']&&$data['access_menu']['is_add'])
-    {
+    $data = $this->get_data_check("is_add");
+    if (!is_null($data)) {
           $this->load->library('form_validation');
           $this->form_validation->set_rules('name','Name','trim|required|max_length[128]|xss_clean');
           $this->form_validation->set_rules('description','description','trim|xss_clean|max_length[128]');
@@ -232,9 +184,7 @@ class Menugroup extends BaseController {
               redirect('menugroup/edit/'.$menu_group_id);
           }
       }
-      else {
-           $this->loadThis();
-      }
+
   }
 
   function get_menu_group_detail()

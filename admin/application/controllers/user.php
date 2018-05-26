@@ -30,7 +30,7 @@ class User extends BaseController
     {
         $data['global'] = $this->global;
         $data['menu_id'] ='1';
-    		$data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+    	$data['menu_list'] = $this->initdata_model->get_menu($data['global']);
         $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
         if($data['access_menu']['is_access'])
         {
@@ -54,7 +54,7 @@ class User extends BaseController
 
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'])
       {
@@ -86,7 +86,7 @@ class User extends BaseController
     {
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'] && $data['access_menu']['is_add'])
       {
@@ -131,7 +131,7 @@ class User extends BaseController
     {
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'] && $data['access_menu']['is_add'])
       {
@@ -190,7 +190,7 @@ class User extends BaseController
     {
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'] && $data['access_menu']['is_edit'])
       {
@@ -223,7 +223,7 @@ class User extends BaseController
     {
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'] && $data['access_menu']['is_edit'])
       {
@@ -295,7 +295,7 @@ class User extends BaseController
 
       $data['global'] = $this->global;
       $data['menu_id'] ='3';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       if($data['access_menu']['is_access'] && $data['access_menu']['is_edit'])
       {
@@ -320,7 +320,7 @@ class User extends BaseController
     {
         $data['global'] = $this->global;
         $data['menu_id'] ='3';
-        $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+        $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
         $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
         $data['content'] = 'changePassword';
         $data['header'] = array('title' => 'Change Password | '.$this->config->item('sitename'),
@@ -377,7 +377,7 @@ class User extends BaseController
     {
       $data['global'] = $this->global;
       $data['menu_id'] ='0';
-      $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
+      $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
       $data['access_menu'] = $this->isAccessMenu($data['menu_list'],$data['menu_id']);
       $data['content'] = '404';
       $data['header'] = array('title' => '404 - Page Not Found | '.$this->config->item('sitename'),
