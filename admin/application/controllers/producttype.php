@@ -48,10 +48,7 @@ class Producttype extends BaseController {
 			$data["content"] = "producttype";
 			$data["header"] = $this->get_header("producttype");
 			$this->load->view("template/layout_main", $data);
-
 		}
-
-
 	}
 
 	//page edit
