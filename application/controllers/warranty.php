@@ -25,7 +25,8 @@ class Warranty extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
 
-		$data['content'] = 'warranty';
+		//$data['content'] = 'warranty';
+		$data['content'] = 'warranty_new';
 		$this->load->view('template/layout', $data);
 		
 	}

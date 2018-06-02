@@ -25,7 +25,8 @@ class Howtobuy extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
 
-		$data['content'] = 'howtobuy';
+		//$data['content'] = 'howtobuy';
+		$data['content'] = 'howtobuy_new';
 		$this->load->view('template/layout', $data);
 		
 	}

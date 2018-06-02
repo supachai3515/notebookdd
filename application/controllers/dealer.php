@@ -31,7 +31,8 @@ class Dealer extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
         //content file view
-		$data['content'] = 'dealer';
+		//$data['content'] = 'dealer';
+		$data['content'] = 'signin_new';
 		// if have file script
 		//$data['script_file']= "js/product_add_js";
 		//load layout

@@ -24,7 +24,10 @@ class Payment extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
 
-		$data['content'] = 'payment';
+		//$data['content'] = 'payment';
+		$data['content'] = 'payment_new';
+		$data['script_file'] = 'js/payment_js';
+
 		$this->load->view('template/layout', $data);
 	}
 	public function sendmail()
