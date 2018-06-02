@@ -14,6 +14,9 @@
     <script src="<?php echo base_url('theme_unicase');?>/assets/js/bootstrap-select.min.js"></script>
 	<script src="<?php echo base_url('theme_unicase');?>/assets/js/wow.min.js"></script>
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/angular.min.js'></script>
+	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/angular-animate.min.js'></script>
+	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/loading-bar.js'></script>
+	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/sweetalert2.js'></script>
 	<script src="<?php echo base_url('theme_unicase');?>/assets/js/scripts.js"></script>
 	<!-- page script -->
 	<?php $this->load->view("js/main_app_js"); ?>

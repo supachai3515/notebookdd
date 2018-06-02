@@ -26,6 +26,12 @@
 	    <link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/green.css">
 	    <link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/owl.carousel.css">
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/owl.transitions.css">
+
+		<!-- loading bar -->
+		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/loading-bar.css">
+
+		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/sweetalert2.css">
+		
 		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
 		<link href="<?php echo base_url('theme_unicase');?>/assets/css/lightbox.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/animate.min.css">
@@ -311,11 +317,11 @@
 						<div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
 							<div class="nav-outer">
 								<ul class="nav navbar-nav">
-									<li class="active dropdown yamm-fw">
-										<a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+									<li>
+										<a href="<?php echo base_url()?>" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
 									</li>
 									<li class="dropdown yamm">
-										<a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">หมวดหมู่สินค้า<span class="menu-label new-menu hidden-xs">new</span></a>
+										<a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">หมวดหมู่สินค้า<span class="menu-label new-menu hidden-xs">new</span></a>
 										<ul class="dropdown-menu">
 											<li>
 												<div class="yamm-content">

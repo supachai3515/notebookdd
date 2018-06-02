@@ -14,87 +14,75 @@
         <div class="row inner-bottom-sm">
             <div class="contact-page">
                 <div class="col-md-6 contact-form">
-                    <div class="col-md-12 contact-title">
-                        <h4>แจ้งการชำระเงิน</h4>
-                    </div>
-                    <div class="col-md-10 ">
-                        <form class="register-form" role="form">
+                    <form ng-submit="sendPayment()" class="form-horizontal" role="form">
+                        <div class="col-md-12 contact-title">
+                            <h4>แจ้งการชำระเงิน</h4>
+                        </div>
+                        <div class="col-md-10 ">
                             <div class="form-group">
                                 <label class="info-title" for="paymentName">ชื่อ
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentName" placeholder="ชื่อ">
+                                <input type="text" ng-model="paymentMessage.txtName" class="form-control unicase-form-control text-input" id="paymentName" placeholder="ชื่อ" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title" for="paymentTel">เบอร์ติดต่อ
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentTel" placeholder="เบอร์ติดต่อ">
+                                <input type="text" ng-model="paymentMessage.txtTel" class="form-control unicase-form-control text-input" id="paymentTel" placeholder="เบอร์ติดต่อ" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title" for="paymentOrderId">เลขที่ใบสั่งซื้อ
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentOrderId" placeholder="เลขที่ใบสั่งซื้อ">
+                                <input type="text" ng-model="paymentMessage.txtOrder" class="form-control unicase-form-control text-input" id="paymentOrderId" placeholder="เลขที่ใบสั่งซื้อ" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title control-label" for="paymentBank">เลือกธนาคาร
                                     <span>*</span>
                                 </label>
-                                <select class="form-control unicase-form-control selectpicker" id="paymentBank">
+                                <select ng-model="paymentMessage.txtBank" class="form-control unicase-form-control selectpicker" id="paymentBank" required>
                                     <option>--Select options--</option>
                                     <option>ธนาคารกรุงเทพ</option>
                                     <option>ธนาคารไทยพาณิชย์</option>
                                     <option>ธนาคารกสิกรไทย</option>
                                 </select>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title" for="paymentTotal">จำนวนเงิน
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentTotal" placeholder="จำนวนเงิน">
+                                <input type="text" ng-model="paymentMessage.txtAmount" class="form-control unicase-form-control text-input" id="paymentTotal" placeholder="จำนวนเงิน" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title" for="paymentDate">วันที่โอน ตัวอย่าง 01/04/2016
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentDate" placeholder="วันที่โอน">
+                                <input type="text" ng-model="paymentMessage.txtDate" class="form-control unicase-form-control text-input" id="paymentDate" placeholder="วันที่โอน" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-10">
-                        <form class="register-form" role="form">
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label class="info-title" for="paymentTime">เวลาโอน ตัวอย่าง 12:00
                                     <span>*</span>
                                 </label>
-                                <input type="text" class="form-control unicase-form-control text-input" id="paymentTime" placeholder="เวลาโอน">
+                                <input type="text" ng-model="paymentMessage.txtTime" class="form-control unicase-form-control text-input" id="paymentTime" placeholder="เวลาโอน" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-12 outer-bottom-small m-t-20">
-                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">แจ้งชำระเงิน</button>
-                    </div>
+                        </div>
+                        <div class="col-md-12 outer-bottom-small m-t-20">
+                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">แจ้งชำระเงิน</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-6 contact-info">
                     <div class="row bank-payment">

@@ -1,11 +1,10 @@
 
 <script type="text/javascript">
 
-  app.controller("tracking_ctrl", function($scope, $http) {
+  app.controller("tracking_ctrl", function($scope, $http,cfpLoadingBar, cfpLoadingBar) {
     $scope.orderTracking = '';
-
     $scope.getOrderTracking = function() {
-        console.log($scope.txtSearchTracking);
+        cfpLoadingBar.start();
         var orderid = $scope.txtSearchTracking || 'all';
         $http({
             method: 'GET',
