@@ -74,7 +74,7 @@
 					<div class="cnt-account">
 						<ul class="list-unstyled">
 							<li>
-								<a href="#">
+								<a href="<?php echo base_url('account')?>">
 									<i class="icon fa fa-user"></i>บัญชีผู้ใช้</a>
 							</li>
 							<!-- <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li> -->
@@ -86,10 +86,17 @@
 								<a href="<?php echo base_url('payment');?>">
 									<i class="icon fa fa-money"></i>แจ้งชำระเงิน</a>
 							</li>
+							<?php if (!$this->session->userdata('is_logged_in')): ?>
 							<li>
-								<a href="<?php echo base_url('dealer')?>">
+								<a href="<?php echo base_url('account')?>">
 									<i class="icon fa fa-sign-in"></i>เข้าสู่ระบบ</a>
 							</li>
+							<?php else: ?>
+							<li>
+								<a href="<?php echo base_url('logout')?>">
+									<i class="icon fa fa-sign-out"></i>ออกจากระบบ</a>
+							</li>
+							<?php endif ?>
 						</ul>
 					</div>
 					<!-- /.cnt-account -->
@@ -317,9 +324,7 @@
 						<div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
 							<div class="nav-outer">
 								<ul class="nav navbar-nav">
-									<li>
-										<a href="<?php echo base_url()?>" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-									</li>
+									<li><a href="<?php echo base_url()?>">Home</a></li>
 									<li class="dropdown yamm">
 										<a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">หมวดหมู่สินค้า<span class="menu-label new-menu hidden-xs">new</span></a>
 										<ul class="dropdown-menu">

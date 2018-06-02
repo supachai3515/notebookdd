@@ -715,6 +715,13 @@ a {
 .sidebar .sidebar-widget .advertisement .owl-controls .owl-pagination .owl-page:hover span {
   background: #12cca7;
 }
+.sidebar .sidebar-widget.tab .tab-heading a {
+  color: #666666;
+  line-height: 36px;
+}
+.sidebar .sidebar-widget.tab .tab-heading a:hover {
+  color: #abd07e;
+}
 .single-product .gallery-holder .gallery-thumbs .owl-item .item:hover {
   border: 1px solid #12cca7;
 }
