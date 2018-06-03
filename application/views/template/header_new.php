@@ -348,6 +348,10 @@
 										</ul>
 									</li>
 
+									<li class="dropdown">
+										<a href="<?php echo base_url('products')?>">สินค้า</a>
+									</li>
+
 									<li class="dropdown yamm">
 
 										<a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">บริการ
