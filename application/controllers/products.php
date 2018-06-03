@@ -60,9 +60,9 @@ class Products extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'products';
+		$data['content'] = 'products_new';
 		// if have file script
-		//$data['script_file']= "js/product_add_js";
+		$data['script_file']= "js/products_new_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 

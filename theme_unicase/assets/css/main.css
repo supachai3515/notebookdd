@@ -1509,11 +1509,16 @@ a {
   background: #f7f7f7;
 }
 .sidebar .side-menu nav .nav > li > a {
-  padding: 13px 15px;
+  position: relative;
+  padding: 13px 25px 13px 15px;
   color: #666666;
   text-transform: uppercase;
 }
 .sidebar .side-menu nav .nav > li > a:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  right: 5px;
   color: #bababa;
   content: "\f0a9";
   float: right;
@@ -1545,7 +1550,8 @@ a {
   top: 0 !important;
   left: 100%;
   margin: 0;
-  min-width: 330%;
+  /* min-width: 330%; */
+  min-width: 100%;
   /*338%;*/
   position: absolute;
   top: 0px;
@@ -3334,6 +3340,12 @@ a {
   line-height: 55px;
   font-size: 17px;
   right: 14px;
+}
+.search-result-container .category-product .product .product-image {
+  height: 200px;
+}
+.search-result-container .category-product .product .product-image a img {
+  width: 100%;
 }
 .search-result-container .category-product .product .cart {
   opacity: 1;
