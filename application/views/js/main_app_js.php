@@ -7,7 +7,16 @@
 		cfpLoadingBarProvider.includeSpinner = true;
 	})
 	app.controller("mainCtrl", function($scope) {
-	    //code
+	    //Limit long text
+		String.prototype.trunc = String.prototype.trunc ||
+			function(n){
+			return (this.length > n) ? this.substr(0, n-1) + '...' : this;
+		};
+		$scope.limitProductName = function(s) {
+			if(s) {
+				return s.trunc(55);
+			}
+		}
 	});
 
 </script>

@@ -50,7 +50,7 @@ class CI_Pagination {
 	var $cur_tag_open		= '&nbsp;<strong>';
 	var $cur_tag_close		= '</strong>';
 	var $next_tag_open		= '&nbsp;';
-	var $next_tag_close		= '&nbsp;';
+	var $next_tag_close		= '';
 	var $prev_tag_open		= '&nbsp;';
 	var $prev_tag_close		= '';
 	var $num_tag_open		= '&nbsp;';

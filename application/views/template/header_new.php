@@ -184,7 +184,7 @@
 						<!-- /.contact-row -->
 						<!-- ============================================================= SEARCH AREA ============================================================= -->
 						<div class="search-area">
-							<form>
+							<form role="search" action="<?php echo base_url('search')?>" method="GET">
 								<div class="control-group">
 
 									<ul class="categories-filter animate-dropdown">
@@ -212,11 +212,8 @@
 											</ul>
 										</li>
 									</ul>
-
-									<input class="search-field" placeholder="ค้นหา" />
-
-									<a class="search-button" href="#"></a>
-
+										<input type="text" class="search-field" placeholder="ค้นหา" name="search">
+										<button type="submit"  class="search-button"></button>
 								</div>
 							</form>
 						</div>

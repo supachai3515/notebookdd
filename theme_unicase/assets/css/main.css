@@ -1594,7 +1594,8 @@ a {
   font-family: 'FjallaOneRegular';
   margin: 0px;
 }
-.sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle {
+.sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle,
+.sidebar .sidebar-module-container.type01 .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading a {
   clear: both;
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -1602,12 +1603,16 @@ a {
   font-weight: 300;
   line-height: 36px;
 }
+.sidebar .sidebar-module-container.type01 .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading a:hover {
+  color: #abd07e;
+}
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle:after {
   content: "\f147";
   float: right;
   font-family: fontawesome;
 }
-.sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle.collapsed {
+.sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle.collapsed,
+.sidebar .sidebar-module-container.type01 .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading a {
   color: #666666;
 }
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle.collapsed:after {
@@ -3341,10 +3346,12 @@ a {
   font-size: 17px;
   right: 14px;
 }
-.search-result-container .category-product .product .product-image {
-  height: 200px;
+.search-result-container .category-product .product .product-image,
+.item-carousel .product-image {
+  height: 250px;
 }
-.search-result-container .category-product .product .product-image a img {
+.search-result-container .category-product .product .product-image a img,
+.item-carousel .product-image a img{
   width: 100%;
 }
 .search-result-container .category-product .product .cart {
