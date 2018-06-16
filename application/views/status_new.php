@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                    <div class="row multistep">
                         <div class="col-xs-4">
-                            <div class="text-center multistep-stepname"><i class="fa fa-shopping-cart"></i> สั่งซื้อ</div>
+                            <div class="text-center multistep-stepname"><h4>สั่งซื้อ</h4></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="col-xs-4">
-                            <div class="text-center multistep-stepname"><i class="fa fa-money"></i> ชำระเงิน</div>
+                            <div class="text-center multistep-stepname"><h4>ชำระเงิน</h4></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="<?php if ($order['order_status_id']>1): ?>width: 100%<?php endif ?>">
                                 </div>
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="col-xs-4 multistep-step">
-                            <div class="text-center multistep-stepname"><i class="fa fa-truck"></i> ส่งสินค้า</div>
+                            <div class="text-center multistep-stepname"><h4>ส่งสินค้า</h4></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="<?php if ($order['order_status_id']==4): ?>width: 100%<?php endif ?>">
                                 </div>
