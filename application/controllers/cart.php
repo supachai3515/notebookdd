@@ -25,9 +25,9 @@ class Cart extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'cart';
+		$data['content'] = 'cart_new';
 		// if have file script
-		//$data['script_file']= "js/product_add_js";
+		$data['script_file']= "js/cart_js";
 		//load layout
 		$this->load->view('template/layout', $data);
 		
@@ -54,9 +54,9 @@ class Cart extends CI_Controller {
 		}
 
         //content file view
-		$data['content'] = 'cart';
+		$data['content'] = 'cart_new';
 		// if have file script
-		//$data['script_file']= "js/product_add_js";
+		$data['script_file']= "js/cart_js";
 		//load layout
 		$this->load->view('template/layout', $data);
 		

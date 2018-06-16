@@ -44,7 +44,7 @@ class Status extends CI_Controller {
 		$re = $this->db->query($sql_reservations);
 		$data['order_reservations'] = $re->row_array();
 
-		$data['content'] = 'status';
+		$data['content'] = 'status_new';
 		$this->load->view('template/layout', $data);
 		}
 		else{

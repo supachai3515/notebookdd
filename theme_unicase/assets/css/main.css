@@ -4813,6 +4813,13 @@ a {
   display: block;
   text-align: center;
 }
+.shopping-cart .shopping-cart-table table tbody tr .cart-image a {
+  width: 154px;
+  margin-right: 0;
+}
+.shopping-cart .shopping-cart-table table tbody tr .cart-image a img {
+  width: 100%;
+}
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info {
   vertical-align: middle !important;
 }
