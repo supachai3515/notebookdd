@@ -20,6 +20,7 @@
 	<script src="<?php echo base_url('theme_unicase');?>/assets/js/scripts.js"></script>
 	<!-- page script -->
 	<?php $this->load->view("js/main_app_js"); ?>
+	<?php $this->load->view("js/header_cart_js"); ?>
   	<?php if(isset($script_file)){echo $this->load->view($script_file); }?>
 </body>
 </html>

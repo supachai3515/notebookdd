@@ -661,10 +661,10 @@
 					<div class="more-info-tab clearfix ">
 						<h3 class="new-product-title pull-left">สินค้ามาใหม่</h3>
 						<ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
-							<li class="active">
+							<!-- <li class="active">
 								<a data-transition-type="backSlide" href="#all" data-toggle="tab">All</a>
-							</li>
-							<li>
+							</li> -->
+							<!-- <li>
 								<a data-transition-type="backSlide" href="#smartphone" data-toggle="tab">smartphone</a>
 							</li>
 							<li>
@@ -672,7 +672,7 @@
 							</li>
 							<li>
 								<a data-transition-type="backSlide" href="#apple" data-toggle="tab">apple</a>
-							</li>
+							</li> -->
 						</ul>
 						<!-- /.nav-tabs -->
 					</div>

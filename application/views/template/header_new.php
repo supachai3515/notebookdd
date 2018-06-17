@@ -194,7 +194,7 @@
 						<!-- ============================================================= SEARCH AREA : END ============================================================= -->
 					</div><!-- /.top-search-holder -->
 
-					<div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+					<div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row" ng-controller="header_cart_ctrl">
 						<!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
 
 						<div class="dropdown dropdown-cart">
@@ -203,50 +203,53 @@
 									<div class="total-price-basket">
 										<span class="lbl">cart -</span>
 										<span class="total-price">
-											<span class="sign">$</span>
-											<span class="value">600.00</span>
+											<span class="value">{{sumTotal() | currency:'฿':0}}</span>
 										</span>
 									</div>
 									<div class="basket"><i class="glyphicon glyphicon-shopping-cart"></i></div>
 									<div class="basket-item-count">
-										<span class="count">2</span>
+										<span class="count" ng-bind="sumItems()"></span>
 									</div>
 								</div>
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<div class="cart-item product-summary">
-										<div class="row">
-											<div class="col-xs-4">
-												<div class="image">
-													<a href="detail.html">
-														<img src="assets/images/cart.jpg" alt="">
-													</a>
+									<div ng-if="sumTotal() > 0 ">
+										<div class="cart-item product-summary">
+											<div class="row" ng-repeat="item in productItems" ng-if="item.price != '0'">
+												<div class="col-xs-4">
+													<div class="image">
+														<a href="<?php echo base_url('product/'.'{{item.sku}}') ?>">
+															<img src="{{item.img}}" alt="" style="width: 100%;">
+														</a>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<h3 class="name">
+														<a href="<?php echo base_url('product/'.'{{item.sku}}') ?>" title="{{item.name}}">{{limitProductName(item.name)}}</a>
+													</h3>
+													<div class="price">{{item.price | currency:'฿':0}}</div>
+												</div>
+												<div class="col-xs-1 action">
+													<a href="" ng-click="deleteProduct_click(item.rowid)"><i class="fa fa-trash"></i></a>
 												</div>
 											</div>
-											<div class="col-xs-7">
-												<h3 class="name">
-													<a href="index.php?page-detail">Simple Product</a>
-												</h3>
-												<div class="price">$600.00</div>
-											</div>
-											<div class="col-xs-1 action">
-												<a href="#">
-													<i class="fa fa-trash"></i>
-												</a>
-											</div>
-										</div>
-									</div><!-- /.cart-item -->
-									<div class="clearfix"></div>
-									<hr>
-									<div class="clearfix cart-total">
-										<div class="pull-right">
-											<span class="text">Sub Total :</span>
-											<span class='price'>$600.00</span>
-										</div>
+										</div><!-- /.cart-item -->
 										<div class="clearfix"></div>
-										<a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
-									</div><!-- /.cart-total-->
+										<hr>
+										<div class="clearfix cart-total">
+											<div class="pull-right">
+												<span class="text">ยอดรวมทั้งสิ้น :</span>
+												<span class='price'>{{sumTotal() | currency:'฿':0}}</span>
+											</div>
+											<div class="clearfix"></div>
+											<a href="<?php echo base_url('cart') ?>" class="btn btn-upper btn-primary btn-block m-t-20">ตะกร้าสินค้า</a>
+											<a href="<?php echo base_url('checkout') ?>" class="btn btn-upper btn-primary btn-block m-t-20">ดำเนินการชำระเงิน</a>
+										</div><!-- /.cart-total-->
+									</div>
+									<div ng-if="sumTotal() < 1 ">
+										<p class="text-center">ยังไม่ได้เลือกสินค้า</p>
+									</div>
 								</li>
 							</ul><!-- /.dropdown-menu-->
 						</div><!-- /.dropdown-cart -->
