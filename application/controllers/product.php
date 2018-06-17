@@ -7,6 +7,7 @@ class Product extends CI_Controller {
 		//call model inti 
 		$this->load->model('initdata_model');
 		$this->load->model('products_model');
+		$this->load->model('home_model');
 		$this->load->library('pagination');
 	}
 
@@ -45,10 +46,11 @@ class Product extends CI_Controller {
 			$data['menu_type'] = $this->initdata_model->get_type();
 			$data['menu_brands'] = $this->initdata_model->get_brands();
 			$data['brand_oftype'] = $this->products_model->get_brand_oftype();
+			$data['product_new'] = $this->home_model->get_products_new();
 
 
 	        //content file view
-			$data['content'] = 'product_detail';
+			$data['content'] = 'product_detail_new';
 			// if have file script
 			//$data['script_file']= "js/product_add_js";
 			//load layout

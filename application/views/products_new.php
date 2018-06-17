@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="#">Home</a></li>
+				<li><a href="<?php echo base_url(); ?>">Home</a></li>
 				<li class='active'>สินค้า</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
@@ -114,7 +114,7 @@
                                                                 $image_url = $this->config->item('no_url_img');
                                                             }
                                                         ?>
-                                                        <a href="<?php echo $image_url;?>"><img  src="<?php echo $image_url;?>" data-echo="<?php echo $image_url;?>" alt=""></a>
+                                                        <a data-lightbox="<?php echo $image_url;?>" data-title="<?php echo $row['name'] ?>" href="<?php echo $image_url;?>"><img  src="<?php echo $image_url;?>" data-echo="<?php echo $image_url;?>" alt=""></a>
                                                     </div><!-- /.image -->	
                                                     <?php if ($row['is_hot']==1): ?>
                                                         <div class="tag hot"><span>hot</span></div>
