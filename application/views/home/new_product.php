@@ -12,7 +12,7 @@
                             $image_url = $this->config->item('no_url_img');
                         }
                     ?> 
-                    <a data-lightbox="<?php echo $image_url;?>" data-title="<?php echo $row['name'] ?>" href="<?php echo $image_url;?>"><img src="<?php echo $image_url;?>" data-echo="<?php echo $image_url;?>" alt=""></a>
+                    <a data-lightbox="<?php echo $i;?>" data-title="<?php echo $row['name'] ?>" href="<?php echo $image_url;?>"><img src="<?php echo $image_url;?>" data-echo="<?php echo $image_url;?>" alt=""></a>
                 </div><!-- /.image -->
                 <div class="tag new">
                     <span>new</span>
