@@ -202,7 +202,7 @@
                                 <a href="<?php echo base_url('howtobuy')?>">วิธีการสั่งซื้อ</a>
                             </li>
                             <li>
-                                <a href="#">ดาวน์โหลดเอกสาร</a>
+                                <a href="<?php echo base_url('download')?>">ดาวน์โหลดเอกสาร</a>
                             </li>
                         </ul>
                     </div><!-- /.module-body -->

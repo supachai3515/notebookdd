@@ -73,29 +73,14 @@
 				<div class="header-top-inner">
 					<div class="cnt-account">
 						<ul class="list-unstyled">
-							<li>
-								<a href="<?php echo base_url('account')?>">
-									<i class="icon fa fa-user"></i>บัญชีผู้ใช้</a>
-							</li>
+							<li><a href="<?php echo base_url('account')?>"><i class="icon fa fa-user"></i>บัญชีผู้ใช้</a></li>
 							<!-- <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li> -->
-							<li>
-								<a href="#">
-									<i class="icon fa fa-shopping-cart"></i>ตะกร้าสินค้า</a>
-							</li>
-							<li>
-								<a href="<?php echo base_url('payment');?>">
-									<i class="icon fa fa-money"></i>แจ้งชำระเงิน</a>
-							</li>
+							<li><a href="#"><i class="icon fa fa-shopping-cart"></i>ตะกร้าสินค้า</a></li>
+							<li><a href="<?php echo base_url('payment');?>"><i class="icon fa fa-money"></i>แจ้งชำระเงิน</a></li>
 							<?php if (!$this->session->userdata('is_logged_in')): ?>
-							<li>
-								<a href="<?php echo base_url('account')?>">
-									<i class="icon fa fa-sign-in"></i>เข้าสู่ระบบ</a>
-							</li>
+							<li><a href="<?php echo base_url('account')?>"><i class="icon fa fa-sign-in"></i>เข้าสู่ระบบ</a></li>
 							<?php else: ?>
-							<li>
-								<a href="<?php echo base_url('logout')?>">
-									<i class="icon fa fa-sign-out"></i>ออกจากระบบ</a>
-							</li>
+							<li><a href="<?php echo base_url('logout')?>"><i class="icon fa fa-sign-out"></i>ออกจากระบบ</a></li>
 							<?php endif ?>
 						</ul>
 					</div>
@@ -140,17 +125,12 @@
 									</li>
 								</ul>
 							</li>
-						</ul>
-						<!-- /.list-unstyled -->
-					</div>
-					<!-- /.cnt-cart -->
+						</ul><!-- /.list-unstyled -->
+					</div><!-- /.cnt-cart -->
 					<div class="clearfix"></div>
-				</div>
-				<!-- /.header-top-inner -->
-			</div>
-			<!-- /.container -->
-		</div>
-		<!-- /.header-top -->
+				</div><!-- /.header-top-inner -->
+			</div><!-- /.container -->
+		</div><!-- /.header-top -->
 		<!-- ============================================== TOP MENU : END ============================================== -->
 		<div class="main-header">
 			<div class="container">
@@ -161,11 +141,9 @@
 							<a href="<?php echo base_url()?>">
 								<img src="<?php echo base_url('theme_unicase')?>/assets/images/NBDD_LOGO.jpg" style="max-width: 181px;">
 							</a>
-						</div>
-						<!-- /.logo -->
+						</div><!-- /.logo -->
 						<!-- ============================================================= LOGO : END ============================================================= -->
-					</div>
-					<!-- /.logo-holder -->
+					</div><!-- /.logo-holder -->
 
 					<div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
 						<div class="contact-row">
@@ -180,20 +158,16 @@
 								<a class="pull-right" href="http://line.me/ti/p/%40zlg9137d" target="_blank">
 									<i class="icon fa fa-comments"></i> line : @notebookdd</a>
 							</div>
-						</div>
-						<!-- /.contact-row -->
+						</div><!-- /.contact-row -->
 						<!-- ============================================================= SEARCH AREA ============================================================= -->
 						<div class="search-area">
 							<form role="search" action="<?php echo base_url('search')?>" method="GET">
 								<div class="control-group">
-
 									<ul class="categories-filter animate-dropdown">
 										<li class="dropdown">
-
 											<a class="dropdown-toggle" data-toggle="dropdown" href="category.html">Categories
 												<b class="caret"></b>
 											</a>
-
 											<ul class="dropdown-menu" role="menu">
 												<li class="menu-header">Computer</li>
 												<li role="presentation">
@@ -216,11 +190,9 @@
 										<button type="submit"  class="search-button"></button>
 								</div>
 							</form>
-						</div>
-						<!-- /.search-area -->
+						</div><!-- /.search-area -->
 						<!-- ============================================================= SEARCH AREA : END ============================================================= -->
-					</div>
-					<!-- /.top-search-holder -->
+					</div><!-- /.top-search-holder -->
 
 					<div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
 						<!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
@@ -235,13 +207,10 @@
 											<span class="value">600.00</span>
 										</span>
 									</div>
-									<div class="basket">
-										<i class="glyphicon glyphicon-shopping-cart"></i>
-									</div>
+									<div class="basket"><i class="glyphicon glyphicon-shopping-cart"></i></div>
 									<div class="basket-item-count">
 										<span class="count">2</span>
 									</div>
-
 								</div>
 							</a>
 							<ul class="dropdown-menu">
@@ -256,7 +225,6 @@
 												</div>
 											</div>
 											<div class="col-xs-7">
-
 												<h3 class="name">
 													<a href="index.php?page-detail">Simple Product</a>
 												</h3>
@@ -268,42 +236,25 @@
 												</a>
 											</div>
 										</div>
-									</div>
-									<!-- /.cart-item -->
+									</div><!-- /.cart-item -->
 									<div class="clearfix"></div>
 									<hr>
-
 									<div class="clearfix cart-total">
 										<div class="pull-right">
-
 											<span class="text">Sub Total :</span>
 											<span class='price'>$600.00</span>
-
 										</div>
 										<div class="clearfix"></div>
-
 										<a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
-									</div>
-									<!-- /.cart-total-->
-
-
+									</div><!-- /.cart-total-->
 								</li>
-							</ul>
-							<!-- /.dropdown-menu-->
-						</div>
-						<!-- /.dropdown-cart -->
-
+							</ul><!-- /.dropdown-menu-->
+						</div><!-- /.dropdown-cart -->
 						<!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->
-					</div>
-					<!-- /.top-cart-row -->
-				</div>
-				<!-- /.row -->
-
-			</div>
-			<!-- /.container -->
-
-		</div>
-		<!-- /.main-header -->
+					</div><!-- /.top-cart-row -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.main-header -->
 
 		<!-- ============================================== NAVBAR ============================================== -->
 		<div class="header-nav animate-dropdown">
@@ -337,20 +288,13 @@
 																</ul>
 															</div><!-- /.col -->
 														</div>
-													</div>
-													<!-- /.row -->
-												</div>
-												<!-- /.yamm-content -->
+													</div><!-- /.row -->
+												</div><!-- /.yamm-content -->
 											</li>
 										</ul>
 									</li>
-
-									<li class="dropdown">
-										<a href="<?php echo base_url('products')?>">สินค้า</a>
-									</li>
-
+									<li class="dropdown"><a href="<?php echo base_url('products')?>">สินค้า</a></li>
 									<li class="dropdown yamm">
-
 										<a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">บริการ
 											<span style="display: none;" class="menu-label hot-menu hidden-xs">hot</span>
 										</a>
@@ -378,15 +322,9 @@
 													<div class="row">
 														<div class='col-xs-12 col-sm-12 col-md-12'>
 															<ul class='links'>
-																<li>
-																	<a href="<?php echo base_url('warranty')?>">เงื่อนไขการรับประกัน</a>
-																</li>
-																<li>
-																	<a href="<?php echo base_url('howtobuy')?>">วิธีการสั่งซื้อ</a>
-																</li>
-																<li>
-																	<a href="#">ดาวน์โหลดเอกสาร</a>
-																</li>
+																<li><a href="<?php echo base_url('warranty')?>">เงื่อนไขการรับประกัน</a></li>
+																<li><a href="<?php echo base_url('howtobuy')?>">วิธีการสั่งซื้อ</a></li>
+																<li><a href="<?php echo base_url('download')?>">ดาวน์โหลดเอกสาร</a></li>
 															</ul>
 														</div>
 													</div>
@@ -394,29 +332,15 @@
 											</li>
 										</ul>
 									</li>
-
-									<li class="dropdown">
-										<a href="<?php echo base_url('contact')?>">ติดต่อเรา</a>
-									</li>
-
-								</ul>
-								<!-- /.navbar-nav -->
+									<li class="dropdown"><a href="<?php echo base_url('contact')?>">ติดต่อเรา</a></li>
+								</ul><!-- /.navbar-nav -->
 								<div class="clearfix"></div>
-							</div>
-							<!-- /.nav-outer -->
-						</div>
-						<!-- /.navbar-collapse -->
-
-
-					</div>
-					<!-- /.nav-bg-class -->
-				</div>
-				<!-- /.navbar-default -->
-			</div>
-			<!-- /.container-class -->
-
-		</div>
-		<!-- /.header-nav -->
+							</div><!-- /.nav-outer -->
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.nav-bg-class -->
+				</div><!-- /.navbar-default -->
+			</div><!-- /.container-class -->
+		</div><!-- /.header-nav -->
 		<!-- ============================================== NAVBAR : END ============================================== -->
 
 	</header>
