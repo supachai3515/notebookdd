@@ -30,7 +30,11 @@
 		<!-- loading bar -->
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/loading-bar.css">
 
+		<!-- sweetalert2 -->
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/sweetalert2.css">
+
+		<!-- lity -->
+		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/lity.min.css">
 		
 		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
 		<link href="<?php echo base_url('theme_unicase');?>/assets/css/lightbox.css" rel="stylesheet">
