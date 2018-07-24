@@ -1,14 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+require APPPATH . "/libraries/BaseController.php";
 
-class Orders extends CI_Controller {
+class Orders extends BaseController 
+{
 	public function __construct(){
 		parent::__construct();
-		//call model inti 
-		$this->load->model('initdata_model');
-		$this->load->model('orders_model');
-		$this->load->library('pagination');
-		$this->is_logged_in();
+        session_start();
+        $this->load->model('orders_model');
+        $this->load->library('my_upload');
+        $this->load->library('upload');
+        $this->isLoggedIn();
 
 	}
 
@@ -16,83 +18,54 @@ class Orders extends CI_Controller {
 	public function index($page=0)
 	{
 
-		$config['base_url'] = base_url('orders/index');
-		$config['total_rows'] = $this->orders_model->get_orders_count();
-		$config['per_page'] = 10; 
-        /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='pagination'>";
-		$config['full_tag_close'] ="</ul>";
-		$config['num_tag_open'] = '<li>';
-		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
-		$config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-		$config['next_link'] = '&raquo';
-		$config['next_tag_open'] = "<li>";
-		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '&laquo';
-		$config['prev_tag_open'] = "<li>";
-		$config['prev_tagl_close'] = "</li>";
-		$config['first_tag_open'] = "<li>";
-		$config['first_tagl_close'] = "</li>";
-		$config['last_tag_open'] = "<li>";
-		$config['last_tagl_close'] = "</li>";
+		$data = $this->get_data_check("is_view");
+        if (!is_null($data)) {
+            $count = $this->orders_model->get_orders_count();
+            $data["links_pagination"] = $this->pagination_compress("orders/index", $count, $this->config->item("pre_page"));
+            $data["orders_list"] = $this->orders_model->get_orders($page, $this->config->item("pre_page"));
+            $data["links_pagination"] = $this->pagination->create_links();
 
-        $this->pagination->initialize($config); 
-		$data['orders_list'] = $this->orders_model->get_orders($page, $config['per_page']);
-		$data['order_status_list'] = $this->orders_model->get_order_status();
-		$data['links_pagination'] = $this->pagination->create_links();
+            $data['order_status_list'] = $this->orders_model->get_order_status();
 
-		$data['menus_list'] = $this->initdata_model->get_menu();
-
-		//call script
-        $data['menu_id'] ='10';
-		$data['content'] = 'orders';
-		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
-								'description' =>  'orders| '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
-								'keyword' =>  'notebookdd');
-		$this->load->view('template/layout', $data);	
+            $data["content"] = "orders";
+            $data["header"] = $this->get_header("orders");
+            $this->load->view("template/layout_main", $data);
+		}
 	}
 
 
 	//page search
 	public function search()
 	{
-
-		$return_data = $this->orders_model->get_orders_search();
-		$data['orders_list'] = $return_data['result_orders'];
-		$data['data_search'] = $return_data['data_search'];
-		$data['menus_list'] = $this->initdata_model->get_menu();
-		$data['order_status_list'] = $this->orders_model->get_order_status();
-
-        $data['menu_id'] ='10';
-		$data['content'] = 'orders';
-		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
-								'description' =>  'orders| '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
-								'keyword' =>  'notebookdd');
-		$this->load->view('template/layout', $data);	
+		$data = $this->get_data_check("is_view");
+        if (!is_null($data)) {
+            $return_data = $this->orders_model->get_orders_search();
+            $data['orders_list'] = $return_data['result_orders'];
+            $data['data_search'] = $return_data['data_search'];
+            $data['order_status_list'] = $this->orders_model->get_order_status();
+            $data["content"] = "orders";
+            $data["header"] = $this->get_header("orders");
+            $this->load->view("template/layout_main", $data);
+        }
 
 	}
 
 	//page edit
 	public function edit($orders_id)
 	{
-		$this->is_logged_in();
-		$data['menus_list'] = $this->initdata_model->get_menu();
-		$data['orders_data'] = $this->orders_model->get_orders_id($orders_id);
-		$data['orders_detail'] = $this->orders_model->get_orders_detail_id($orders_id);
-		$data['order_status_list'] = $this->orders_model->get_order_status();
-		$data['order_status_history_list'] = $this->orders_model->get_order_status_history($orders_id);
-		
-        $data['menu_id'] ='10';
-		$data['content'] = 'orders_edit';
-		$data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
-								'description' =>  'orders| '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
-								'keyword' =>  'notebookdd');
-		$this->load->view('template/layout', $data);	
 
+		$data = $this->get_data_check("is_edit");
+        if (!is_null($data)) {
+            $data['orders_data'] = $this->orders_model->get_orders_id($orders_id);
+            $data['orders_detail'] = $this->orders_model->get_orders_detail_id($orders_id);
+            $data['order_status_list'] = $this->orders_model->get_order_status();
+            $data['order_status_history_list'] = $this->orders_model->get_order_status_history($orders_id);
+
+            //$data['script_file']= "js/order_js";
+            $data["content"] = "orders_edit";
+            $data["header"] = $this->get_header("Order edit");
+            $this->load->view("template/layout_main", $data);
+        }
 	}
 
 
@@ -176,12 +149,6 @@ class Orders extends CI_Controller {
 
 	}  
 
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		if(!isset($is_logged_in) || $is_logged_in != true){
-			redirect('login');		
-		}		
-	}
 
 	function sendmail_order_tracking($orderId)
 	{

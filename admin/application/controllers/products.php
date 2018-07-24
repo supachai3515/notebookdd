@@ -22,7 +22,8 @@ class Products extends BaseController
 	{
 
 		$data = $this->get_data_check("is_view");
-		if (!is_null($data)) {
+		if (!is_null($data)) 
+		{
 
 					$count = $this->products_model->get_products_count();
 					$data['links_pagination'] = $this->pagination_compress("products/index", $count, $this->config->item('pre_page'));
@@ -43,27 +44,29 @@ class Products extends BaseController
 					$this->load->view("template/layout_main", $data);
 
 
-				}
+		}
 
-			}
-
-
-			//page edit
-			public function edit($product_id)
-			{
-				$data = $this->get_data_check("is_edit");
-				if (!is_null($data)) {
-						$data['brands_list'] = $this->products_model->get_brands();
-						$data['type_list'] = $this->products_model->get_type();
-						$data['product_data'] = $this->products_model->get_product($product_id);
-						$data['images_list'] = $this->products_model->get_images($product_id);
-						//call script
-						$data['script_file']= "js/product_js";
-						$data['content'] = 'product_edit';
-						$data["header"] = $this->get_header("Products");
-						$this->load->view('template/layout_main', $data);	
-				}
 	}
+		
+
+
+	//page edit
+	public function edit($product_id)
+	{
+		$data = $this->get_data_check("is_edit");
+		if (!is_null($data)) {
+				$data['brands_list'] = $this->products_model->get_brands();
+				$data['type_list'] = $this->products_model->get_type();
+				$data['product_data'] = $this->products_model->get_product($product_id);
+				$data['images_list'] = $this->products_model->get_images($product_id);
+				//call script
+				$data['script_file']= "js/product_js";
+				$data['content'] = 'product_edit';
+				$data["header"] = $this->get_header("Products");
+				$this->load->view('template/layout_main', $data);	
+		}
+	}
+
 	//page search
 	public function search()
 	{
@@ -244,13 +247,6 @@ class Products extends BaseController
 		}
 
 	} 
-
-	public function is_logged_in(){
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		if(!isset($is_logged_in) || $is_logged_in != true){
-			redirect('login');		
-		}		
-	}
 
 	public function getstock()
 	{

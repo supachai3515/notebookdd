@@ -1,5 +1,6 @@
-<div id="page-wrapper" ng-app="myApp">
-    <div class="container-fluid" ng-controller="myCtrl">
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid box" ng-controller="mainCtrl">
         <div class="page-header">
             <h1>เอกสาร<small> Download</small></h1>
             <?php //if(isset($sql))echo "<p>".$sql."</p>"; ?>
@@ -151,6 +152,8 @@
             </div>
         </div>
     </div>
-    <!-- /.container-fluid -->
+            <!-- /.container-fluid box -->
+            </div>
+        <!-- /.content -->
+    </section>
 </div>
-<!-- /#page-wrapper -->
