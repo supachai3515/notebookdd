@@ -186,6 +186,8 @@
         }
     }
 
+
+
     // $scope.ckeckoutSubmit = function() {        
     //     swal({
     //         title: 'ยืนยัน?',
@@ -228,4 +230,49 @@
        }
 
   });
+
+
+
+</script>
+<script type="text/javascript">
+
+function validateForm() {
+
+     $.ajax({
+            url: "<?php echo base_url('sms_otp/Call_otp_test');?>",
+            type: "POST",
+            async: false,
+            cache: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {
+                'mobile_number': "0917750586"
+            },
+            success: function (res) {
+
+                swal({
+                    title: 'กรุณาตรวจสอบ หรัส OTP',
+                    text: "You are going to send emails from the system. Please confirm",                   
+                    showCancelButton: true,
+                    input: 'email',
+                    inputValue: "",
+                    confirmButtonText: 'Submit',
+                    confirmButtonColor: '#4aa0f1',
+                    cancelButtonColor: '#898b8e',
+                    confirmButtonText: 'Send'
+                    }).then(function (email) {  
+                        send_email = email;
+                        sentHtmtBody_send();
+                        loadingIcon();
+                    });
+                swal("Done!", res.otp_id, "success");
+                return false;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                return false;
+                swal("Error deleting!", "Please try again", "error");
+            }
+        });    
+        return true;
+}
 </script>

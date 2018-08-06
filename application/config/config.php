@@ -24,6 +24,10 @@ $config['tagline'] = "NotebookDD ทางเราขาย อะไหล่�
 $config['url_img'] = "http://www.notebookdd.com/admin/";
 $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
 
+$config['otp_username'] = "TEST002";
+$config['otp_password'] = "TEST002";
+$config['otp_sender'] = "MoLinkSMS";
+
 /*
 |--------------------------------------------------------------------------
 | Index File

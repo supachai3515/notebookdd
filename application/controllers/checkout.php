@@ -60,6 +60,7 @@ class Checkout extends CI_Controller {
 
 	public function save()
 	{
+		return;
 
 	    $name =  $this->input->post('txtName');
 	    $address =  $this->input->post('txtAddress');

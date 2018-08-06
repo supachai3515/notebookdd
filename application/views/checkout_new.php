@@ -130,7 +130,9 @@
                     </table><!-- /table -->
                 </div><!-- /.cart-shopping-total -->
                 <div class="col-md-12 col-sm-12">
-                    <form class="form-horizontal"  name="form1" method="post" action="<?php echo base_url('checkout/save'); ?>" OnSubmit="return chkSubmit();">
+
+
+                    <form class="form-horizontal"   method="post" action="<?php echo base_url('checkout/save'); ?>" onsubmit="return validateForm()">
                         <script type="text/javascript">
                         </script>
                         <fieldset>
