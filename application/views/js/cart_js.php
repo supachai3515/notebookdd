@@ -234,6 +234,8 @@
 
 
 </script>
+
+
 <script type="text/javascript">
 
 function validateForm() {
@@ -261,11 +263,12 @@ function validateForm() {
                     cancelButtonColor: '#898b8e',
                     confirmButtonText: 'Send'
                     }).then(function (email) {  
-                        send_email = email;
-                        sentHtmtBody_send();
-                        loadingIcon();
+                        //call api  validate
+                       
+                        swal("Done!", res.otp_id, "success");
+                        return true;
                     });
-                swal("Done!", res.otp_id, "success");
+                //swal("Done!", res.otp_id, "success");
                 return false;
             },
             error: function (xhr, ajaxOptions, thrownError) {
@@ -273,6 +276,6 @@ function validateForm() {
                 swal("Error deleting!", "Please try again", "error");
             }
         });    
-        return true;
+        return false;
 }
 </script>

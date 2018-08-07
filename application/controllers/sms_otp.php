@@ -15,7 +15,7 @@ class Sms_otp extends CI_Controller {
         $mobile_number = $value->mobile_number;
         $data = array(
             "mobile_number" => $mobile_number ,
-            "otp_id" => "sdss"
+            "otp_id" => "sdsssfasffasdgver"
         );
         echo json_encode($data );
 
@@ -58,6 +58,30 @@ class Sms_otp extends CI_Controller {
             } else {
                 echo $response;
             }
+
+
+
+
+            // {
+            //     "d": {
+            //         "Result": {
+            //             "__type": "MolinkService2016.sms+JSON_result",
+            //             "otp_id": "860c9015-6c71-4a83-8d7d-8897c964662a",
+            //             "message": null,
+            //             "code": null
+            //         },
+            //         "Id": 1,
+            //         "Exception": null,
+            //         "Status": 5,
+            //         "IsCanceled": false,
+            //         "IsCompleted": true,
+            //         "CreationOptions": 0,
+            //         "AsyncState": null,
+            //         "IsFaulted": false
+            //     }
+            // }
+
+
         }
 
     }
@@ -93,5 +117,26 @@ class Sms_otp extends CI_Controller {
         } else {
           echo $response;
         }
+
+
+        // {
+        //     "d": {
+        //         "Result": {
+        //             "__type": "MolinkService2016.sms+JSON_result",
+        //             "otp_id": null,
+        //             "message": null,
+        //             "code": null
+        //         },
+        //         "Id": 3,
+        //         "Exception": null,
+        //         "Status": 5,
+        //         "IsCanceled": false,
+        //         "IsCompleted": true,
+        //         "CreationOptions": 0,
+        //         "AsyncState": null,
+        //         "IsFaulted": false
+        //     }
+        // }
+
     }
 }
