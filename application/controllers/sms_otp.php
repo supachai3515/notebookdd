@@ -86,6 +86,16 @@ class Sms_otp extends CI_Controller {
 
     }
 
+    public function Check_otp_test($otp_num)
+    {
+        $data = array(
+            "mobile_number" => $mobile_number ,
+            "otp_id" => "xxxxxxxxxxxx"
+        );
+        echo json_encode($data );
+
+    }
+
     public function Check_otp($otp_id)
     {
 

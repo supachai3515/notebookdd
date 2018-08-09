@@ -132,7 +132,7 @@
                 <div class="col-md-12 col-sm-12">
 
 
-                    <form class="form-horizontal"   method="post" action="<?php echo base_url('checkout/save'); ?>" onsubmit="return validateForm()">
+                    <form class="form-horizontal" name="checkoutForm"  method="post" action="<?php echo base_url('checkout/save'); ?>">
                         <script type="text/javascript">
                         </script>
                         <fieldset>
@@ -191,7 +191,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">ชื่อผู้รับสินค้า</label>  
+                        <label class="col-md-4 control-label" for="textinput">ชื่อผู้รับสินค้า<sup>*</sup></label>  
                         <div class="col-md-4">
                             <?php if( $isUsername == 1) {?>
                                 <input type="text" name="txtName"  placeholder="ชื่อผู้รับสินค้า" class="form-control unicase-form-control text-input" required="required" 
@@ -216,7 +216,7 @@
                         </div>
 
                         <div class="form-group">
-                        <label class="col-md-4 control-label" for="passwordinput">เบอร์โทรติดต่อกลับ</label>
+                        <label class="col-md-4 control-label" for="passwordinput">เบอร์โทรติดต่อกลับ<sup>*</sup></label>
                         <div class="col-md-4">
                             <?php if( $isUsername == 1) {?>
                                 <input type="text" name="txtTel" id="txtTel" required="required" class="form-control unicase-form-control text-input" placeholder="เบอร์โทรติดต่อกลับ" maxlength="12" value="<?php echo $username_login["Mobile"];?>" />
@@ -241,10 +241,10 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtEmail">อีเมล์ติดต่อกลับ</label>  
+                        <label class="col-md-4 control-label" for="txtEmail">อีเมล์ติดต่อกลับ<sup>*</sup></label>  
                         <div class="col-md-4">
                         <?php if( $isUsername == 1) {?>
-                                <input type="text" name="txtEmail" id="txtEmail" required="required "placeholder="อีเมล์ติดต่อกลับ"  class="form-control unicase-form-control text-input" value="<?php echo $username_login["Email"];?>" />
+                                <input type="text" name="txtEmail" id="txtEmail" required="required " placeholder="อีเมล์ติดต่อกลับ"  class="form-control unicase-form-control text-input" value="<?php echo $username_login["Email"];?>" />
                             <?php } else { ?>
                                 <input id="txtEmail" name="txtEmail" type="email" placeholder="อีเมล์ติดต่อกลับ" class="form-control unicase-form-control text-input" required="required">
                             <?php } ?>
@@ -255,7 +255,7 @@
                         <div class="form-group">
                         <label class="col-md-4 control-label" for="singlebutton"></label>
                         <div class="col-md-4">
-                            <button  type="submit" name="Submit" class="btn btn-primary">ยืนยันการสั่งซื้อ</button>
+                            <button  type="button" class="btn btn-primary" onClick="validateForm()">ยืนยันการสั่งซื้อ</button>
                         </div>
                         </div>
                         </fieldset>

@@ -239,7 +239,30 @@
 <script type="text/javascript">
 
 function validateForm() {
+    var errRequire = false
+    var requireField = []
+    var name = document.forms["checkoutForm"]["txtName"];
+    var email = document.forms["checkoutForm"]["txtEmail"];
+    var tel = document.forms["checkoutForm"]["txtTel"];
 
+    // Validate field
+    requireField.push(name,email,tel)
+    for (let i = 0; i < requireField.length; i++) {
+        if(requireField[i].value === '') {
+            swal({
+                type: 'warning',
+                title: '',
+                text: 'กรุณากรอกข้อมูลให้ครบ'
+            })
+            errRequire = true
+            break;
+        }
+    }
+
+    if(errRequire) {
+        return false
+    }
+    
      $.ajax({
             url: "<?php echo base_url('sms_otp/Call_otp_test');?>",
             type: "POST",
@@ -248,34 +271,59 @@ function validateForm() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: {
-                'mobile_number': "0917750586"
+                'mobile_number': tel.value
             },
             success: function (res) {
-
                 swal({
-                    title: 'กรุณาตรวจสอบ หรัส OTP',
-                    text: "You are going to send emails from the system. Please confirm",                   
+                    title: 'กรุณายืนยันตัวตน',
+                    text: 'กรอกรหัส OTP ที่ส่งไปยังหมายเลข '+ tel.value,
+                    input: 'text',
+                    inputValue: '',
+                    allowOutsideClick: false,
                     showCancelButton: true,
-                    input: 'email',
-                    inputValue: "",
-                    confirmButtonText: 'Submit',
-                    confirmButtonColor: '#4aa0f1',
-                    cancelButtonColor: '#898b8e',
-                    confirmButtonText: 'Send'
-                    }).then(function (email) {  
-                        //call api  validate
-                       
-                        swal("Done!", res.otp_id, "success");
-                        return true;
-                    });
-                //swal("Done!", res.otp_id, "success");
-                return false;
+                    inputValidator: function(value) {
+                        // Validate input OTP
+                        return new Promise(function (resolve, reject) {
+                            if (value != '') {
+                                resolve();
+                            }else {
+                                reject('กรุณากรอกรหัส OTP')
+                            }
+                        })
+                    },
+                    preConfirm: (otp_id) => {
+                        // Check OTP
+                        return fetch(`<?php echo base_url('sms_otp/Check_otp_test');?>/${otp_id}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.statusText)
+                            }
+                            return response.json()
+                        })
+                        .catch(error => {
+                            swal.showValidationError(
+                            `Request failed: ${error}`
+                            )
+                        })
+                    }
+                }).then(function(result) { 
+                    console.log('>', result);
+                    swal({
+                        type: 'success',
+                        title: 'ยืนยันตัวตนสำเร็จ',
+                        allowOutsideClick: false,
+                        showCancelButton: false,
+                    })
+                    .then(function(result) { 
+                        var form = document.getElementsByName('checkoutForm');
+                        form[0].submit();
+                    })
+                })                
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 return false;
                 swal("Error deleting!", "Please try again", "error");
             }
-        });    
-        return false;
+        });
 }
 </script>
