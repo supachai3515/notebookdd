@@ -9,6 +9,7 @@ class Sms_otp extends CI_Controller {
 		$this->load->model('products_model');
 		$this->load->library('pagination');
     }
+    
     public function Call_otp_test()
     {
         $value = json_decode(file_get_contents("php://input"));
@@ -22,77 +23,71 @@ class Sms_otp extends CI_Controller {
     }
 
     public function Call_otp()
-    {
-        $value = json_decode(file_get_contents("php://input"));
+    {$value = json_decode(file_get_contents("php://input"));
         $mobile_number = $value->mobile_number;
+        if($mobile_number != null){
+            // $otp_username =  $this->config->item('otp_username');
+            // $otp_password =  $this->config->item('otp_password');
+            // $otp_sender = $this->config->item('otp_sender');
+            // $mobile_number = "";
 
-        if(isset($mobile_number )){
-            $otp_username =  $this->config->item('otp_username');
-            $otp_password =  $this->config->item('otp_password');
-            $otp_sender = $this->config->item('otp_sender');
-            $mobile_number = "";
-
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://203.146.186.186/molink_otp_service/sms.asmx/OTPSend",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => "{\n\t\"username\":\"$otp_username\",\n\t\"password\":\"$otp_password\",\n\t\"txtSMS\":\"รหัส OTP ของคุณคือ ${code}\",\n\t\"sender\":\"otp_sender\",\n\t\"txtMobile\":\"$mobile_number\"\n}",
-                CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json"
-                ),
-            ));
+            // $curl = curl_init();
+            // curl_setopt_array($curl, array(
+            //     CURLOPT_URL => "http://203.146.186.186/molink_otp_service/sms.asmx/OTPSend",
+            //     CURLOPT_RETURNTRANSFER => true,
+            //     CURLOPT_ENCODING => "",
+            //     CURLOPT_MAXREDIRS => 10,
+            //     CURLOPT_TIMEOUT => 30,
+            //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //     CURLOPT_CUSTOMREQUEST => "POST",
+            //     CURLOPT_POSTFIELDS => "{\n\t\"username\":\"$otp_username\",\n\t\"password\":\"$otp_password\",\n\t\"txtSMS\":\"รหัส OTP ของคุณคือ ${code}\",\n\t\"sender\":\"otp_sender\",\n\t\"txtMobile\":\"$mobile_number\"\n}",
+            //     CURLOPT_HTTPHEADER => array(
+            //     "cache-control: no-cache",
+            //     "content-type: application/json"
+            //     ),
+            // ));
             
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
+            // $response = curl_exec($curl);
+            // $err = curl_error($curl);
             
-            curl_close($curl);
+            // curl_close($curl);
             
-            if ($err) {
-                echo "cURL Error #:" . $err;
-            } else {
-                echo $response;
-            }
-
-
-
-
-            // {
-            //     "d": {
-            //         "Result": {
-            //             "__type": "MolinkService2016.sms+JSON_result",
-            //             "otp_id": "860c9015-6c71-4a83-8d7d-8897c964662a",
-            //             "message": null,
-            //             "code": null
-            //         },
-            //         "Id": 1,
-            //         "Exception": null,
-            //         "Status": 5,
-            //         "IsCanceled": false,
-            //         "IsCompleted": true,
-            //         "CreationOptions": 0,
-            //         "AsyncState": null,
-            //         "IsFaulted": false
-            //     }
+            // if ($err) {
+            //     echo "cURL Error #:" . $err;
+            // } else {
+            //     echo $response;
             // }
 
 
+            echo  json_encode(' {
+                                    "d": {
+                                        "Result": {
+                                            "__type": "MolinkService2016.sms+JSON_result",
+                                            "otp_id": "ee3c7bff-0fd4-4653-8694-1badbdb6db50",
+                                            "message": null,
+                                            "code": null
+                                        },
+                                        "Id": 2,
+                                        "Exception": null,
+                                        "Status": 5,
+                                        "IsCanceled": false,
+                                        "IsCompleted": true,
+                                        "CreationOptions": 0,
+                                        "AsyncState": null,
+                                        "IsFaulted": false
+                                    }
+                                }');
+
+
         }
-
-    }
-
-    public function Check_otp_test($otp_num)
-    {
-        $data = array(
-            "mobile_number" => $mobile_number ,
-            "otp_id" => "xxxxxxxxxxxx"
-        );
-        echo json_encode($data );
+        else{
+            
+            echo  json_encode(' { 
+                
+                    "IsCompleted": false
+                
+            }');
+        }
 
     }
 

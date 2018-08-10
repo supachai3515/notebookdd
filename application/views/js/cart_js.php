@@ -262,9 +262,11 @@ function validateForm() {
     if(errRequire) {
         return false
     }
+
+    var from = $("#form").serialize()
     
      $.ajax({
-            url: "<?php echo base_url('sms_otp/Call_otp_test');?>",
+            url: "<?php echo base_url('sms_otp/Call_otp');?>",
             type: "POST",
             async: false,
             cache: false,
@@ -274,38 +276,54 @@ function validateForm() {
                 'mobile_number': tel.value
             },
             success: function (res) {
-                swal({
-                    title: 'กรุณายืนยันตัวตน',
-                    text: 'กรอกรหัส OTP ที่ส่งไปยังหมายเลข '+ tel.value,
-                    input: 'text',
-                    inputValue: '',
-                    allowOutsideClick: false,
-                    showCancelButton: true,
-                    inputValidator: function(value) {
-                        // Validate input OTP
-                        return new Promise(function (resolve, reject) {
-                            if (value != '') {
-                                resolve();
-                            }else {
-                                reject('กรุณากรอกรหัส OTP')
+
+                console.log('>', res);
+                    swal({
+                            title: 'กรุณายืนยันตัวตน',
+                            text: 'กรอกรหัส OTP ที่ส่งไปยังหมายเลข '+ tel.value,
+                            input: 'text',
+                            inputValue: '',
+                            allowOutsideClick: false,
+                            showCancelButton: true,
+                            inputValidator: function(value) {
+                                // Validate input OTP
+                                return new Promise(function (resolve, reject) {
+                                    if (value != '') {
+                                        resolve();
+                                    }else {
+                                        reject('กรุณากรอกรหัส OTP')
+                                    }
+                                })
+                            },
+                            preConfirm: (otp_id) => {
+                                // Check OTP
+                                return fetch(`<?php echo base_url('sms_otp/Check_otp_test');?>/${otp_id}`)
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error(response.statusText)
+                                    }
+                                    return response.json()
+                                })
+                                .catch(error => {
+                                    swal.showValidationError(
+                                    `Request failed: ${error}`
+                                    )
+                                })
                             }
-                        })
-                    },
-                    preConfirm: (otp_id) => {
-                        // Check OTP
-                        return fetch(`<?php echo base_url('sms_otp/Check_otp_test');?>/${otp_id}`)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(response.statusText)
-                            }
-                            return response.json()
-                        })
-                        .catch(error => {
-                            swal.showValidationError(
-                            `Request failed: ${error}`
-                            )
-                        })
-                    }
+
+                // }
+                // //end if
+                // else {
+                //     swal({
+                //         type: 'error',
+                //         title: 'กรุณาติดต่อทางร้าน',
+                //         allowOutsideClick: false,
+                //         showCancelButton: false,
+                //     }
+                // } 
+
+
+
                 }).then(function(result) { 
                     console.log('>', result);
                     swal({
