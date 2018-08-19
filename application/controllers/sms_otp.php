@@ -23,9 +23,12 @@ class Sms_otp extends CI_Controller {
     }
 
     public function Call_otp()
-    {$value = json_decode(file_get_contents("php://input"));
+    { 
+        
+        $value = json_decode(file_get_contents("php://input"));
         $mobile_number = $value->mobile_number;
         if($mobile_number != null){
+
             // $otp_username =  $this->config->item('otp_username');
             // $otp_password =  $this->config->item('otp_password');
             // $otp_sender = $this->config->item('otp_sender');
@@ -59,89 +62,104 @@ class Sms_otp extends CI_Controller {
             // }
 
 
-            echo  json_encode(' {
-                                    "d": {
-                                        "Result": {
-                                            "__type": "MolinkService2016.sms+JSON_result",
-                                            "otp_id": "ee3c7bff-0fd4-4653-8694-1badbdb6db50",
-                                            "message": null,
-                                            "code": null
-                                        },
-                                        "Id": 2,
-                                        "Exception": null,
-                                        "Status": 5,
-                                        "IsCanceled": false,
-                                        "IsCompleted": true,
-                                        "CreationOptions": 0,
-                                        "AsyncState": null,
-                                        "IsFaulted": false
-                                    }
-                                }');
-
-
+            $datajson =  json_decode('{
+                                        "d": {
+                                                    "Result": {
+                                                        "__type": "MolinkService2016.sms+JSON_result",
+                                                        "otp_id": "ee3c7bff-0fd4-4653-8694-1badbdb6db50",
+                                                        "message": null,
+                                                        "code": null
+                                                    },
+                                                "Id": 2,
+                                                "Exception": null,
+                                                "Status": 5,
+                                                "IsCanceled": false,
+                                                "IsCompleted": true,
+                                                "CreationOptions": 0,
+                                                "AsyncState": null,
+                                                "IsFaulted": false
+                                            }
+                                }'
+                            );
+          //print_r($datajson->d);
+          echo  json_encode($datajson->d);
         }
         else{
+
+            $data = array(
+                "IsCompleted" => false ,
+                "Error" => "No mobile Number"
+            );
             
-            echo  json_encode(' { 
-                
-                    "IsCompleted": false
-                
-            }');
+            echo  json_encode($data);
         }
 
     }
 
-    public function Check_otp($otp_id)
+    public function Check_otp($otp_id,$otp_id_gen)
     {
+        if($otp_id != null && $otp_id_gen!=null){
 
-        $curl = curl_init();
+        // $curl = curl_init();
         
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://203.146.186.186/molink_otp_service/sms.asmx/OTPValidate",
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => "",
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 30,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n\t\"otp_id\":\"14bade0e-3135-4260-aa99-dd85f2a5aff4\",\n\t\"code\" : \"3665\"\n}",
-          CURLOPT_HTTPHEADER => array(
-            "cache-control: no-cache",
-            "content-type: application/json",
-            "postman-token: 2ffdd701-7cc9-2714-0832-9cc03a974339"
-          ),
-        ));
+        // curl_setopt_array($curl, array(
+        //   CURLOPT_URL => "http://203.146.186.186/molink_otp_service/sms.asmx/OTPValidate",
+        //   CURLOPT_RETURNTRANSFER => true,
+        //   CURLOPT_ENCODING => "",
+        //   CURLOPT_MAXREDIRS => 10,
+        //   CURLOPT_TIMEOUT => 30,
+        //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //   CURLOPT_CUSTOMREQUEST => "POST",
+        //   CURLOPT_POSTFIELDS => "{\n\t\"otp_id\":\"14bade0e-3135-4260-aa99-dd85f2a5aff4\",\n\t\"code\" : \"3665\"\n}",
+        //   CURLOPT_HTTPHEADER => array(
+        //     "cache-control: no-cache",
+        //     "content-type: application/json",
+        //     "postman-token: 2ffdd701-7cc9-2714-0832-9cc03a974339"
+        //   ),
+        // ));
         
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
+        // $response = curl_exec($curl);
+        // $err = curl_error($curl);
         
-        curl_close($curl);
+        // curl_close($curl);
         
-        if ($err) {
-          echo "cURL Error #:" . $err;
-        } else {
-          echo $response;
-        }
-
-
-        // {
-        //     "d": {
-        //         "Result": {
-        //             "__type": "MolinkService2016.sms+JSON_result",
-        //             "otp_id": null,
-        //             "message": null,
-        //             "code": null
-        //         },
-        //         "Id": 3,
-        //         "Exception": null,
-        //         "Status": 5,
-        //         "IsCanceled": false,
-        //         "IsCompleted": true,
-        //         "CreationOptions": 0,
-        //         "AsyncState": null,
-        //         "IsFaulted": false
-        //     }
+        // if ($err) {
+        //   echo "cURL Error #:" . $err;
+        // } else {
+        //   echo $response;
         // }
 
+
+        $datajson =  json_decode('  {
+                                    "d": {
+                                        "Result": {
+                                            "__type": "MolinkService2016.sms+JSON_result",
+                                            "otp_id": null,
+                                            "message": null,
+                                            "code": null
+                                        },
+                                        "Id": 3,
+                                        "Exception": null,
+                                        "Status": 5,
+                                        "IsCanceled": false,
+                                        "IsCompleted": false,
+                                        "CreationOptions": 0,
+                                        "AsyncState": null,
+                                        "IsFaulted": false
+                                    }
+                                }'
+                        );
+                        //print_r($datajson->d);
+                        echo  json_encode($datajson->d);
+                        }
+                        else{
+
+                        $data = array(
+                        "IsCompleted" => false ,
+                        "Error" => "No mobile Number"
+                        );
+
+                        echo  json_encode($data);
+                        }
     }
 }

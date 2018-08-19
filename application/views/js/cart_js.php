@@ -264,7 +264,10 @@ function validateForm() {
     }
 
     var from = $("#form").serialize()
-    
+
+    var data = {
+        "mobile_number": tel.value
+        };
      $.ajax({
             url: "<?php echo base_url('sms_otp/Call_otp');?>",
             type: "POST",
@@ -272,13 +275,15 @@ function validateForm() {
             cache: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            data: {
-                'mobile_number': tel.value
-            },
+            data: JSON.stringify(data),
             success: function (res) {
-
                 console.log('>', res);
-                    swal({
+                if(res.IsCompleted == true){
+                     console.log('>', res);
+
+                     var otp_id_gen = res.Result.otp_id;
+
+                      swal({
                             title: 'กรุณายืนยันตัวตน',
                             text: 'กรอกรหัส OTP ที่ส่งไปยังหมายเลข '+ tel.value,
                             input: 'text',
@@ -297,7 +302,7 @@ function validateForm() {
                             },
                             preConfirm: (otp_id) => {
                                 // Check OTP
-                                return fetch(`<?php echo base_url('sms_otp/Check_otp_test');?>/${otp_id}`)
+                                return fetch(`<?php echo base_url('sms_otp/Check_otp_test');?>/${otp_id}/${otp_id_gen}`)
                                 .then(response => {
                                     if (!response.ok) {
                                         throw new Error(response.statusText)
@@ -310,37 +315,36 @@ function validateForm() {
                                     )
                                 })
                             }
+                        }).then(function(result) { 
+                            console.log('>', result);
 
-                // }
-                // //end if
-                // else {
-                //     swal({
-                //         type: 'error',
-                //         title: 'กรุณาติดต่อทางร้าน',
-                //         allowOutsideClick: false,
-                //         showCancelButton: false,
-                //     }
-                // } 
+                            if(result.IsCompleted == true){
 
+                                 swal({
+                                    type: 'success',
+                                    title: 'ยืนยันตัวตนสำเร็จ',
+                                    allowOutsideClick: false,
+                                    showCancelButton: false,
+                                })
+                                .then(function(result) { 
+                                    var form = document.getElementsByName('checkoutForm');
+                                    form[0].submit();
+                                })
+                            }
+                            else{
+                                swal("Error!", "Please try again", "error");
+                            }
+                        })   
 
-
-                }).then(function(result) { 
-                    console.log('>', result);
-                    swal({
-                        type: 'success',
-                        title: 'ยืนยันตัวตนสำเร็จ',
-                        allowOutsideClick: false,
-                        showCancelButton: false,
-                    })
-                    .then(function(result) { 
-                        var form = document.getElementsByName('checkoutForm');
-                        form[0].submit();
-                    })
-                })                
+                }//end if
+                else{
+                    swal("Error!", "Please try again", "error");
+                }
+                               
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 return false;
-                swal("Error deleting!", "Please try again", "error");
+                swal("Error!", "Please try again", "error");
             }
         });
 }
