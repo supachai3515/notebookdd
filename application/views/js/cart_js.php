@@ -275,8 +275,7 @@ function validateForm() {
 function sendOTP() {
     var from = $("#form").serialize()
     var data = {"mobile_number": tel.value};
-
-    
+ 
     $(".send-otp-false").remove();
     $(".check-otp-false").remove();
     //Counter send OTP click
@@ -298,26 +297,51 @@ function sendOTP() {
        }
      }, 1000);
 
-     $.ajax({
+    $.ajax({
         url: "<?php echo base_url('sms_otp/Call_otp');?>",
         type: "POST",
         async: false,
         cache: false,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(data),
-        success: function (res) {
-            if(res.IsCompleted == true){
-                otp_id_gen = res.Result.otp_id;
+        data: {mobile_number: tel.value},
+        dataType: "text",  
+        success: function (res) { 
+            var dataMain = JSON.parse(res);
+            if(dataMain.IsCompleted === true) {
+                if(dataMain.Data.data.status ==="success"){
+                    otp_id_gen = dataMain.Data.data.token;
+                }else{
+                    swal("Error!", dataMain.Data.data.Error, "error");
+                }   
             } else {
                 $(".modal-header").append("<div class='alert alert-danger send-otp-false' role='alert' style='margin-top: 10px;'>ส่งรหัส OTP ผิดพลาด</div>");
             }            
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            return false;
             swal("Error!", "Please try again", "error");
+            return false;
         }
     });
+
+    //  $.ajax({
+    //     url: "<?php echo base_url('sms_otp/Call_otp');?>",
+    //     type: "POST",
+    //     async: false,
+    //     cache: false,
+    //     contentType: "application/json; charset=utf-8",
+    //     dataType: "json",
+    //     data: JSON.stringify(data),
+    //     success: function (res) { 
+    //         if(res.IsCompleted == true){
+    //             otp_id_gen = res.otp_id_gen;
+    //         } else {
+    //             $(".modal-header").append("<div class='alert alert-danger send-otp-false' role='alert' style='margin-top: 10px;'>ส่งรหัส OTP ผิดพลาด</div>");
+    //         }            
+    //     },
+    //     error: function (xhr, ajaxOptions, thrownError) {
+    //         swal("Error!", "Please try again", "error");
+    //         return false;
+    //     }
+    // });
 }
 
 // Check OTP
