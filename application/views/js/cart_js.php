@@ -268,6 +268,8 @@ function validateForm() {
     $("#myModal").modal({
         backdrop  : 'static'
     });
+    //$(".modal-body").html("");
+    $('#otpinput').hide();
     $(".modal-body").append("<button type='button' id='sendOTP' class='btn btn-default' onClick='sendOTP()' style='margin-top: 10px;'>ส่งรหัส OTP</button>");
 }
 
@@ -292,13 +294,14 @@ function sendOTP() {
       }
       if (counter === 0) {
         $("#count").remove();
-        $(".modal-body").append("<button type='button' id='sendOTP' class='btn btn-default' onClick='sendOTP()' style='margin-top: 10px;'>ส่งรหัส OTP</button>");
+        $(".modal-body").append("<button type='button' id='sendOTP' class='btn btn-default' onClick='sendOTP()' style='margin-top: 10px;'>ส่งรหัส OTP อีกครั้ง</button>");
         clearInterval(counter);
        }
      }, 1000);
 
     $.ajax({
-        url: "<?php echo base_url('sms_otp/Call_otp');?>",
+        url: "<?php echo base_url('sms_otp/Call_otp_test');?>",
+        //url: "<?php echo base_url('sms_otp/Call_otp');?>",
         type: "POST",
         async: false,
         cache: false,
@@ -309,6 +312,8 @@ function sendOTP() {
             if(dataMain.IsCompleted === true) {
                 if(dataMain.Data.data.status ==="success"){
                     otp_id_gen = dataMain.Data.data.token;
+                    $('#otpinput').show();
+                    //$(".modal-header").append('<form class="form-inline text-center otpForm" name="otpForm"><div id="otpinput" ><input type="text" name="otp" id="otp" placeholder="กรอกรหัส OTP"  class="form-control unicase-form-control text-center"></div>   </form>');
                 }else{
                     swal("Error!", dataMain.Data.data.Error, "error");
                 }   
@@ -321,54 +326,46 @@ function sendOTP() {
             return false;
         }
     });
-
-    //  $.ajax({
-    //     url: "<?php echo base_url('sms_otp/Call_otp');?>",
-    //     type: "POST",
-    //     async: false,
-    //     cache: false,
-    //     contentType: "application/json; charset=utf-8",
-    //     dataType: "json",
-    //     data: JSON.stringify(data),
-    //     success: function (res) { 
-    //         if(res.IsCompleted == true){
-    //             otp_id_gen = res.otp_id_gen;
-    //         } else {
-    //             $(".modal-header").append("<div class='alert alert-danger send-otp-false' role='alert' style='margin-top: 10px;'>ส่งรหัส OTP ผิดพลาด</div>");
-    //         }            
-    //     },
-    //     error: function (xhr, ajaxOptions, thrownError) {
-    //         swal("Error!", "Please try again", "error");
-    //         return false;
-    //     }
-    // });
 }
 
 // Check OTP
 function checkOTP() {
-    var otp = document.forms["otpForm"]["otp"].value;
-    $(".check-otp-false").remove();
 
-    $.ajax({
-        url: "<?php echo base_url('sms_otp/Check_otp');?>/"+otp+"/"+otp_id_gen,
-        type: "GET",
-        async: false,
-        cache: false,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (res) {
-            if(res.IsCompleted){
-                var form = document.getElementsByName('checkoutForm');
-                form[0].submit();
-            } else {
-                $(".modal-header").append("<div class='alert alert-danger check-otp-false' role='alert' style='margin-top: 10px;'>รหัส OTP ไม่ถูกต้อง</div>");
+    if(otp_id_gen !== ''){
+        var otp = document.forms["otpForm"]["otp"].value;
+        $(".check-otp-false").remove();
+        if(otp && !isNaN(otp)){
+            $.ajax({
+            //url: "<?php echo base_url('sms_otp/Check_otp');?>/"+otp+"/"+otp_id_gen,
+            url: "<?php echo base_url('sms_otp/Call_otp_test');?>",
+            type: "GET",
+            async: false,
+            cache: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (res) {
+                if(res.IsCompleted){
+                    var form = document.getElementsByName('checkoutForm');
+                    form[0].submit();
+                } else {
+                    $(".modal-header").append("<div class='alert alert-danger check-otp-false' role='alert' style='margin-top: 10px;'>รหัส OTP ไม่ถูกต้อง</div>");
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                return false;
+                swal("Error!", "Please try again", "error");
             }
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-            return false;
-            swal("Error!", "Please try again", "error");
+        });
         }
-    });
+        else{
+            swal("warning", "กรุณากรอกรหัส OTP", "warning");
+        }
+
+        
+    }else{
+        swal("warning", "กรุณากดปุ่ม ส่งรหัส OTP ก่อนครับ", "warning");
+    }
+   
 }
 </script>
 
@@ -381,12 +378,14 @@ function checkOTP() {
       </div>
       <div class="modal-body text-center">
         <form class="form-inline text-center otpForm" name="otpForm">
+        <div id="otpinput" >   
             <input type="text" name="otp" id="otp" placeholder="กรอกรหัส OTP"  class="form-control unicase-form-control text-center">
+        </div> 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
-        <button type="button" class="btn btn-primary" onClick="checkOTP()">SUBMIT</button>
+        <button type="button" class="btn btn-primary" onClick="checkOTP()">ยืนยันรหัส OTP</button>
       </div>
     </div>
   </div>

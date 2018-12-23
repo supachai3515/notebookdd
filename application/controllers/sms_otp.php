@@ -59,14 +59,16 @@ class Sms_otp extends CI_Controller {
     
     public function Call_otp_test()
     {
-        $value = json_decode(file_get_contents("php://input"));
-        $mobile_number = $value->mobile_number;
-        $data = array(
-            "mobile_number" => $mobile_number ,
-            "otp_id" => "sdsssfasffasdgver"
+        $datajson = array ( 
+            "data" => array("status" => "success", "token" =>"wertyuiop")
         );
-        echo json_encode($data );
 
+        $data = array(
+            "IsCompleted" => true ,
+            "Error" => "",
+            "Data" =>  $datajson 
+        );
+        echo  json_encode($data);
     }
 
     public function Call_otp()
