@@ -60,7 +60,7 @@ class Sms_otp extends CI_Controller {
     public function Call_otp_test()
     {
         $datajson = array ( 
-            "data" => array("status" => "success", "token" =>"wertyuiop")
+            "data" => array("status" => "success", "token" =>"5555")
         );
 
         $data = array(

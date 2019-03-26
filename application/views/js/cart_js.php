@@ -270,7 +270,7 @@ function validateForm() {
     });
     //$(".modal-body").html("");
     $('#otpinput').hide();
-    $(".modal-body").append("<button type='button' id='sendOTP' class='btn btn-default' onClick='sendOTP()' style='margin-top: 10px;'>ส่งรหัส OTP</button>");
+    $(".modal-body").append("<button type='button' id='sendOTP' class='btn btn-default' onClick='sendOTP()' style='margin-top: 10px;'>ขอรหัส OTP</button>");
 }
 
 // Send OTP
@@ -318,7 +318,7 @@ function sendOTP() {
                     swal("Error!", dataMain.Data.data.Error, "error");
                 }   
             } else {
-                $(".modal-header").append("<div class='alert alert-danger send-otp-false' role='alert' style='margin-top: 10px;'>ส่งรหัส OTP ผิดพลาด</div>");
+                $(".modal-header").append("<div class='alert alert-danger send-otp-false' role='alert' style='margin-top: 10px;'>ขอรหัส OTP ผิดพลาด</div>");
             }            
         },
         error: function (xhr, ajaxOptions, thrownError) {
@@ -363,7 +363,7 @@ function checkOTP() {
 
         
     }else{
-        swal("warning", "กรุณากดปุ่ม ส่งรหัส OTP ก่อนครับ", "warning");
+        swal("warning", "กรุณากดปุ่ม ขอรหัส OTP ก่อนครับ", "warning");
     }
    
 }
