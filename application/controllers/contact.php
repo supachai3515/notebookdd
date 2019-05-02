@@ -26,8 +26,7 @@ class Contact extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
 
-		//$data['content'] = 'contact';
-		$data['content'] = 'contact_new';
+		$data['content'] = 'contact';
 		$this->load->view('template/layout', $data);
 	}
 

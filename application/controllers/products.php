@@ -24,39 +24,21 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page; 
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		// $config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
-		// $config['full_tag_close'] ="</ul>";
-		// $config['num_tag_open'] = '<li>';
-		// $config['num_tag_close'] = '</li>';
-		// $config['cur_tag_open'] = '<li><a href="#" class="active">';
-        // $config['cur_tag_close'] = '</a></li>';
-		// $config['next_link'] = '&raquo';
-		// $config['next_tag_open'] = "<li>";
-		// $config['next_tagl_close'] = "</li>";
-		// $config['prev_link'] = '&laquo';
-		// $config['prev_tag_open'] = "<li>";
-		// $config['prev_tagl_close'] = "</li>";
-		// $config['first_tag_open'] = "<li>";
-		// $config['first_tagl_close'] = "</li>";
-		// $config['last_tag_open'] = "<li>";
-		// $config['last_tagl_close'] = "</li>";
-
-		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
+		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_open'] = '<li><a href="#" class="active">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
-		$config['next_tag_open'] = "<li class='next'>";
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = "<li>";
 		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
-		$config['prev_tag_open'] = "<li class='prev'>";
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = "<li>";
 		$config['prev_tagl_close'] = "</li>";
 		$config['first_tag_open'] = "<li>";
 		$config['first_tagl_close'] = "</li>";
 		$config['last_tag_open'] = "<li>";
-		$config['last_link'] = 'Last <i class="fa fa-angle-right"></i>';
 		$config['last_tagl_close'] = "</li>";
 
         $this->pagination->initialize($config); 
@@ -78,9 +60,9 @@ class Products extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'products_new';
+		$data['content'] = 'products';
 		// if have file script
-		$data['script_file']= "js/products_new_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 
@@ -103,22 +85,21 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
+		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_open'] = '<li><a href="#" class="active">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
-		$config['next_tag_open'] = "<li class='next'>";
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = "<li>";
 		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
-		$config['prev_tag_open'] = "<li class='prev'>";
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = "<li>";
 		$config['prev_tagl_close'] = "</li>";
 		$config['first_tag_open'] = "<li>";
 		$config['first_tagl_close'] = "</li>";
 		$config['last_tag_open'] = "<li>";
-		$config['last_link'] = 'Last <i class="fa fa-angle-right"></i>';
 		$config['last_tagl_close'] = "</li>";
 
         $this->pagination->initialize($config); 
@@ -140,9 +121,9 @@ class Products extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'products_new';
+		$data['content'] = 'products';
 		// if have file script
-		$data['script_file']= "js/products_new_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 
@@ -165,22 +146,21 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
+		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_open'] = '<li><a href="#" class="active">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
-		$config['next_tag_open'] = "<li class='next'>";
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = "<li>";
 		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
-		$config['prev_tag_open'] = "<li class='prev'>";
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = "<li>";
 		$config['prev_tagl_close'] = "</li>";
 		$config['first_tag_open'] = "<li>";
 		$config['first_tagl_close'] = "</li>";
 		$config['last_tag_open'] = "<li>";
-		$config['last_link'] = 'Last <i class="fa fa-angle-right"></i>';
 		$config['last_tagl_close'] = "</li>";
 
         $this->pagination->initialize($config); 
@@ -203,9 +183,9 @@ class Products extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'products_new';
+		$data['content'] = 'products';
 		// if have file script
-		$data['script_file']= "js/products_new_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 
@@ -229,22 +209,21 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
+		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_open'] = '<li><a href="#" class="active">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
-		$config['next_tag_open'] = "<li class='next'>";
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = "<li>";
 		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
-		$config['prev_tag_open'] = "<li class='prev'>";
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = "<li>";
 		$config['prev_tagl_close'] = "</li>";
 		$config['first_tag_open'] = "<li>";
 		$config['first_tagl_close'] = "</li>";
 		$config['last_tag_open'] = "<li>";
-		$config['last_link'] = 'Last <i class="fa fa-angle-right"></i>';
 		$config['last_tagl_close'] = "</li>";
 
         $this->pagination->initialize($config); 
@@ -265,9 +244,9 @@ class Products extends CI_Controller {
 		$data['brand_oftype'] = $this->products_model->get_brand_oftype();
 
         //content file view
-		$data['content'] = 'products_new';
+		$data['content'] = 'products';
 		// if have file script
-		$data['script_file']= "js/products_new_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 
@@ -317,9 +296,9 @@ class Products extends CI_Controller {
 		$data['brand_oftype'] = $this->products_model->get_brand_oftype();
 
         //content file view
-		$data['content'] = 'products_new';
+		$data['content'] = 'products';
 		// if have file script
-		$data['script_file']= "js/products_new_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);
 	}

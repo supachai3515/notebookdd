@@ -31,8 +31,7 @@ class Download extends CI_Controller {
 		$data['doc_list'] = $re->result_array();
 
 
-		$data['content'] = 'download_new';
-		$data['script_file']= "js/download_js";
+		$data['content'] = 'download';
 		$this->load->view('template/layout', $data);
 		
 	}

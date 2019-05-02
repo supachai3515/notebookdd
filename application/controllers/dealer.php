@@ -17,8 +17,6 @@ class Dealer extends CI_Controller {
 			$data['orderList'] =  $this->dealer_model->get_orderList($this->session->userdata('username'));
 			$data['dealerInfo'] =  $this->dealer_model->get_dealerInfo($this->session->userdata('username'));
 			
-		} else {
-			redirect ( 'login' );
 		}
 
 		//header meta tag 
@@ -33,8 +31,7 @@ class Dealer extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
         //content file view
-		//$data['content'] = 'dealer';
-		$data['content'] = 'account';
+		$data['content'] = 'dealer';
 		// if have file script
 		//$data['script_file']= "js/product_add_js";
 		//load layout

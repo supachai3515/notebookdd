@@ -35,9 +35,10 @@ class Home extends CI_Controller {
 		$data['product_new'] = $this->home_model->get_products_new();
 		$data['product_sale'] = $this->home_model->get_products_sale();
 
-
-		$data['content'] = 'home_new';
-		$data['script_file']= "js/home_js";
+        //content file view
+		$data['content'] = 'home';
+		// if have file script
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);	
 	}

@@ -25,10 +25,7 @@ class Tracking extends CI_Controller {
 		$data['menu_brands'] = $this->initdata_model->get_brands();
 
 
-		//$data['content'] = 'tracking';
-		$data['content'] = 'tracking_new';
-		$data['script_file'] = 'js/tracking_js';
-
+		$data['content'] = 'tracking';
 		$this->load->view('template/layout', $data);
 	}
 

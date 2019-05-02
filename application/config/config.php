@@ -18,12 +18,37 @@ $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ?
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
-//Config by user
-$config['sitename'] = "อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบต Mainboard Keyboard อะแดปเตอร์";
-$config['tagline'] = "NotebookDD ทางเราขาย อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบตโน๊ตบุ๊ค อะแดปเตอร์ Mainboard ซ่อมโน๊ตบุ๊ค จำหน่ายอะไหล่ notebook";
-$config['url_img'] = "http://www.notebookdd.com/admin/";
+// //Config by user
+// $config['sitename'] = "อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบต Mainboard Keyboard อะแดปเตอร์";
+// $config['tagline'] = "NotebookDD ทางเราขาย อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบตโน๊ตบุ๊ค อะแดปเตอร์ Mainboard ซ่อมโน๊ตบุ๊ค จำหน่ายอะไหล่ notebook";
+// $config['url_img'] = "http://www.notebookdd.com/admin/";
+// $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
+
+// $config['otp_username'] = "TEST002";
+// $config['otp_password'] = "TEST002";
+// $config['otp_sender'] = "MoLinkSMS";
+
+
+$config['short_sitename'] = "อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค Notebookdd ";
+$config['sitename'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน แบต จอ คีบอร์ด - cyberbatt";
+$config['tagline'] = "อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน จอแมคบุ๊ค จอไอแมค จอไอโฟน  แบตเตอรี่โน๊ตบุ๊ค แบตเตอรี่แมคบุ๊ค แบตเตอรี่ไอโฟน  ครบวงจร";
+$config['author'] = "Notebookdd";
+$config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
+
+
+$config['url_img'] = "https://www.notebookdd.com/admin/";
 $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
 
+$config['email_name'] = "notebookdd";
+$config['email_owner'] = "simpleitnotebook@gmail.com";
+$config['email_noreply'] = "notebookdd.fix@gmail.com";
+$config['pass_mail_noreply'] = "";
+$config['weburl'] = "https://www.notebookdd.com/";
+$config['line_id'] = "@notebookdd";
+
+$config['payment_transfer'] = '';
+
+//Config by user
 $config['otp_username'] = "TEST002";
 $config['otp_password'] = "TEST002";
 $config['otp_sender'] = "MoLinkSMS";

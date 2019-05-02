@@ -51,16 +51,15 @@ class Checkout extends CI_Controller {
 
 
         //content file view
-		$data['content'] = 'checkout_new';
+		$data['content'] = 'checkout';
 		// if have file script
-		$data['script_file']= "js/cart_js";
+		//$data['script_file']= "js/product_add_js";
 		//load layout
 		$this->load->view('template/layout', $data);
 	}
 
 	public function save()
 	{
-		return;
 
 	    $name =  $this->input->post('txtName');
 	    $address =  $this->input->post('txtAddress');
