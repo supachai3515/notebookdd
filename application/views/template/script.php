@@ -11,19 +11,16 @@
 	<script type="text/javascript" src="<?php echo base_url('theme_unicase');?>/assets/js/lightbox.min.js"></script>
 	<script src="<?php echo base_url('theme_unicase');?>/assets/js/bootstrap-select.min.js"></script>
     <script src="<?php echo base_url('theme_unicase');?>/assets/js/wow.min.js"></script>
-    
-    <script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/angular.min.js'></script>
+	<script src="<?php echo base_url('theme_unicase');?>/assets/js/scripts.js"></script>
+
+	<!-- For demo purposes – can be removed on production -->
+	<script src="switchstylesheet/switchstylesheet.js"></script>
+
+	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/angular.min.js'></script>
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/angular-animate.min.js'></script>
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/loading-bar.js'></script>
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/sweetalert2.js'></script>
     <script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/lity.min.js'></script>
-    
-
-	<script src="<?php echo base_url('theme_unicase');?>/assets/js/scripts.js"></script>
-
-	<!-- For demo purposes – can be removed on production -->
-
-	<script src="switchstylesheet/switchstylesheet.js"></script>
     <!-- page script -->
     <?php $this->load->view("js/main_app_js"); ?>
 	<?php $this->load->view("js/header_cart_js"); ?>

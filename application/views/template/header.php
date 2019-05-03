@@ -43,7 +43,7 @@
 		
 		<!-- Icons/Glyphs -->
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/font-awesome.min.css">
-
+		<link href="<?php echo base_url('theme_unicase');?>/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
         <!-- Fonts --> 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 
@@ -76,21 +76,21 @@
 				<div class="header-top-inner">
 					<div class="cnt-account">
                         <ul class="list-unstyled">
-							<li><a href="<?php echo base_url('dealer')?>"><i class="icon fa fa-user"></i>บัญชีผู้ใช้</a></li>
+							<li><a href="<?php echo base_url('dealer')?>"><i class="icon fa fa-user"></i> บัญชีผู้ใช้</a></li>
 						 
-							<li><a href="<?php echo base_url('cart') ?>"><i class="icon fa fa-shopping-cart"></i>ตะกร้าสินค้า</a></li>
-							<li><a href="<?php echo base_url('payment');?>"><i class="icon fa fa-money"></i>แจ้งชำระเงิน</a></li>
+							<li><a href="<?php echo base_url('cart') ?>"><i class="icon fa fa-shopping-cart"></i> ตะกร้าสินค้า</a></li>
+							<li><a href="<?php echo base_url('payment');?>"><i class="icon fa fa-money"></i> แจ้งชำระเงิน</a></li>
 							<?php if (!$this->session->userdata('is_logged_in')): ?>
-							    <li><a href="<?php echo base_url('dealer')?>"><i class="icon fa fa-sign-in"></i>เข้าสู่ระบบ</a></li>
+							    <li><a href="<?php echo base_url('dealer')?>"><i class="fas fa-sign-out-alt"></i> เข้าสู่ระบบ</a></li>
 							<?php else: ?>
-							    <li><a href="<?php echo base_url('dealer/logout')?>"><i class="icon fa fa-sign-out"></i>ออกจากระบบ</a></li>
+							    <li><a href="<?php echo base_url('dealer/logout')?>"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
 							<?php endif ?>
 						</ul>
 					</div><!-- /.cnt-account -->
 
 					<div class="cnt-block">
 						<ul class="list-unstyled list-inline">
-                        <li><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"><i class="fa fa-comment"></i> line : @notebookdd</a></li>
+                        <li><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"><i class="icon fab fa-line"></i> : @notebookdd</a></li>
 						</ul><!-- /.list-unstyled -->
 					</div><!-- /.cnt-cart -->
 					<div class="clearfix"></div>
@@ -114,15 +114,19 @@
 						</div><!-- /.logo -->
 						<!-- ============================================================= LOGO : END ============================================================= -->
 					</div><!-- /.logo-holder -->
-
+				 
 					<div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
 						<div class="contact-row">
 							<div class="phone inline">
                             <a class="pull-right" href="http://line.me/ti/p/%40zlg9137d" target="_blank">
-									<i class="icon fa fa-comments"></i> line : @notebookdd</a>
+									<i class="icon fab fa-line"></i> @notebookdd
+								</a>
 							</div>
 							<div class="contact inline">
-								<i class="icon fa fa-envelope"></i> saler@unicase.com
+								<a href="https://www.facebook.com/notebooksimple/" target="_blank">
+									<i class="icon fab fa-facebook"></i> facebook
+								</a>
+								 
 							</div>
 						</div><!-- /.contact-row -->
 						<!-- ============================================================= SEARCH AREA ============================================================= -->

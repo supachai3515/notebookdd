@@ -5196,3 +5196,132 @@ a {
 .body-content .sign-in-page .register-form .form-group {
   margin-bottom: 25px;
 }
+
+
+
+
+.category-menu-area {
+  margin-bottom: 40px;
+}
+.category-title{
+    background: rgba(0, 0, 0, 0) url("images/bg-category.png") no-repeat scroll 13px 20px;
+    border-bottom: 3px solid;
+    border-radius: 5px 5px 0 0;
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    border-color: #4a4a4a;
+}
+.category-title h2 {
+  border-left: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 0 -3px 45px;
+  padding: 15px 12px 15px 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.category-menu {
+  border-left: 1px solid #f1f1f1;
+  border-radius: 0 0 5px 5px;
+  border-right: 1px solid #f1f1f1;
+}
+.category-menu ul{}
+.category-menu ul li{position: relative;}
+.category-menu ul li a{
+    border-bottom: 1px solid #f1f1f1;
+	cursor:pointer;
+}
+.category-menu ul li a{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-left: 4px solid transparent;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 14px 20px 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #666;
+}
+.category-menu ul li a:hover{
+  border-color: #b4d333 #b4d333 #f1f1f1;
+  color: #b4d333;
+}
+span.holder{
+    cursor: pointer;
+}
+.has-sub span.holder::before {
+  content: "";
+  font-family: fontawesome;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 30px;
+  font-size: 12px
+}
+.has-sub.open span.holder::before{
+	content: "\f068";
+}
+.category-menu ul li ul li.has-sub a::after{
+	content: "";
+	font-family: fontawesome;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 18px;
+	width: 30px;
+  font-size: 12px
+}
+.category-menu ul li ul li.has-sub.open a::after{
+	content: "\f068";
+}
+.category-menu ul li ul li.has-sub ul li a::after{
+	display:none;
+}
+.category-menu ul li ul{
+	display:none;
+}
+.category-menu ul li ul li{
+    position: relative;
+}
+.category-menu ul li ul li::before {
+  content: "";
+  font-family: fontawesome;
+  font-size: 16px;
+  left: 15px;
+  position: absolute;
+  top: 17px;
+  color: #b4d333;
+}
+
+.category-menu ul li ul li ul li a {
+  padding-left: 45px;
+}
+.category-menu ul li ul li ul li::before{
+  content: "";
+  font-family: FontAwesome;
+  font-weight: normal;
+  height: 8px;
+  left: 30px;
+  line-height: 8px;
+  margin-top: -4px;
+  position: absolute;
+  top: 50%;
+  transition: all 0.5s ease 0s;
+  width: 8px;
+}
+.category-menu ul li ul li a{
+    border-left:none;
+}
+.banner-area {
+  margin: 30px 0;
+}
+.single-banner a img{
+    transition:0.3s;
+}
+.single-banner a img:hover {
+  opacity: 0.5;
+}
