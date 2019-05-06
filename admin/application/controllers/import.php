@@ -6,6 +6,7 @@ class Import extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('products_model');
+		$this->load->model('Initdata_model');
 	}
 
 
@@ -58,6 +59,7 @@ class Import extends CI_Controller {
 			$data_product = array(
 				'sku' => $sku_str,
 				'name' => $value->Name,
+				'slug' => $this->Initdata_model->slug($value->Name),
 				'product_type_id' => $value->CategoryId,
 				'model' => $value->Model,
 				'product_brand_name' => str_replace("/","-",$value->Brand), 
@@ -75,10 +77,9 @@ class Import extends CI_Controller {
 			}
 			
 			else {
-
-
 				$data_product = array(
 					'sku' => $sku_str,
+					'slug' => $this->Initdata_model->slug($value->Name),
 					'name' => $value->Name,
 					'product_type_id' => $value->CategoryId,
 					'model' => $value->Model,
@@ -132,6 +133,7 @@ class Import extends CI_Controller {
 			$data_product = array(
 				'id' => $value->Id,
 				'name' => $value->Name,
+				'slug' => $this->Initdata_model->slug($value->Name),
 				'modified_date' => date("Y-m-d H:i:s"),
 				'is_active' => '1',
 
@@ -246,6 +248,7 @@ class Import extends CI_Controller {
 			$data_branch = array(
 				'id' => $value->Id,
 				'name' => $value->Name,
+				'slug' => $this->Initdata_model->slug($value->Name),
 				'description' => $value->Address,
 				'tel' => $value->Tel,
 				'modified_date' => date("Y-m-d H:i:s"),
@@ -265,6 +268,7 @@ class Import extends CI_Controller {
 					$data_branch = array(
 					'id' => $value->Id,
 					'name' => $value->Name,
+					'slug' => $this->Initdata_model->slug($value->Name),
 					'description' => $value->Address,
 					'tel' => $value->Tel,
 					'create_date' => date("Y-m-d H:i:s"),
