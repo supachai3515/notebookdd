@@ -1,9 +1,18 @@
+<div class="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <ul class="list-inline list-unstyled">
+                <li><a href="<?php echo base_url()?>">Home</a></li>
+                <li class='active'>ดาวน์โหลดเอกสาร</li>
+            </ul>
+        </div><!-- /.breadcrumb-inner -->
+    </div><!-- /.container -->
+</div><!-- /.breadcrumb -->
+
 <div id="content">
     <div class="main-content content-contact">
         <div class="container" ng-init="getDoclist()">
-            <div class="bread-crumb">
-                <a href="#">Home</a> <span class="lnr lnr-chevron-right"></span> <span>Download เอกสาร</span>
-            </div>
+            
 
             <div class=" row col-md-8 col-md-offset-2">
                 <form ng-submit="getOrderTracking()" >

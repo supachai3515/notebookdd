@@ -185,7 +185,9 @@
                                                     <div class="row">
                                                         <div class="col-xs-4">
                                                             <div class="image">
-                                                                <a href="<?php echo base_url('product/'.$row['slug']) ?>"><img src="<?php echo $row['img']; ?>" alt=""></a>
+																<a href="<?php echo base_url('product/'.$row['slug']) ?>">
+																<img src="<?php echo $row['img']; ?>" class="img-responsive" alt="">
+															</a>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-7">
@@ -257,7 +259,7 @@
 															<div class="col-xs-12 col-sm-12 col-md-12">
 																<ul class="links">
 																	<?php foreach ($menu_type as $value): ?>
-																	<li><a href="<?php echo base_url('products/category/'.$value['name']) ?>"><?php echo $value['name'] ?></a></li>
+																	<li><a href="<?php echo base_url('products/category/'.$value['slug']) ?>"><?php echo $value['name'] ?></a></li>
 																	<?php endforeach ?>
 																</ul>
 															</div><!-- /.col -->
@@ -279,7 +281,7 @@
 														<div class='col-xs-12 col-sm-12 col-md-12'>
 															<ul class='links'>
 																<li>
-																	<a href="#">งานซ่อม</a>
+																	<a href="<?php echo base_url('tracking')?>"> tracking</a>
 																</li>
 															</ul>
 														</div>
@@ -296,6 +298,7 @@
 													<div class="row">
 														<div class='col-xs-12 col-sm-12 col-md-12'>
 															<ul class='links'>
+															 
 																<li><a href="<?php echo base_url('warranty')?>">เงื่อนไขการรับประกัน</a></li>
 																<li><a href="<?php echo base_url('howtobuy')?>">วิธีการสั่งซื้อ</a></li>
 																<li><a href="<?php echo base_url('download')?>">ดาวน์โหลดเอกสาร</a></li>

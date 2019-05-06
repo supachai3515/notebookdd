@@ -19,8 +19,7 @@ class Dashboard extends BaseController
         if (!is_null($data)) {
             $data['get_order_status'] = $this->dasboard_model->get_order_status();
             $data['get_orders'] = $this->dasboard_model->get_orders();
-			$data['get_orders_today'] = $this->dasboard_model->get_orders_today();
-		
+            $data['get_orders_today'] = $this->dasboard_model->get_orders_today();
             $data["content"] = "dashboard";
             $data["header"] = $this->get_header("Dashboard");
             $this->load->view("template/layout_main", $data);

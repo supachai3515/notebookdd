@@ -83,7 +83,7 @@ class BaseController extends CI_Controller
     {
         $data['global'] = $this->global;
         $data['menu_id'] ='0';
-        $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
+        $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
         $data['access_menu'] = $this->isAccessMenu($data['menu_list'], $data['menu_id']);
         $data['content'] = 'access';
         //if script file
@@ -215,7 +215,7 @@ class BaseController extends CI_Controller
     {
         $data['global'] = $this->global;
         $data['menu_id'] = $this->initdata_model->get_menu_id($this->router->fetch_class());
-        $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
+        $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
         $data['access_menu'] = $this->isAccessMenu($data['menu_list'], $data['menu_id']);
         if ($data['access_menu']['is_access']&&$data['access_menu'][$check_role]) {
             return $data;
@@ -229,7 +229,7 @@ class BaseController extends CI_Controller
     {
         $data['global'] = $this->global;
         $data['menu_id'] = $this->initdata_model->get_menu_id($link_name);
-        $data['menu_list'] = $this->initdata_model->get_menu($data['global']);
+        $data['menu_list'] = $this->initdata_model->get_menu($data['global']['menu_group_id']);
         $data['access_menu'] = $this->isAccessMenu($data['menu_list'], $data['menu_id']);
         if ($data['access_menu']['is_access']&&$data['access_menu'][$check_role]) {
             return $data;

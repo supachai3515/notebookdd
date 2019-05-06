@@ -1,79 +1,97 @@
-<div id="content">
-    <div class="main-content">
-        <div class="container">
-            <div class="bread-crumb">
-                <a href="<?php echo base_url(); ?>">Home</a> <span class="lnr lnr-chevron-right"></span> <span>แจ้งชำระเงิน</span>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="col-sm-12">
+<div class="breadcrumb">
+	<div class="container">
+		<div class="breadcrumb-inner">
+			<ul class="list-inline list-unstyled">
+				<li><a href="<?php echo base_url()?>">Home</a></li>
+				<li class='active'>แจ้งชำระเงิน</li>
+			</ul>
+		</div><!-- /.breadcrumb-inner -->
+	</div><!-- /.container -->
+</div><!-- /.breadcrumb -->
+
+<div class="body-content outer-top-bd" ng-controller="payment_ctrl">
+    <div class="container">
+        <div class="row inner-bottom-sm">
+            <div class="contact-page">
+                <div class="col-md-6 contact-form">
                     <form ng-submit="sendPayment()" class="form-horizontal" role="form">
-                        <fieldset>
-                            <!-- Text input-->
+                        <div class="col-md-12 contact-title">
+                            <h4>แจ้งการชำระเงิน</h4>
+                        </div>
+                        <div class="col-md-10 ">
                             <div class="form-group">
-                                <label for="textinput">ชื่อ</label>
-                                <input id="textinput" ng-model="paymentMessage.txtName" name="txtName" type="text" placeholder="ชื่อ" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentName">ชื่อ
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtName" class="form-control unicase-form-control text-input" id="paymentName" placeholder="ชื่อ" required>
                             </div>
-                            <!-- Text input-->
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">เบอร์ติดต่อ</label>
-                                <input id="textinput" ng-model="paymentMessage.txtTel"name="txtTel" type="text" placeholder="เบอร์ติดต่อ" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentTel">เบอร์ติดต่อ
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtTel" class="form-control unicase-form-control text-input" id="paymentTel" placeholder="เบอร์ติดต่อ" required>
                             </div>
-                            <!-- Text input-->
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">เลขที่ใบสั่งซื้อ</label>
-                                <input id="textinput" ng-model="paymentMessage.txtOrder"name="txtOrder" type="text" placeholder="เลขที่ใบสั่งซื้อ" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentOrderId">เลขที่ใบสั่งซื้อ
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtOrder" class="form-control unicase-form-control text-input" id="paymentOrderId" placeholder="เลขที่ใบสั่งซื้อ" required>
                             </div>
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">เลือกธนาคาร</label>
-                                <select ng-model="paymentMessage.txtBank"name="txtBank" id="inputBank" class="form-control" required="required">
-                                    <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
-                                    <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
-                                    <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                                <label class="info-title control-label" for="paymentBank">เลือกธนาคาร
+                                    <span>*</span>
+                                </label>
+                                <select ng-model="paymentMessage.txtBank" class="form-control unicase-form-control selectpicker" id="paymentBank" required>
+                                    <option>--Select options--</option>
+                                    <option>ธนาคารกรุงเทพ</option>
+                                    <option>ธนาคารไทยพาณิชย์</option>
+                                    <option>ธนาคารกสิกรไทย</option>
                                 </select>
                             </div>
-
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">จำนวนเงิน</label>
-                                <input id="textinput" ng-model="paymentMessage.txtAmount"name="txtAmount" type="text" placeholder="จำนวนเงิน" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentTotal">จำนวนเงิน
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtAmount" class="form-control unicase-form-control text-input" id="paymentTotal" placeholder="จำนวนเงิน" required>
                             </div>
-
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">วันที่โอน ตัวอย่าง 01/04/2016</label>
-                                <input id="textinput" ng-model="paymentMessage.txtDate"name="txtDate" type="text" placeholder="วันที่โอน" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentDate">วันที่โอน ตัวอย่าง 01/04/2016
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtDate" class="form-control unicase-form-control text-input" id="paymentDate" placeholder="วันที่โอน" required>
                             </div>
-
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="textinput">เวลาโอน ตัวอย่าง 12:00</label>
-                                <input id="textinput" ng-model="paymentMessage.txtTime"name="txtTime" type="text" placeholder="เวลาโอน" class="form-control input-md" required="required">
+                                <label class="info-title" for="paymentTime">เวลาโอน ตัวอย่าง 12:00
+                                    <span>*</span>
+                                </label>
+                                <input type="text" ng-model="paymentMessage.txtTime" class="form-control unicase-form-control text-input" id="paymentTime" placeholder="เวลาโอน" required>
                             </div>
-                         
-                            <div class="form-group">
-                                <label for="filebutton"></label>
-                                <button type="submit" class="btn btn-primary">แจ้งชำระ</button>
-                            </div>
-                            <div class="form-group" ng-if="isProscess==true">
-                            <hr>
-                                <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-success" style="width:70%"></div>
-                            </div>                  
-                            </div>
-                            <h4 class="text-success" ng-bind="message_prosecss"></h4>
-
-                        </fieldset>
+                        </div>
+                        <div class="col-md-12 outer-bottom-small m-t-20">
+                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">แจ้งชำระเงิน</button>
+                        </div>
                     </form>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="row bank-payment">
+                <div class="col-md-6 contact-info">
+                    <div class="row bank-payment">
                     <div class="col-sm-3">
                         <img src="<?php echo base_url('theme'); ?>/images/bb.jpg" class="img-responsive img-rounded" alt="Image">
                     </div>
                     <div class="col-sm-9">
-                        <h4>ธนาคารกรุงเทพ</h4>
-                        <p>เลขที่บัญชี : 0687-076-380<br>
-                        ชื่อบัญชี นายสมิด ตรวจมรคา ธนาคารกรุงเทพ สาขาพาราไดซ์ พาร์ค<br>
-                        </p>
+                        <h5><strong>ธนาคารกรุงเทพ</strong></h5>
+                        <p>เลขที่บัญชี : 0687-076-380<br>ชื่อบัญชี นายสมิด ตรวจมรคา ธนาคารกรุงเทพ สาขาพาราไดซ์ พาร์ค<br></p>
                     </div>
                 </div>
                 <div class="row bank-payment">
@@ -81,7 +99,7 @@
                         <img src="<?php echo base_url('theme'); ?>/images/thaipanit.jpg" class="img-responsive img-rounded" alt="Image">
                     </div>
                     <div class="col-sm-9">
-                        <h4>ธนาคารไทยพาณิชย์</h4>
+                        <h5><strong>ธนาคารไทยพาณิชย์</strong></h5>
                         <p>เลขที่บัญชี : 175-2203-837<br>
                         นายสมิด ตรวจมรคา ธนาคารไทยพาณิชย์ สาขาพาราไดซ์ พาร์ค<br>
                     </div>
@@ -91,40 +109,38 @@
                         <img src="<?php echo base_url('theme'); ?>/images/kban.jpg" class="img-responsive img-rounded" alt="Image">
                     </div>
                     <div class="col-sm-9">
-                        <h4>ธนาคารกสิกรไทย</h4>
+                        <h5><strong>ธนาคารกสิกรไทย</strong></h5>
                         <p>เลขที่บัญชี : 628-2014-074<br>
                         นายสมิด ตรวจมรคา ธนาคารกสิกรไทย สาขาพาราไดซ์ พาร์ค<br>
                     </div>
                 </div>
-
-                <div class="" style="padding-top:30px;">
-                <p><strong>จ้งชำระเงินผ่านทาง email</strong></p>
-                    <div class="item-contact-box">
-                            <a href="#"><span class="lnr lnr-envelope"></span></a>
-                            <label>e-mail:</label>
-                        </div>
-                        <div class="mail-box">
-                            <a href="mailto:simpleitnotebook@gmail.com">simpleitnotebook@gmail.com</a>
-                        </div>
+                <div class="clearfix email">
+                    <h5><strong>แจ้งชำระเงินผ่านทางอีเมล</strong></h5>
+                    <div class="pull-left">
+                        <span class="contact-i">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <span class="contact-span"><a href="mailto:simpleitnotebook@gmail.com">simpleitnotebook@gmail.com</a></span>
+                    </div>
                 </div>
-
-                <div class="" >
-                <p><strong>แจ้งชำระเงินผ่านทาง line</strong></p>
-
-                         <div class="item-contact-box">
-                            <a href="#"><span class="fa fa-comment"></span></a>
-                            <label>Line id:</label>
-                        </div>
-                        <div class="mail-box">
-                            <p><a href="http://line.me/ti/p/%40zlg9137d" target="_blank">@notebookdd</a></p>
-
-                        </div>
+                <div class="clearfix line">
+                    <h5><strong>แจ้งชำระเงินผ่านทางไลน์</strong></h5>
+                    <div class="pull-left">
+                        <span class="contact-i">
+                            <i class="fa fa-comments"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <span><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"> line : @notebookdd</a></span>
+                    </div>
                 </div>
-            </div>
-          
-        </div>         
-        </div>
-    </div>
-    <!-- End Grid Product -->
-</div>
-<!-- End Content -->
+                </div>
+            </div><!-- /.contact-page -->
+        </div><!-- /.row -->
+        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
+        <?php $this->load->view('template/footer_brand'); ?>
+        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+    </div><!-- /.container -->
+</div><!-- /.body-content -->

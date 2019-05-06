@@ -14,15 +14,8 @@
                             </div><!-- /.logo -->
                         </div><!-- /.footer-logo -->
                         <div class="module-body m-t-20">
-                            <p style="display: none;" class="about-us"> Nam libero tempore, cum soluta nobis est ses eligendi optio cumque cum soluta nobis est ses eligendi
-                                optio cumque.</p>
-                            <div class="social-icons">
-                                <a href="http://facebook.com/transvelo" class='active'><i class="icon fa fa-facebook"></i></a>
-                                <a href="#"><i class="icon fa fa-twitter"></i></a>
-                                <a href="#"><i class="icon fa fa-linkedin"></i></a>
-                                <a href="#"><i class="icon fa fa-rss"></i></a>
-                                <a href="#"><i class="icon fa fa-pinterest"></i></a>
-                            </div><!-- /.social-icons -->
+                            <p   class="about-us"> จำหน่าย อะไหล่แมคบุ๊ค อะไหล่โน๊ตบุ๊ค อะไหล่ไอโฟน แบต จอ คีบอร์ด </p>
+                            
                         </div><!-- /.module-body -->
                     </div><!-- /.contact-info -->
                     <!-- ============================================================= CONTACT INFO : END ============================================================= -->
@@ -145,6 +138,22 @@
     <div class="footer-bottom inner-bottom-sm">
         <div class="container">
             <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading outer-bottom-xs">
+                        <h4 class="module-title">หมวดหมู่สินค้า</h4>
+                    </div><!-- /.module-heading -->
+
+                    <div class="module-body">
+                        <ul class='list-unstyled'>
+                        <?php $i =0; foreach ($menu_type as $value): ?>
+                        <?php if ($i<4): ?>
+                            <li><a href="<?php echo base_url('products/category/'.$value['slug']) ?>"><?php echo $value['name'] ?></a></li>
+                            <?php endif ?>
+                        <?php $i++;  endforeach ?>
+                        </ul>
+                    </div><!-- /.module-body -->
+                </div><!-- /.col -->
+
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="module-heading outer-bottom-xs">
                         <h4 class="module-title">หมวดหมู่สินค้า</h4>
@@ -152,9 +161,11 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li>
-                                <a href="#">Order History</a>
-                            </li>
+                        <?php $i =0; foreach ($menu_type as $value): ?>
+                        <?php if ($i>=4 && $i <9): ?>
+                            <li><a href="<?php echo base_url('products/category/'.$value['slug']) ?>"><?php echo $value['name'] ?></a></li>
+                            <?php endif ?>
+                        <?php $i++;  endforeach ?>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
@@ -165,26 +176,13 @@
                     <div class="module-body">
                         <ul class='list-unstyled'>
                             <li>
-                                <a href="#">บัญชีผู้ใช้</a>
+                                <a href="<?php echo base_url('dealer')?>">บัญชีผู้ใช้</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('payment')?>">แจ้งชำระเงิน</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('tracking')?>">ติดตามการจัดส่ง</a>
-                            </li>
-                        </ul>
-                    </div><!-- /.module-body -->
-                </div><!-- /.col -->
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">บริการ</h4>
-                    </div><!-- /.module-heading -->
-
-                    <div class="module-body">
-                        <ul class='list-unstyled'>
-                            <li>
-                                <a href="#">งานซ่อม</a>
                             </li>
                         </ul>
                     </div><!-- /.module-body -->
@@ -220,27 +218,7 @@
                     - All rights Reserved
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 no-padding">
-                <div class="clearfix payment-methods">
-                    <ul>
-                        <li>
-                            <img src="<?php echo base_url('theme_unicase');?>/assets/images/payments/1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url('theme_unicase');?>/assets/images/payments/2.png" alt="">
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url('theme_unicase');?>/assets/images/payments/3.png" alt="">
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url('theme_unicase');?>/assets/images/payments/4.png" alt="">
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url('theme_unicase');?>/assets/images/payments/5.png" alt="">
-                        </li>
-                    </ul>
-                </div><!-- /.payment-methods -->
-            </div>
+             
         </div>
     </div>
 </footer>

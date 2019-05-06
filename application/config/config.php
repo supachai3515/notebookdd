@@ -36,13 +36,13 @@ $config['author'] = "Notebookdd";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
-$config['url_img'] = "https://www.notebookdd.com/admin/";
+$config['url_img'] = "http://www.notebookdd.com/admin/";
 $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
 
 $config['email_name'] = "notebookdd";
 $config['email_owner'] = "simpleitnotebook@gmail.com";
-$config['email_noreply'] = "notebookdd.fix@gmail.com";
-$config['pass_mail_noreply'] = "";
+$config['email_noreply'] = "notebookdd.notreply@gmail.com";
+$config['pass_mail_noreply'] = "noteb00kdd";
 $config['weburl'] = "https://www.notebookdd.com/";
 $config['line_id'] = "@notebookdd";
 

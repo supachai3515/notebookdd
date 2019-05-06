@@ -6,7 +6,10 @@ app.controller('mainCtrl', function($scope,$http) {
     $scope.product_alert = false;
     $scope.is_reservations_check = false;
      $scope.product_alert_text = 'สินค้า 1 ชิ้น ได้ถูกเพิ่มเข้าไปยังตะกร้าสินค้าของคุณ <a class="btn btn-default" href="<?php echo base_url("cart") ?>" role="button">ดูตะกร้าสินค้า</a>';
-    
+
+     $scope.shipping_price = 0;
+     $scope.spcial_price = 0;
+
 	$scope.productItems = [{
      		id: '0',
             sku: '0',
@@ -22,6 +25,17 @@ app.controller('mainCtrl', function($scope,$http) {
 	}];
 
     $scope.sumTotal = function() {
+        var total = 0;
+        var weight = 0;
+        for (var i = 0; i < $scope.productItems.length; i++) {
+            var product = $scope.productItems[i];
+            total += (product.price * product.quantity);
+        }
+        return total;
+    }
+
+
+    $scope.sumShipping = function() {
         var total = 0;
         for (var i = 0; i < $scope.productItems.length; i++) {
             var product = $scope.productItems[i];
@@ -70,7 +84,7 @@ app.controller('mainCtrl', function($scope,$http) {
              {
                 qty =value.quantity +1;
              }
-               
+
          });
          if(qty>0){
              $http({
@@ -80,7 +94,7 @@ app.controller('mainCtrl', function($scope,$http) {
                  $scope.getOrder();
                 $scope.deleteResult = data;
             });
-         }     
+         }
 
     }
 
@@ -93,7 +107,7 @@ app.controller('mainCtrl', function($scope,$http) {
              {
                 qty =value.quantity - 1;
              }
-               
+
          });
          if(qty>0){
              $http({
@@ -103,10 +117,9 @@ app.controller('mainCtrl', function($scope,$http) {
                  $scope.getOrder();
                 $scope.deleteResult = data;
             });
-         } 
-    
-    }
+         }
 
+    }
 
     $scope.deleteProduct_click = function(rowid) {
 
@@ -121,16 +134,17 @@ app.controller('mainCtrl', function($scope,$http) {
     }
 
     $scope.getOrder = function() {
-    	  
+
         // Simple GET request example:
         $http({
             method: 'GET',
             url: '<?php echo base_url()."cart/get_cart";?>'
         }).success(function(data) {
- 
+
             $scope.productItems = [{
                 id: '0',
                 sku: '0',
+                slug: '',
                 name: '',
                 img: '',
                 price: 0,
@@ -148,6 +162,7 @@ app.controller('mainCtrl', function($scope,$http) {
                 $scope.productItems.push({
                 	id: product.id,
 	                sku: product.sku,
+                    slug: product.slug,
 	                name: product.name,
 	                img: product.img,
 	                price: product.price,
@@ -167,11 +182,11 @@ app.controller('mainCtrl', function($scope,$http) {
         });
 
     }
-    
+
     $scope.caltax = function() {
         var sumtex = 0;
         if ($scope.isTax) {
-            sumtex = (($scope.sumTotal()) * 7) / 100;
+            sumtex = (($scope.sumTotal()) * 7) / 107;
         }
         return sumtex;
     }
@@ -194,7 +209,7 @@ app.controller('mainCtrl', function($scope,$http) {
         $scope.saveDealer = function() {
             $scope.isProscess = true;
             $scope.message_prosecss = "กรุณารอ...";
-         
+
           $http({
             method: 'POST',
             url: '<?php echo base_url('dealer/register');?>',
@@ -234,13 +249,13 @@ app.controller('mainCtrl', function($scope,$http) {
     $scope.editDealerForm_click = function() {
 
             $scope.showOrderDealer = false;
-            $scope.editDealerForm = true;  
+            $scope.editDealerForm = true;
             <?php if ($this->session->userdata('is_logged_in')): ?>
                 $scope.getDealer("<?php echo $this->session->userdata('username');?>");
-            <?php endif ?>        
+            <?php endif ?>
        }
 
-    
+
      $scope.savedealerEdit = function() {
             <?php if($this->session->userdata('is_logged_in')) {?>
 
@@ -255,7 +270,7 @@ app.controller('mainCtrl', function($scope,$http) {
 
                     if(data.error == true) {
                     $scope.isProscess = false;
-                    
+
                     $scope.message_prosecss = data.message;
                 }
                 else {
@@ -265,7 +280,7 @@ app.controller('mainCtrl', function($scope,$http) {
                });
 
              <?php }?>
-       
+
 
        }
 
@@ -279,7 +294,7 @@ app.controller('mainCtrl', function($scope,$http) {
          },
 
          data: { name_dealer : $scope.name_dealer}
-           
+
         }).success(function(data) {
             $scope.dealerEdit = data;
             //console.log(data);
@@ -301,7 +316,8 @@ app.controller('mainCtrl', function($scope,$http) {
          },
             data:$scope.paymentMessage
         }).success(function(data) {
-             $scope.isProscess = false;
+
+            $scope.isProscess = false;
             $scope.message_prosecss = data.message;
 
             console.log(data);
@@ -309,7 +325,7 @@ app.controller('mainCtrl', function($scope,$http) {
 
       }
 
-       $scope.getOrderTracking = function() {        
+       $scope.getOrderTracking = function() {
             console.log($scope.txtSearchTracking);
             var orderid = $scope.txtSearchTracking;
             if($scope.txtSearchTracking==null)
@@ -323,16 +339,16 @@ app.controller('mainCtrl', function($scope,$http) {
              headers: {
            'Content-Type': 'application/x-www-form-urlencoded'
          },
-           
+
         }).success(function(data) {
             $scope.orderTracking = data;
             //console.log(data);
        });
 
-     
+
        }
 
-          $scope.getDoclist = function() {        
+          $scope.getDoclist = function() {
             console.log($scope.txtSearchTracking);
             $http({
             method: 'GET',
@@ -340,19 +356,19 @@ app.controller('mainCtrl', function($scope,$http) {
              headers: {
            'Content-Type': 'application/x-www-form-urlencoded'
          },
-           
+
         }).success(function(data) {
             $scope.doc_list = data;
             //console.log(data);
        });
 
-     
+
        }
 
-        $scope.ckeckoutSubmit = function() {        
-           
+        $scope.ckeckoutSubmit = function() {
+
                  $scope.isProscess = true;
-         $scope.message_prosecss = "กรุณารอ...";
+            $scope.message_prosecss = "กรุณารอ...";
             console.log($scope.paymentMessage);
 
                   $http({
@@ -363,13 +379,108 @@ app.controller('mainCtrl', function($scope,$http) {
              },
                 data:$scope.paymentMessage
             }).success(function(data) {
-                 $scope.isProscess = false;
-                $scope.message_prosecss = 'ทำการสั่งซื้อสำเเร็จ';
 
                 console.log(data);
            });
-       }
+       };
 
+
+
+        $scope.changeProvince = function($province) {
+
+                $http({
+                    method: 'POST',
+                    url: '<?php echo base_url('checkout/getProvince');?>',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+
+                    data: {
+                        province_id: $province
+                    }
+
+                }).success(function(data) {
+                    $scope.items = data;
+                    //console.log(data);
+                });
+            };
+
+
+            $scope.changeAmphur = function($amphur_id) {
+
+                $http({
+                    method: 'POST',
+                    url: '<?php echo base_url('checkout/getSpecialCounty');?>',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+
+                    data: {
+                        amphur_id: $amphur_id
+                    }
+
+                }).success(function(data) {
+                    $scope.spcial_price = parseInt(data.spcial_price, 10);
+                    //console.log(data);
+                });
+
+            };
+
+
+            $scope.changeShipping = function($transport) {
+
+                $http({
+                    method: 'POST',
+                    url: '<?php echo base_url('checkout/getShipping');?>',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+
+                    data: {
+                        shipping_id: $transport
+                    }
+
+                }).success(function(data) {
+                    $scope.shipping_price = parseInt(data.shipping_price, 10);
+                    //console.log(data);
+                });
+            };
+
+
+            $scope.get_shipping_method = function() {
+
+                $http({
+                    method: 'POST',
+                    url: '<?php echo base_url('checkout/get_shipping_method');?>',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+
+                }).success(function(data) {
+                    $scope.shipping_method  = data;
+                    //console.log(data);
+                });
+            };
+
+
+             $scope.get_province_list = function() {
+
+                $http({
+                    method: 'POST',
+                    url: '<?php echo base_url('checkout/get_province_list');?>',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+
+                }).success(function(data) {
+                    $scope.province_list  = data;
+                    //console.log(data);
+                });
+            };
+
+
+    $scope.get_province_list();
+    $scope.get_shipping_method();
 
     //init get
      $scope.getOrder();

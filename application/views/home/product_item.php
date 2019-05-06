@@ -15,7 +15,7 @@
 
                     }
                 ?> 
-                <a href="<?php echo base_url('product/'.$row['sku']) ?>" class="product-thumb-link"><img class="img-responsive" src="<?php echo $image_url;?>" alt=""></a>
+                <a href="<?php echo base_url('product/'.$row['slug']) ?>" class="product-thumb-link"><img class="img-responsive" src="<?php echo $image_url;?>" alt=""></a>
                 <div class="product-box-promotion">
                     <span class="new-item">new</span>
                 </div>
@@ -36,7 +36,7 @@
                    
             </div>
 
-                <h3 class="title-product"><a href="<?php echo base_url('product/'.$row['sku']) ?>"><?php echo $row['name'] ?></a></h3>
+                <h3 class="title-product"><a href="<?php echo base_url('product/'.$row['slug']) ?>"><?php echo $row['name'] ?></a></h3>
                 <p class="desc"><?php echo $row['model'] ?></p>
                 <div class="cart-wishlist-compare text-center">
                      <?php if ($row['stock_all'] > 0): ?>

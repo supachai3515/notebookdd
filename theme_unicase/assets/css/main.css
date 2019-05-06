@@ -1483,7 +1483,7 @@ a {
   color: #666666;
   text-transform: uppercase;
 }
-.sidebar .side-menu nav .nav > li > a:after {
+/* .sidebar .side-menu nav .nav > li > a:after {
   color: #bababa;
   content: "\f0a9";
   float: right;
@@ -1496,7 +1496,7 @@ a {
   transition: all 0.3s ease 0s;
   width: 20px;
   font-family: FontAwesome;
-}
+} */
 .sidebar .side-menu nav .nav > li > a .icon {
   font-size: 20px;
   margin-right: 25px;
@@ -3365,7 +3365,7 @@ a {
 }
 .single-product .product-info .name {
   font-size: 20px;
-  line-height: 18px;
+  /* line-height: 18px; */
   font-family: 'FjallaOneRegular';
   color: #555;
   margin-top: 5px;
@@ -5199,7 +5199,7 @@ a {
 
 
 
-
+/* 
 .category-menu-area {
   margin-bottom: 40px;
 }
@@ -5324,4 +5324,4 @@ span.holder{
 }
 .single-banner a img:hover {
   opacity: 0.5;
-}
+} */

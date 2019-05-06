@@ -14,32 +14,30 @@
 | path to your installation.
 |
 */
-
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 //Config by user
-$config['short_sitename'] = "Notebookdd";
-$config['sitename'] = "ขายอะไหล่แท้ มือหนึ่งและมือสอง - Notebookdd";
-$config['tagline'] = "ขายอะไหล่แท้ มือหนึ่ง และมือสอง ซ่อมด่วนรอรับได้เลย เปลี่ยนชิพการ์ดจอ ลง OSX -ซ่อมหน้าจอ LED LCD เมนบอร์ดทุกอาการ";
+$config['short_sitename'] = "notebookdd";
+$config['sitename'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - notebookdd";
+$config['tagline'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่ง และมือสอง ซ่อมด่วนรอรับได้เลย เปลี่ยนชิพการ์ดจอ ลง OSX -ซ่อมหน้าจอ LED LCD เมนบอร์ดทุกอาการ";
 $config['url_img'] = "http://www.notebookdd.com/";
 $config['no_url_img'] = "http://www.notebookdd.com/uploads/no_image.jpg";
 
-$config['email_name'] = "Notebookdd";
-$config['email_owner'] = "Notebookdd_md@hotmail.com";
-$config['email_noreply'] = "Notebookdd.fix@gmail.com";
-$config['pass_mail_noreply'] = "0917824565";
-$config['weburl'] = "http://www.notebookdd.com/";
+$config['email_name'] = "notebookdd";
+$config['email_owner'] = "simpleitnotebook@gmail.com";
+$config['email_noreply'] = "notebookdd.notreply@gmail.com";
+$config['pass_mail_noreply'] = "noteb00kdd";
+$config['weburl'] = "https://www.notebookdd.com/";
 $config['line_id'] = "@notebookdd";
-$config['user_system'] = "System Admin";
 
-$config['payment_transfer'] = '<h4>ธนาคารกรุงเทพ</h4>';
+
+$config['payment_transfer'] = ' ';
 
 
 //information
 $config['pre_page'] = "10";
-
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -277,6 +275,7 @@ $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
+
 /*
 |--------------------------------------------------------------------------
 | Cookie Related Variables

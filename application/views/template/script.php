@@ -21,10 +21,17 @@
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/loading-bar.js'></script>
 	<script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/sweetalert2.js'></script>
     <script type='text/javascript' src='<?php echo base_url('theme_unicase');?>/assets/js/lity.min.js'></script>
-    <!-- page script -->
-    <?php $this->load->view("js/main_app_js"); ?>
-	<?php $this->load->view("js/header_cart_js"); ?>
-  	<?php if(isset($script_file)){echo $this->load->view($script_file); }?>
+
+    <script src="<?php echo base_url('theme_unicase');?>/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="<?php echo base_url('theme_unicase');?>/datepicker/locales/bootstrap-datepicker.th.min.js"></script>
+    <script src="<?php echo base_url('theme_unicase');?>/datepicker/js/bootstrap-timepicker.js"></script>
+    <script type='text/javascript' src='<?php echo base_url('theme');?>/js/angular.min.js'></script>
+
+    <?php echo $this->load->view("template/app");?>
+    <?php if(isset($script)){echo $script;}?>
+	<?php if(isset($script_file)){echo $this->load->view($script_file); }?>
+	
+	
 	<script>
 		$(document).ready(function () {
 			$(".changecolor").switchstylesheet({ seperator: "color" });

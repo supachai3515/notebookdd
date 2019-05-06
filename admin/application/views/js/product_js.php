@@ -19,7 +19,7 @@
 	    	language: "th",
 	    	<?php if($product_data['image']!=""){?>
 		        initialPreview: [
-		            '<img src="<?php echo base_url($product_data['image']);?>" class="file-preview-image">'
+		            '<img src="<?php echo $this->config->item('url_img').$product_data['image'];?>" class="file-preview-image">'
 		        ],
 	        <?php } ?>
 	        overwriteInitial: false,
@@ -31,7 +31,7 @@
 			    	language: "th",
 			    	<?php if($image['path']!=""){?>
 			    		initialPreview: [
-					            '<img src="<?php echo base_url($image['path']); ?>" class="file-preview-image">'
+					            '<img src="<?php echo $this->config->item('url_img').$image['path']; ?>" class="file-preview-image">'
 					        ],
 			    	<?php } ?>
 			        overwriteInitial: false,

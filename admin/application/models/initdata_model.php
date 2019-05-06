@@ -10,25 +10,14 @@ class Initdata_model extends CI_Model
         parent::__construct();
     }
 
-    public function get_menu($data_global)
+    public function get_menu($menu_group_id)
     {
-		$sqlmenu ="";
-
-		if($data_global['name']==$this->config->item('user_system')){
-			$sqlmenu =" SELECT m.* ,1 is_add, 1 is_edit,1 is_view
-			FROM menu m
-			WHERE m.is_active = 1 ORDER BY m.order_by ";
-		}
-		else {
-			$sqlmenu =" SELECT m.* , md.is_add,md.is_edit,md.is_view
-			FROM menu m
-			INNER JOIN menu_group_detail md ON m.menu_id = md.menu_id AND md.is_active = 1
-			INNER JOIN menu_group mg ON mg.menu_group_id = md.menu_group_id AND mg.is_active = 1
-			WHERE m.is_active = 1  AND mg.menu_group_id = '".$data_global['menu_group_id']."'
-			ORDER BY m.order_by ";
-
-		}
-       
+        $sqlmenu =" SELECT m.* , md.is_add,md.is_edit,md.is_view
+								FROM menu m
+	              INNER JOIN menu_group_detail md ON m.menu_id = md.menu_id AND md.is_active = 1
+	              INNER JOIN menu_group mg ON mg.menu_group_id = md.menu_group_id AND mg.is_active = 1
+	              WHERE m.is_active = 1  AND mg.menu_group_id = '".$menu_group_id."'
+	              ORDER BY m.order_by ";
         $reMenus = $this->db->query($sqlmenu);
         return  $reMenus->result_array();
     }
