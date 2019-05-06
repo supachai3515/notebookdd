@@ -74,17 +74,8 @@
                     
                                     <td class="cart-product-quantity">
                                         <div class="quant-input">
-                                            <div class="arrows">
-                                                <div class="arrow plus gradient"><span class="ir"><i
-                                                            class="icon fa fa-sort-asc"></i></span></div>
-                                                <div class="arrow minus gradient"><span class="ir"><i
-                                                            class="icon fa fa-sort-desc"></i></span></div>
-                                            </div>
-
                                             <input type="text" hidden="true"  name="product_id[]" value="<?php echo $row['id'] ?>">
-                                            <?php echo form_input(array('name' => 'qty[]', 'value' => $row['qty'], 'maxlength' => '3', 'size' => '5')); ?>
-
-                                           
+                                            <input type="number" name="qty[]" value="3" maxlength="3" size="5">
                                         </div>
                                     </td>
                                     <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo $this->cart->format_number($row['price']); ?></span>

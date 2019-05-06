@@ -192,7 +192,7 @@
                                                         </div>
                                                         <div class="col-xs-7">
                                                             <h3 class="name"><a href="<?php echo base_url('product/'.$row['slug']) ?>"><span  ng-bind="item.name"></span></a></h3>
-                                                            <div class="price"><?php echo $row['price'] ?> </div>
+                                                            <div class="price"><?php echo number_format($row['price'],2) ?> : <?php echo $row['qty']; ?> ชิ้น </div>
                                                         </div>
                                                         <div class="col-xs-1 action">
                                                             <a href="<?php echo base_url('cart/delete/'.$row['rowid']) ?>"><i class="fa fa-trash"></i></a>
