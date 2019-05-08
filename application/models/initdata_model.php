@@ -16,7 +16,7 @@ class Initdata_model extends CI_Model {
 
 	public function get_brands()
 	{
-		$sql =" SELECT pb.id, pb.name, pb.slug, pt.id type_id, COUNT(p.id) count_product FROM product_brand pb
+		$sql =" SELECT pb.id, pb.name, pb.slug,  pb.image ,pt.id type_id, COUNT(p.id) count_product FROM product_brand pb
 				INNER JOIN products p ON p.product_brand_id = pb.id
 				INNER JOIN product_type  pt  ON p.product_type_id = pt.id
 				WHERE pb.is_active = 1 AND p.is_active= '1' AND  pt.is_active = 1 GROUP BY  pb.id, pb.name , pb.slug
@@ -203,32 +203,30 @@ class Initdata_model extends CI_Model {
                 LEFT JOIN product_type t ON p.product_type_id = t.id  WHERE
                 p.is_active = 1 AND p.stock > 0 AND p.id = '" . $items['id'] . "'";
             $query = $this->db->query($sql);
-            $row   = $query->row_array();
-            	 $weigth =  $weigth + ($row['weight']*$items['qty']);
+			$row   = $query->row_array();
+			
+			 if(isset($row['weight'])){
+				$weigth =  $weigth + ( $row['weight'] *$items['qty']);
+			 }
+            	
          }
 
-        if($weigth > 0){
+         
 
-        	  $sql = "SELECT price shipping_price FROM shipping_rate
-				WHERE shipping_method_id = '".$shipping_id."'
-				AND '".$weigth."' BETWEEN  from_weight AND to_weight";
+			$sql = "SELECT price shipping_price FROM shipping_rate
+			WHERE shipping_method_id = '".$shipping_id."'
+			AND '".$weigth."' BETWEEN  from_weight AND to_weight";
 
 			$result = $this->db->query($sql);
 
 			$result_row = $result->row_array();
 			if (isset($result_row['shipping_price']) ){
-				return  $result->row_array();
+			return  $result->row_array();
 			}
 			else{
 
-				return array( 'shipping_price' => 0);
-			}
-
-        }
-        else
-        {
-        	return array( 'shipping_price' => 0);
-        }
+			return array( 'shipping_price' => 0);
+			} 
     }
 
     public function get_sipping_spcial($amphur_id)

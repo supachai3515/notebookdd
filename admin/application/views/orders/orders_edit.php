@@ -349,7 +349,7 @@
                   <td><?php echo  $value['sku'] ?></td>
                   <td>
                     <?php echo  $value['product_name'] ?> <br/>
-                    <button type="button" class="btn btn-info btn-xs" ng-click="open(<?php echo  $value['product_id'] ?>,<?php echo  $value['quantity'] ?>,<?php echo $orders_data['id'] ?>)">Serial Number</button>
+                    <!-- <button type="button" class="btn btn-info btn-xs" ng-click="open(<?php echo  $value['product_id'] ?>,<?php echo  $value['quantity'] ?>,<?php echo $orders_data['id'] ?>)">Serial Number</button> -->
                   </td>
                   <td><?php echo  $value['quantity'] ?></td>
                   <td><?php echo  $value['price'] ?></td>
@@ -414,6 +414,128 @@
           </div>
 
           
+
+          <div class="well">
+
+            <form class="form-horizontal" method="POST" action="<?php echo base_url('orders/save_slip/'.$orders_data['id']);?>" accept-charset="utf-8" enctype="multipart/form-data">
+               <div class="form-group">
+                  <legend>การชำระเงิน</legend>
+                </div>
+                 <!-- Text input-->
+                 <?php if (isset($orders_data['credit_note_id'])  && $orders_data['credit_note_id']>0 ): ?>
+                  <div class="form-group">
+                        
+                          <label class="col-md-3 control-label" for="credit_note_id">อ้างอิงใบลดหนี้</label>
+                          <div class="col-md-4">
+                            <?php echo $orders_data['credit_note_id'] ?>  : <?php echo $orders_data['credit_note_docno'] ?> 
+                            </div>   
+                  </div>
+                  <?php endif ?>
+                 <input hidden="true"  value="<?php echo $orders_data['member_id']; ?>"  name="member_id" >
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="textinput">เลือกธนาคาร  *</label>
+                    <div class="col-md-6">
+                      <select  name="bank_name"  class="form-control" required="required">
+
+                          <?php if ($orders_data['bank_name'] == "ธนาคารกรุงเทพ"): ?>
+                            <option value="ธนาคารกรุงเทพ" selected>ธนาคารกรุงเทพ</option>
+                          <?php else: ?>
+                            <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
+                          <?php endif ?>
+
+                          <?php if ($orders_data['bank_name'] == "ธนาคารกรุงไทย"): ?>
+                            <option value="ธนาคารกรุงไทย" selected>ธนาคารกรุงไทย</option>
+                          <?php else: ?>
+                            <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+                          <?php endif ?>
+
+                          <?php if ($orders_data['bank_name'] == "ธนาคารไทยพาณิชย์"): ?>
+                            <option value="ธนาคารไทยพาณิชย์" selected>ธนาคารไทยพาณิชย์</option>
+                          <?php else: ?>
+                            <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
+                          <?php endif ?>
+
+                          <?php if ($orders_data['bank_name'] == "ธนาคารกสิกรไทย"): ?>
+                            <option value="ธนาคารกสิกรไทย" selected>ธนาคารกสิกรไทย</option>
+                          <?php else: ?>
+                            <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                          <?php endif ?>
+
+
+                          <?php if ($orders_data['bank_name'] == "ใบลดหนี้"): ?>
+                            <option value="ใบลดหนี้" selected>ใบลดหนี้</option>
+                          <?php else: ?>
+                            <option value="ใบลดหนี้">ใบลดหนี้</option>
+                          <?php endif ?>
+
+                      </select>
+                     </div>
+                </div>
+
+              <div class="form-group">
+                  <label class="col-md-3 control-label" for="textinput">จำนวนเงิน *</label>
+                  <div class="col-md-6">
+                    <input value="<?php echo $orders_data['amount']; ?>"  name="amount" type="number" placeholder="จำนวนเงิน" class="form-control input-md" required="required">
+                   </div>
+              </div>
+
+              <div class="form-group">
+              <label class="col-md-3 control-label" for="textinput">วันที่โอน  *</label>
+                <div class="col-md-6">
+                    <div class='input-group date' id='datepicker'>
+                        <input type='text' class="form-control" name="inform_date" placeholder="วันที่" value="<?php echo $orders_data['inform_date']; ?>"  required="true" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                   </div>
+                  </div>
+                        
+                <div class="form-group">
+                <label class="col-md-3 control-label" for="textinput">เวลาที่โอน  *</label>
+                <div class="col-md-6">
+                    <div class="input-group bootstrap-timepicker timepicker">
+                        <input id="timepicker1" type="text" name="inform_time" class="form-control input-small" value="<?php echo $orders_data['inform_time']; ?>"   required="true"/>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                    </div>
+                 </div>
+                  </div>
+                         
+                       
+                  <div class="form-group">
+                      <label class="col-md-3 control-label" for="textinput">หมายเหตุ</label>
+                      <div class="col-md-6">
+                        <textarea  name="comment" class="form-control input-md" ><?php echo $orders_data['comment']; ?></textarea>
+                    </div>
+                    </div>
+
+
+                <!-- File Button --> 
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" for="image_field">รูปสำหรับลูกค้า</label>
+                    <div class="col-md-6">
+                      <p><input id="image_field" name="image_field" class="file-loading" type="file" data-show-upload="false" data-min-file-count="1"></p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- File Button --> 
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" for="image_field1">รูปสำหรับเจ้าหน้าที่</label>
+                    <div class="col-md-6">
+                      <p><input id="image_field1" name="image_field1" class="file-loading" type="file" data-show-upload="false" data-min-file-count="1"></p>
+                      
+                    </div>
+                  </div>
+
+                <div class="form-group">
+                  <div class="col-sm-10 col-sm-offset-3">
+                    <button type="submit" value="upload"  class="btn btn-success">บันทึก slip</button>
+                  </div>
+                </div>
+            </form>
+
+            </div>
 
 
  

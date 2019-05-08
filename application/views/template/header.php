@@ -18,7 +18,9 @@
         <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>/content/wp-content/uploads/2016/04/cropped-NBDD_LOGO_4-180x180.jpg" />
 
 	    <!-- Bootstrap Core CSS -->
-	    <link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/datepicker/css/bootstrap-datepicker3.css">
+        <link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/datepicker/css/bootstrap-timepicker.css">
 	    
 	    <!-- Customizable CSS -->
 	    <link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/main.css">
@@ -270,6 +272,7 @@
 										</ul>
 									</li>
 									<li class="dropdown"><a href="<?php echo base_url('products')?>">สินค้า</a></li>
+									<li><a href="<?php echo base_url('payment');?>">แจ้งชำระเงิน</a></li>
 									<li class="dropdown yamm">
 										<a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">บริการ
 											<span style="display: none;" class="menu-label hot-menu hidden-xs">hot</span>

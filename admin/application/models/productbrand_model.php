@@ -58,11 +58,36 @@ class Productbrand_model extends CI_Model
             $slug =$this->input->post('name');
         }
 
+
+        $this->load->library('my_upload');
+        $image_name = "";
+        $dir ='./../uploads/banner/'.date("Ym").'/';
+        $dir_insert ='uploads/banner/'.date("Ym").'/';
+
+
+        $this->my_upload->upload($_FILES["image_field"]);
+        if ($this->my_upload->uploaded == true) {
+            $this->my_upload->allowed         = array('image/*');
+            $this->my_upload->process($dir);
+
+            if ($this->my_upload->processed == true) {
+                $image_name  = $this->my_upload->file_dst_name;
+                $this->my_upload->clean();
+            } else {
+                $data['errors'] = $this->my_upload->error;
+                echo $data['errors'];
+            }
+        } else {
+            $data['errors'] = $this->my_upload->error;
+        }
+
+
         date_default_timezone_set("Asia/Bangkok");
         $data_productbrand = array(
             'name' => $this->input->post('name'),
             'slug' => $this->Initdata_model->slug($slug),
             'description' => $this->input->post('description'),
+            'image' => $dir_insert.$image_name,
             'modified_date' => date("Y-m-d H:i:s"),
             'is_active' => $this->input->post('isactive')
         );

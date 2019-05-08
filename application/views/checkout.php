@@ -289,7 +289,7 @@
                                 <div class="well" ng-if="txtTransport==2">
                                     <div class="form-group" ng-if="txtTransport==2">
                                     <label class="info-title control-label" for="province">จังหวัด</label>
-                                    <
+                                  
                                         <select id="province" name="province" class="form-control"  ng-change="changeProvince(province)"
                                                 ng-model="province"
                                                 ng-options="province.id as province.name for province in province_list track by province.id "

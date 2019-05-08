@@ -42,6 +42,15 @@
           </div>
         </div>
 
+         <!-- File Button -->
+    		<div class="form-group">
+    		  <label class="col-md-3 control-label" for="image_field">รูปตัวอย่าง</label>
+    		  <div class="col-md-6">
+    		    <p><input id="image_field" name="image_field" class="file-loading" type="file" data-show-upload="false" data-min-file-count="1"></p>
+
+    		  </div>
+    		</div>
+
         <!-- Multiple Checkboxes -->
         <div class="form-group">
           <label class="col-md-3 control-label" for="isactive">ใช้งาน</label>

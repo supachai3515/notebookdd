@@ -75,7 +75,7 @@ class Productbrand extends BaseController
             $data["productbrand_data"] = $this->productbrand_model->get_productbrand_id($productbrand_id);
             $data["content"] = "productbrand/productbrand_edit";
             //if script file
-            $data["script_file"]= "js/product_add_js";
+            $data['script_file']= "js/productbrand_js";
             $data["header"] = array("title" => "Product Brand | ".$this->config->item("sitename"),
                                               "description" =>  "Product Brand | ".$this->config->item("tagline"),
                                               "author" => $this->config->item("author"),
