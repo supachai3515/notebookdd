@@ -40,9 +40,9 @@ $config['url_img'] = "http://www.notebookdd.com/admin/";
 $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
 
 $config['email_name'] = "notebookdd";
-$config['email_owner'] = "simpleitnotebook@gmail.com";
-$config['email_noreply'] = "notebookdd.notreply@gmail.com";
-$config['pass_mail_noreply'] = "noteb00kdd";
+$config['email_owner'] = "simple-it@outlook.com";
+$config['email_noreply'] = "systemsendmail.noreply@gmail.com";
+$config['pass_mail_noreply'] = "systemP@$$w0rdsendmail";
 $config['weburl'] = "https://www.notebookdd.com/";
 $config['line_id'] = "@notebookdd";
 
