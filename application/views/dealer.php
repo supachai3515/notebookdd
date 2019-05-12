@@ -164,7 +164,7 @@
 													<tr>
 														<td>
 															<strong>วันที่ : </strong><?php echo $value['date'];?><br/>
-															<strong>เลขที่ใบสั่งซื้อ : </strong>#<?php echo $value['id'];?><br/>
+															<strong>เลขที่ใบสั่งซื้อ : </strong>#<?php echo $value['order_docno'];?><br/>
 															<a href="<?php echo base_url('status/'.$value['ref_id']);?>" target="_bank">
 															<button type="button" class="btn btn-xs btn-success">สะถานะสินค้า <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
 															 

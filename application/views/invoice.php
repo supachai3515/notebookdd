@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>ใบแจ้งชำระเงิน เลขที่ใบสั่งซื้อ <?php echo $order['id']; ?><?php echo $order["name"];?> </title>
+		<title>ใบแจ้งชำระเงิน เลขที่ใบสั่งซื้อ <?php echo $order['order_docno']; ?><?php echo $order["name"];?> </title>
 
 		<!-- Bootstrap CSS -->
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
             	</div>
             	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
-            		<h2>เลขที่ใบสั่งซื้อ <?php echo  $order['id'];?> </h2>
+            		<h2>เลขที่ใบสั่งซื้อ <?php echo  $order['order_docno'];?> </h2>
 					<strong>วันที่ออก <?php echo $order['date']?></strong><br/>
 					กรุณาชำระเงินภายใน 3 วัน 
             	</div>

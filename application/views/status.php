@@ -89,7 +89,7 @@
                                     <span class="estimate-title">
                                         <?php if ($order['is_reservations'] == 1): ?>เลขที่ใบจอง #BO<?php echo $order['id']; ?>
                                         <?php else: ?>
-                                            เลขที่ใบสั่งซื้อ #<?php echo $order['id']; ?>
+                                            เลขที่ใบสั่งซื้อ #<?php echo $order['order_docno']; ?>
                                         <?php endif ?></span>
                                 </th>
                             </tr>

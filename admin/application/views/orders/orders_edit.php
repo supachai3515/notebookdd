@@ -537,24 +537,12 @@
 
             </div>
 
-
- 
-
           </div>
 
           <div class="col-md-4">
             <a href="<?php echo $this->config->item('weburl').'invoice/'.$orders_data['ref_id']; ?>" target="_blank"><button type="button" class="btn btn-success">ใบสั่งซื้อ</button></a>
 
-            <?php if ($orders_data['order_status_id'] >= 2): ?>
-                <?php if ($orders_data['is_invoice'] == 1): ?>
-                  <a href="<?php echo  base_url('orders/invoice/'.$orders_data['id']); ?>" ><button type="button" class="btn btn-info">ใบกำกับภาษี</button></a> <span><?php echo $orders_data['invoice_docno'] ?></span>
-                <?php else: ?>
-                  <a href="<?php echo base_url('orders/invoice/'.$orders_data['id']); ?>"><button type="button" class="btn btn-warning">ออกใบกำกับภาษี</button></a>
-                <?php endif ?>
-
-              
-            <?php endif ?>
-
+          
             <h4 class="text-info">สถานะสินค้า</h4>
             <div class="well">
               <div class="box-body table-responsive no-padding">

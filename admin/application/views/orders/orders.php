@@ -9,7 +9,7 @@
 
             <div class="form-group">
                 <label class="sr-only" for="">เลขที่ใบเสร็จ</label>
-                <input type="number" class="form-control" id="order_id" name="order_id" placeholder="เลขที่ใบเสร็จ">
+                <input type="text" class="form-control" id="order_id" name="order_id" placeholder="เลขที่ใบเสร็จ">
             </div>
             <select id="select_status" name="select_status" class="form-control">
                 <?php foreach ($order_status_list as $status): ?>
@@ -76,7 +76,7 @@
                             <?php endif ?>
                         </td>
                         <td>
-                            <span>เลขที่ใบสั่งซื้อ : <strong>#<?php echo $orders['id'] ?></strong></span><br/>
+                            <span>เลขที่ใบสั่งซื้อ : <strong>#<?php echo $orders['order_docno'] ?></strong></span><br/>
                             <span>โดย : <strong><?php echo $orders['name'] ?></strong></span><br/>
                             <span>วันที่สร้าง : <i class="fa fa-calendar"></i> <?php echo date("d-m-Y H:i", strtotime($orders['date']));?></span><br/>
                             <?php if (isset($orders['user_name'] )): ?>

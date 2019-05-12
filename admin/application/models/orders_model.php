@@ -281,7 +281,7 @@ class Orders_model extends CI_Model
 				WHERE  1=1";
 
         if ($data_orders['order_id'] !="") {
-            $sql = $sql." AND o.id ='".$data_orders['order_id']."'";
+            $sql = $sql." AND o.id ='".$data_orders['order_id']."'   OR  o.order_docno LIKE '%".$data_orders['order_id']."%' ";
         }
 
         if ($this->input->post('select_status') !="0") {
@@ -290,6 +290,7 @@ class Orders_model extends CI_Model
 
         $sql = $sql." AND (o.name LIKE '%".$data_orders['search']."%'
 								 OR  o.id LIKE '%".$data_orders['search']."%'
+                                 OR  o.order_docno LIKE '%".$data_orders['search']."%'
 								 OR  o.trackpost LIKE '%".$data_orders['search']."%')
 
 								 ORDER BY sh.create_date DESC , o.date DESC

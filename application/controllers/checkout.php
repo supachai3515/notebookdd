@@ -239,8 +239,21 @@ class Checkout extends CI_Controller {
 
 			$this->db->insert('orders', $data);
 			$order_id = $this->db->insert_id();
-			$sql = 'UPDATE orders set order_docno = CONCAT(DATE_FORMAT(NOW(), "NDDO%Y%m"),RIGHT(CONCAT(\'0000\',id), 4)) WHERE id = \''.$order_id.'\'';
-			$this->db->query($sql);
+	
+			$checkDate = 'NDO'.date("ymd");
+			$sql ="SELECT COUNT(*)+1 connt_id FROM orders WHERE  LEFT(order_docno, 7) = LEFT('".$checkDate."', 7)  ";
+			$query = $this->db->query($sql);
+			$row = $query->row_array();
+			$order_inv_count =  $row['connt_id'];
+
+			date_default_timezone_set("Asia/Bangkok");
+			$data_order = array(
+							'order_docno' => 'NDO'.date("ymd").str_pad($order_inv_count, 4, "0", STR_PAD_LEFT)
+					);
+
+			$where = array('id' => $order_id );
+			$this->db->update("orders", $data_order, $where);
+
 
 			$linenumber =1;
 
@@ -300,7 +313,7 @@ class Checkout extends CI_Controller {
 		        );
 
 		        $this->load->library('email', $email_config);
-		        $sub ="เลขที่ใบสั่งซื้อ #".$orderdata['id'];
+		        $sub ="เลขที่ใบสั่งซื้อ #".$orderdata['order_docno'];
 
 		        $this->email->from($this->config->item('email_noreply'), $this->config->item('email_name'));
 		        $this->email->to($email);
