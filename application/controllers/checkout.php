@@ -239,6 +239,9 @@ class Checkout extends CI_Controller {
 
 			$this->db->insert('orders', $data);
 			$order_id = $this->db->insert_id();
+			$sql = 'UPDATE orders set order_docno = CONCAT(DATE_FORMAT(NOW(), "NDDO%Y%m"),RIGHT(CONCAT(\'0000\',id), 4)) WHERE id = \''.$order_id.'\'';
+			$this->db->query($sql);
+
 			$linenumber =1;
 
 			foreach ($this->cart->contents() as $items)
@@ -275,7 +278,14 @@ class Checkout extends CI_Controller {
 			else
 			{
 			    $this->db->trans_commit();
-			    $this->cart->destroy();
+				$this->cart->destroy();
+				
+
+				 $sql ="SELECT * FROM orders
+					WHERE id = '".$order_id."'";
+					$result = $this->db->query($sql);
+					$orderdata = $result->row_array();
+
 
 			    //sendmail
 			    $email_config = Array(
@@ -290,7 +300,7 @@ class Checkout extends CI_Controller {
 		        );
 
 		        $this->load->library('email', $email_config);
-		        $sub ="เลขที่ใบสั่งซื้อ #".$order_id;
+		        $sub ="เลขที่ใบสั่งซื้อ #".$orderdata['id'];
 
 		        $this->email->from($this->config->item('email_noreply'), $this->config->item('email_name'));
 		        $this->email->to($email);
@@ -387,7 +397,7 @@ class Checkout extends CI_Controller {
 		$header_str ='
 					<td>
 				       <h2 class="aligncenter">ขอบคุณสำหรับการสั่งซื้อ ('.$this->config->item('sitename').')</h2>
-				       <p>เลขที่ใบสั่งซื้อ #'.$result_order['id'].'<br/>
+				       <p>เลขที่ใบสั่งซื้อ #'.$result_order['order_docno'].'<br/>
 				        วันที่สั่งซื้อ : '.date_format($date1,"d/m/Y H:i").'</p>
 				    </td>
 		';
