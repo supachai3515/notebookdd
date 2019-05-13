@@ -36,8 +36,8 @@ $config['author'] = "Notebookdd";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
-$config['url_img'] = "http://www.notebookdd.com/admin/";
-$config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
+$config['url_img'] = "https://www.notebookdd.com/admin/";
+$config['no_url_img'] = "https://www.notebookdd.com/admin/uploads/no_image.jpg";
 
 $config['email_name'] = "notebookdd";
 $config['email_owner'] = "simple-it@outlook.com";

@@ -22,8 +22,8 @@ $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER
 $config['short_sitename'] = "notebookdd";
 $config['sitename'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่งและมือสอง - notebookdd";
 $config['tagline'] = "รับซ่อม  Macbook iMac  iphone ipad ขายอะไหล่แท้ มือหนึ่ง และมือสอง ซ่อมด่วนรอรับได้เลย เปลี่ยนชิพการ์ดจอ ลง OSX -ซ่อมหน้าจอ LED LCD เมนบอร์ดทุกอาการ";
-$config['url_img'] = "http://www.notebookdd.com/";
-$config['no_url_img'] = "http://www.notebookdd.com/uploads/no_image.jpg";
+$config['url_img'] = "https://www.notebookdd.com/";
+$config['no_url_img'] = "https://www.notebookdd.com/uploads/no_image.jpg";
 
 $config['email_name'] = "notebookdd";
 $config['email_owner'] = "simple-it@outlook.com";
