@@ -25,22 +25,22 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page; 
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
+		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a href="#" class="active">';
+		$config['cur_tag_open'] = '<li  class="active"><a href="#">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '&raquo';
-		$config['next_tag_open'] = "<li>";
-		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '&laquo';
-		$config['prev_tag_open'] = "<li>";
-		$config['prev_tagl_close'] = "</li>";
-		$config['first_tag_open'] = "<li>";
-		$config['first_tagl_close'] = "</li>";
-		$config['last_tag_open'] = "<li>";
-		$config['last_tagl_close'] = "</li>";
+		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
+		$config['next_tag_open'] = '<li class="next">';
+		$config['next_tagl_close'] = '</li>';
+		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tagl_close'] = '</li>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tagl_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tagl_close'] = '</li>';
 
         $this->pagination->initialize($config); 
 		$data['product_list'] = $this->products_model->get_products($page, $config['per_page']);
@@ -87,22 +87,22 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
+		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a href="#" class="active">';
+		$config['cur_tag_open'] = '<li  class="active"><a href="#">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '&raquo';
-		$config['next_tag_open'] = "<li>";
-		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '&laquo';
-		$config['prev_tag_open'] = "<li>";
-		$config['prev_tagl_close'] = "</li>";
-		$config['first_tag_open'] = "<li>";
-		$config['first_tagl_close'] = "</li>";
-		$config['last_tag_open'] = "<li>";
-		$config['last_tagl_close'] = "</li>";
+		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
+		$config['next_tag_open'] = '<li class="next">';
+		$config['next_tagl_close'] = '</li>';
+		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tagl_close'] = '</li>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tagl_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tagl_close'] = '</li>';
 
 
         $this->pagination->initialize($config);
@@ -157,23 +157,22 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
+		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a href="#" class="active">';
+		$config['cur_tag_open'] = '<li  class="active"><a href="#">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '&raquo';
-		$config['next_tag_open'] = "<li>";
-		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '&laquo';
-		$config['prev_tag_open'] = "<li>";
-		$config['prev_tagl_close'] = "</li>";
-		$config['first_tag_open'] = "<li>";
-		$config['first_tagl_close'] = "</li>";
-		$config['last_tag_open'] = "<li>";
-		$config['last_tagl_close'] = "</li>";
-
+		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
+		$config['next_tag_open'] = '<li class="next">';
+		$config['next_tagl_close'] = '</li>';
+		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tagl_close'] = '</li>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tagl_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tagl_close'] = '</li>';
 
     	$this->pagination->initialize($config);
 		$data['product_list'] = $this->products_model->get_products_category($type, $page, $config['per_page']);
@@ -227,23 +226,22 @@ class Products extends CI_Controller {
     	$config["cur_page"] = $page;
 		//config for bootstrap pagination class integration
         /* This Application Must Be Used With BootStrap 3 *  */
-		$config['full_tag_open'] = "<ul class='product-pagi-nav pull-right list-inline'>";
+		$config['full_tag_open'] = "<ul class='list-inline list-unstyled'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a href="#" class="active">';
+		$config['cur_tag_open'] = '<li  class="active"><a href="#">';
         $config['cur_tag_close'] = '</a></li>';
-		$config['next_link'] = '&raquo';
-		$config['next_tag_open'] = "<li>";
-		$config['next_tagl_close'] = "</li>";
-		$config['prev_link'] = '&laquo';
-		$config['prev_tag_open'] = "<li>";
-		$config['prev_tagl_close'] = "</li>";
-		$config['first_tag_open'] = "<li>";
-		$config['first_tagl_close'] = "</li>";
-		$config['last_tag_open'] = "<li>";
-		$config['last_tagl_close'] = "</li>";
-
+		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
+		$config['next_tag_open'] = '<li class="next">';
+		$config['next_tagl_close'] = '</li>';
+		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tagl_close'] = '</li>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tagl_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tagl_close'] = '</li>';
 
         $this->pagination->initialize($config);
 		$data['product_list'] = $this->products_model->get_products__brand($brand, $page, $config['per_page']);

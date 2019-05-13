@@ -38,7 +38,7 @@
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
-                            <p class='contact-number'>สายด่วน: 061 4788 949</p>
+                            <p class='contact-number'>สายด่วน: 086 996 3596 </p>
                         </div><!-- /.module-body -->
                     </div><!-- /.contact-timing -->
                     <!-- ============================================================= CONTACT TIMING : END ============================================================= -->
@@ -83,7 +83,7 @@
                                         </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>135/99 ถ.สุขุมวิท ต.ศรีราชา อ.ศรีราชา จ.ชลบุรี 20110 ชั้น 2 ตึกคอมศรีราชา</p>
+                                        <p>SIMPLE IT (ตึกคอมชลบุรี) ตึกคอมชลบุรี ชั้น 3 อ.เมือง จ.ชลบุรี</p>
                                     </div>
                                 </li>
                                 <li class="media">
@@ -94,8 +94,7 @@
                                         </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>061 478 8949
-                                            <br>089 507 2023</br>090 983 9636</p>
+                                        <p>(+66) 086 996 3596 <br> (+66) 089 507 2023</p>
                                     </div>
                                 </li>
                                 <li class="media">
@@ -107,7 +106,7 @@
                                     </div>
                                     <div class="media-body">
                                         <span>
-                                            <a href="mailto:simpleitnotebook@gmail.com">simpleitnotebook@gmail.com</a>
+                                            <a href="mailto:simple-it@outlook.com">simple-it@outlook.com</a>
                                         </span>
                                         <!-- <br>
                                         <span>

@@ -323,9 +323,10 @@
                                         <input id="txtEmail" name="txtEmail" type="email" placeholder="อีเมล์" class="form-control unicase-form-control text-input" required="required">
                                     <?php } ?>
                                 </div>
-
+                                <div class="form-group">
                                 <div class="pull-right">
                                     <button type="submit" name="Submit" class="btn-upper btn btn-primary">ยืนยันการสั่งซื้อ</button>
+                                </div>
                                 </div>
 
                                 <!-- Button -->

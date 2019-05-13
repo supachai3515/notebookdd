@@ -78,21 +78,23 @@
 				<div class="header-top-inner">
 					<div class="cnt-account">
                         <ul class="list-unstyled">
-							<li><a href="<?php echo base_url('dealer')?>"><i class="icon fa fa-user"></i> บัญชีผู้ใช้</a></li>
-						 
+							
 							<li><a href="<?php echo base_url('cart') ?>"><i class="icon fa fa-shopping-cart"></i> ตะกร้าสินค้า</a></li>
 							<li><a href="<?php echo base_url('payment');?>"><i class="icon fa fa-money"></i> แจ้งชำระเงิน</a></li>
-							<?php if (!$this->session->userdata('is_logged_in')): ?>
+							
+						</ul>
+					</div><!-- /.cnt-account -->
+
+					<div class="cnt-account pull-right">
+						<ul class="list-unstyled">
+						
+						<li><a href="<?php echo base_url('dealer')?>"><i class="icon fa fa-user"></i> บัญชีผู้ใช้</a></li>
+						 
+                       <?php if (!$this->session->userdata('is_logged_in')): ?>
 							    <li><a href="<?php echo base_url('dealer')?>"><i class="fas fa-sign-out-alt"></i> เข้าสู่ระบบ</a></li>
 							<?php else: ?>
 							    <li><a href="<?php echo base_url('dealer/logout')?>"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
 							<?php endif ?>
-						</ul>
-					</div><!-- /.cnt-account -->
-
-					<div class="cnt-block">
-						<ul class="list-unstyled list-inline">
-                        <li><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"><i class="icon fab fa-line"></i> : @notebookdd</a></li>
 						</ul><!-- /.list-unstyled -->
 					</div><!-- /.cnt-cart -->
 					<div class="clearfix"></div>

@@ -29,7 +29,7 @@
                             </span>
                         </div>
                         <div class="media-body">
-                            <span class="contact-span">135/99 ถ.สุขุมวิท ต.ศรีราชา อ.ศรีราชา จ.ชลบุรี 20110 ชั้น 2 ตึกคอมศรีราชา<br>97/233 ม.1 ต.เสม็ด อ.เมือง จ.ชลบุรี 2000<br>SIMPLE IT (ตึกคอมชลบุรี) ตึกคอมชลบุรี ชั้น 3 อ.เมือง จ.ชลบุรี<br>SIMPLE IT (ตึกคอมศรีราชา) ตึกคอมศรีราชา ชั้น 2 อ.ศรีราชา จ.ชลบุรี<br>HOME IT (ตึกคอมศรีราชา) ตึกคอมศรีราชา ชั้น 2 อ.ศรีราชา จ.ชลบุรี</span>
+                            <span class="contact-span">SIMPLE IT (ตึกคอมชลบุรี) ตึกคอมชลบุรี ชั้น 3 อ.เมือง จ.ชลบุรี<br></span>
                         </div>
                     </div>
                     <div class="clearfix phone-no">
@@ -39,7 +39,7 @@
                             </span>
                         </div>
                         <div class="media-body">
-                            <span class="contact-span">061 478 8949<br>089 507 2023<br>090 983 9636</span>
+                            <span class="contact-span">(+66) 086 996 3596 <br>(+66) 089 507 2023</span>
                         </div>
                     </div>
                     <div class="clearfix email">
@@ -49,8 +49,8 @@
                             </span>
                         </div>
                         <div class="media-body">
-                            <span class="contact-span"><a href="mailto:simpleitnotebook@gmail.com">simpleitnotebook@gmail.com</a></span>
-                            <br>
+                       
+                            <span class="contact-span"><a href="mailto:simple-it@outlook.com">simple-it@outlook.com</a></span>
                             <br>
                         </div>
                     </div>
