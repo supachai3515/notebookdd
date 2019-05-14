@@ -273,6 +273,48 @@ class Products extends BaseController
         }
     }
 
+    public function runslug_product_brand()
+    {
+        $sql ="SELECT * FROM product_brand ";
+        $query = $this->db->query($sql);
+        $datalist = $query->result_array();
+
+
+        foreach ($datalist  as $row) {
+            $slug =    $this->Initdata_model->slug($row['name']);
+
+            $data_product_brand = array(
+                'slug' => $slug
+            );
+
+            $where = "id = '".$row['id']."'";
+            $this->db->update("product_brand", $data_product_brand, $where);
+
+            echo $slug.'<br/>';
+        }
+    }
+
+    public function runslug_product_type()
+    {
+        $sql ="SELECT * FROM product_type ";
+        $query = $this->db->query($sql);
+        $datalist = $query->result_array();
+
+
+        foreach ($datalist  as $row) {
+            $slug =    $this->Initdata_model->slug($row['name']);
+
+            $data_product_type = array(
+                'slug' => $slug
+            );
+
+            $where = "id = '".$row['id']."'";
+            $this->db->update("product_type", $data_product_type, $where);
+
+            echo $slug.'<br/>';
+        }
+    }
+
     public function run_strip()
     {
         $sql ="SELECT * FROM products ";
