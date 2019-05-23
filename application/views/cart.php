@@ -75,7 +75,7 @@
                                     <td class="cart-product-quantity">
                                         <div class="quant-input">
                                             <input type="text" hidden="true"  name="product_id[]" value="<?php echo $row['id'] ?>">
-                                            <input type="number" name="qty[]" value="3" maxlength="3" size="5">
+                                            <input type="number" name="qty[]" value="<?php echo $row['qty']; ?>" maxlength="3" size="5">
                                         </div>
                                     </td>
                                     <td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo $this->cart->format_number($row['price']); ?></span>
