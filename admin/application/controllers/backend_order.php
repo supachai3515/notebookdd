@@ -95,7 +95,7 @@ class Backend_order extends BaseController
                 $total  = $total + $shipping_charge;
 
                 $this->db->trans_begin();
-                $ref_order_id = md5("cyberbatt".date("YmdHis")."cyberbatt_gen");
+                $ref_order_id = md5("notebookdd".date("YmdHis")."notebookdd_gen");
                 $order_id="";
                 if ($quantity == 0) {
                     redirect('backend_order/list_temp', 'refresh');

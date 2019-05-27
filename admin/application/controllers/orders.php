@@ -78,7 +78,7 @@ class Orders extends BaseController
         // $data['header'] = array('title' => 'orders| '.$this->config->item('sitename'),
         //                         'description' =>  'orders| '.$this->config->item('tagline'),
         //                         'author' => $this->config->item('author'),
-        //                         'keyword' =>  'cyberbatt');
+        //                         'keyword' =>  'notebookdd');
         // $this->load->view('template/layout', $data);
     }
 
