@@ -47,7 +47,7 @@
 		<link rel="stylesheet" href="<?php echo base_url('theme_unicase');?>/assets/css/font-awesome.min.css">
 		<link href="<?php echo base_url('theme_unicase');?>/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
         <!-- Fonts --> 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>
@@ -122,7 +122,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
 						<div class="contact-row">
 							<div class="phone inline">
-                            <a class="pull-right" href="http://line.me/ti/p/%40zlg9137d" target="_blank">
+                            <a class="pull-right" href="https://line.me/ti/p/%40zlg9137d" target="_blank">
 									<i class="icon fab fa-line"></i> @notebookdd
 								</a>
 							</div>

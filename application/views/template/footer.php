@@ -122,7 +122,7 @@
                                         </span>
                                     </div>
                                     <div class="media-body">
-                                        <span><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"> line : @notebookdd</a></span>
+                                        <span><a href="https://line.me/ti/p/%40zlg9137d" target="_blank"> line : @notebookdd</a></span>
                                     </div>
                                 </li>
                             </ul>
@@ -213,7 +213,7 @@
             <div class="col-xs-12 col-sm-6 no-padding">
                 <div class="copyright">
                     Copyright © <script>document.write(new Date().getFullYear());</script>
-                    <a href="<?php echo base_url();?>">NOTEBOOKDD.COM</a>
+                    <a href="<?php echo base_url();?>">batterynb.com</a>
                     - All rights Reserved
                 </div>
             </div>

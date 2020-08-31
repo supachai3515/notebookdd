@@ -56,7 +56,7 @@
                             <div class="caption">
                                 <h4>ไปรษณีย์ไทย</h4>
                                 <p><strong>ชำระเงินก่อน 15.30น. ส่งสินค้าออกวันเดียวกัน หลังจากนั้น ส่งสินค้าออกวันถัดไป</strong></p>
-                                <p><a href="http://track.thailandpost.co.th/tracking/default.aspx" class="btn btn-primary" target="_blank">ไปรษณีย์ไทย</a></p>
+                                <p><a href="https://track.thailandpost.co.th/tracking/default.aspx" class="btn btn-primary" target="_blank">ไปรษณีย์ไทย</a></p>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <div class="caption">
                                 <h3>เคอรี่ เอ็กซ์เพรส (ประเทศไทย)</h3>
                                 <p><strong> ชำระเงินก่อน 14.00น. ส่งสินค้าออกในวันเดียวกัน หลังจากนั้น ส่งสินค้าออกวันถัดไป </strong></p>
-                                <p><a href="http://th.ke.rnd.kerrylogistics.com/shipmenttracking/" class="btn btn-primary" target="_blank">เคอรี่ เอ็กซ์เพรส (ประเทศไทย)</a></li></p>
+                                <p><a href="https://th.ke.rnd.kerrylogistics.com/shipmenttracking/" class="btn btn-primary" target="_blank">เคอรี่ เอ็กซ์เพรส (ประเทศไทย)</a></li></p>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                             <div class="caption">
                                 <h3>เซ้าท์เทิร์น ดีลิเวอรี่ เซอร์วิส (SDS)</h3>
                                 <p><strong>ชำระเงินก่อน 17.00น. ส่งสินค้าออกวันเดียวกัน หลังจากนั้น ส่งสินค้าออกวันถัดไป</strong></p>
-                                <p><a href="http://www.sds.co.th/status.php" class="btn btn-primary" target="_blank">เซ้าท์เทิร์น ดีลิเวอรี่ เซอร์วิส</a></p>
+                                <p><a href="https://www.sds.co.th/status.php" class="btn btn-primary" target="_blank">เซ้าท์เทิร์น ดีลิเวอรี่ เซอร์วิส</a></p>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             <div class="caption">
                                 <h3>สยามเฟิสท์</h3>
                                 <p><strong>ชำระเงินก่อน 17.00น. ส่งสินค้าออกวันเดียวกัน หลังจากนั้น ส่งสินค้าออกวันถัดไป </strong></p>
-                                <p><a href="http://www.siamfirst.co.th/sfc/news.asp?ID=19" class="btn btn-primary" target="_blank">สยามเฟิสท์</a></p>
+                                <p><a href="https://www.siamfirst.co.th/sfc/news.asp?ID=19" class="btn btn-primary" target="_blank">สยามเฟิสท์</a></p>
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ class Contact extends CI_Controller {
 		//header meta tag 
 		$data['header'] = array('title' => 'ติดต่อเรา | '.$this->config->item('sitename'),
 								'description' =>  'ติดต่อเรา | '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
+								'author' => 'www.batterynb.com',
 								'keyword' =>  'ติดต่อเรา | '.$this->config->item('tagline') );
 
 		//get menu database 

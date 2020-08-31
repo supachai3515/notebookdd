@@ -15,7 +15,7 @@ class Tracking extends CI_Controller {
 		//header meta tag 
 		$data['header'] = array('title' => 'แจ้งชำระเงิน | '.$this->config->item('sitename'),
 								'description' =>  'แจ้งชำระเงิน | '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
+								'author' => 'www.batterynb.com',
 								'keyword' =>  'แจ้งชำระเงิน | '.$this->config->item('tagline') );
 
 		//get menu database 

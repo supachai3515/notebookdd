@@ -22,7 +22,7 @@ class Dealer extends CI_Controller {
 		//header meta tag 
 		$data['header'] = array('title' => 'สมาชิก dealer | '.$this->config->item('sitename'),
 								'description' => 'สมาชิก dealer | '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
+								'author' => 'www.batterynb.com',
 								'keyword' => 'สมาชิก dealer | '.$this->config->item('tagline') );
 		//get menu database 
 		$this->load->model('initdata_model');

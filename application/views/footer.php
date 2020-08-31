@@ -18,7 +18,7 @@
                     </div>
                     <div class="contact-phone">
                         <label class="sub-title"><i class="fa fa-comment"></i> line id:</label>
-                        <span class="phone-number"><a href="http://line.me/ti/p/%40zlg9137d" target="_blank">@notebookdd</a></span>
+                        <span class="phone-number"><a href="https://line.me/ti/p/%40zlg9137d" target="_blank">@notebookdd</a></span>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="newsletter">
-                        <h2 class="sub-title">เวลาทำการ notebookdd.com</h2>
+                        <h2 class="sub-title">เวลาทำการ batterynb.com</h2>
                         <p><i class="fa fa-clock-o"></i> ทุกวัน 10.30 - 20.00 น.</p>
                         <h2 class="sub-title">ช่องทางการชำระเงิน</h2>
                         <p><a href="<?php echo base_url('payment')?>"> <img src="<?php echo base_url() ?>/theme/images/bankimg.jpg" class="img-responsive" alt="Image" width="100%"></a></p>

@@ -15,7 +15,7 @@ class Download extends CI_Controller {
 		//header meta tag 
 		$data['header'] = array('title' => 'download | '.$this->config->item('sitename'),
 								'description' =>  'download | '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
+								'author' => 'www.batterynb.com',
 								'keyword' =>  'download | '.$this->config->item('tagline') );
 
 		//get menu database 

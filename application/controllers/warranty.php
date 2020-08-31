@@ -15,7 +15,7 @@ class Warranty extends CI_Controller {
 		//header meta tag 
 		$data['header'] = array('title' => 'เงื่อนไขการรับประกัน | '.$this->config->item('sitename'),
 								'description' =>  'เงื่อนไขการรับประกัน | '.$this->config->item('tagline'),
-								'author' => 'www.notebookdd.com',
+								'author' => 'www.batterynb.com',
 								'keyword' =>  'เงื่อนไขการรับประกัน | '.$this->config->item('tagline') );
 
 		//get menu database 

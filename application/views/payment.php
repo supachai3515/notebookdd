@@ -133,7 +133,7 @@
                         </span>
                     </div>
                     <div class="media-body">
-                        <span><a href="http://line.me/ti/p/%40zlg9137d" target="_blank"> line : @notebookdd</a></span>
+                        <span><a href="https://line.me/ti/p/%40zlg9137d" target="_blank"> line : @notebookdd</a></span>
                     </div>
                 </div>
                 </div>

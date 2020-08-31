@@ -1,7 +1,7 @@
 RewriteEngine on
 # redirect www to non-www
-#RewriteCond %{HTTP_HOST} ^www\.notwbookdd\.com$ [NC]
-#RewriteRule ^(.*)$ http://notwbookdd.com/$1 [L,R=301]
+#RewriteCond %{HTTP_HOST} ^www\.batterynb\.com$ [NC]
+#RewriteRule ^(.*)$ http://batterynb.com/$1 [L,R=301]
 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -10,4 +10,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ ./index.php/$1 [L]
 
 
-ErrorDocument 404 https://www.notwbookdd.com/demo/notfound
+ErrorDocument 404 https://www.batterynb.com/demo/notfound

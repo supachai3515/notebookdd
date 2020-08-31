@@ -34727,7 +34727,7 @@ INSERT INTO `zipcode` VALUES ('7455', '961303', '76', '997', '8860', '96130');
 -- ----------------------------
 DROP FUNCTION IF EXISTS `strip_tags`;
 DELIMITER ;;
-CREATE DEFINER=`admin_notebookdd`@`localhost` FUNCTION `strip_tags`($str text) RETURNS text CHARSET utf8
+CREATE FUNCTION `strip_tags`($str text) RETURNS text CHARSET utf8
 BEGIN
     DECLARE $start, $end INT DEFAULT 1;
     LOOP

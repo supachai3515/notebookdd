@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'admin_notebookdd';
-$db['default']['password'] = 'TkIpkv7iQ3';
-$db['default']['database'] = 'admin_notebookdd';
+$db['default']['username'] = 'contract_batterynb';
+$db['default']['password'] = 'sEQgkrMtYN';
+$db['default']['database'] = 'contract_batterynb';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

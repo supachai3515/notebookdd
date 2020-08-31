@@ -21,8 +21,8 @@ $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER
 // //Config by user
 // $config['sitename'] = "อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบต Mainboard Keyboard อะแดปเตอร์";
 // $config['tagline'] = "NotebookDD ทางเราขาย อะไหล่โน๊ตบุ๊ค จอโน๊ตบุ๊ค แบตโน๊ตบุ๊ค อะแดปเตอร์ Mainboard ซ่อมโน๊ตบุ๊ค จำหน่ายอะไหล่ notebook";
-// $config['url_img'] = "http://www.notebookdd.com/admin/";
-// $config['no_url_img'] = "http://www.notebookdd.com/admin/uploads/no_image.jpg";
+// $config['url_img'] = "http://www.batterynb.com/admin/";
+// $config['no_url_img'] = "http://www.batterynb.com/admin/uploads/no_image.jpg";
 
 // $config['otp_username'] = "TEST002";
 // $config['otp_password'] = "TEST002";
@@ -36,14 +36,14 @@ $config['author'] = "Notebookdd";
 $config['keyword'] = "อะไหล่แมคบุ๊ค,อะไหล่โน๊ตบุ๊ค,อะไหล่ไอโฟน,จอแมคบุ๊ค,จอไอแมค,จอไอโฟน,แบตเตอรี่โน๊ตบุ๊ค,แบตเตอรี่แมคบุ๊ค,แบตเตอรี่ไอโฟน,ครบวงจร";
 
 
-$config['url_img'] = "https://www.notebookdd.com/admin/";
-$config['no_url_img'] = "https://www.notebookdd.com/admin/uploads/no_image.jpg";
+$config['url_img'] = "https://www.batterynb.com/admin/";
+$config['no_url_img'] = "https://www.batterynb.com/admin/uploads/no_image.jpg";
 
 $config['email_name'] = "notebookdd";
 $config['email_owner'] = "simple-it@outlook.com";
 $config['email_noreply'] = "systemsendmail.noreply@gmail.com";
 $config['pass_mail_noreply'] = "systemP@ssw0rdsendmail";
-$config['weburl'] = "https://www.notebookdd.com/";
+$config['weburl'] = "https://www.batterynb.com/";
 $config['line_id'] = "@notebookdd";
 
 $config['payment_transfer'] = '';
